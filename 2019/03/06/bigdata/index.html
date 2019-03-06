@@ -8,16 +8,21 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>sheerLi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前端知识点总结">
-<meta property="og:type" content="website">
+  <meta name="description" content="Linux 基本环境配置 以下修改操作需要在 root 管理员权限下所以先通过 su - 命令切换到 root 环境下  修改主机名 执行下面命令修改主机名（临时）1hostname bigdata01-huadian.com   修改主机名（永久）1.执行下面命令进入相应文件2.按下键盘的 “i” 键进入编辑模式1vim /etc/sysconfig/network   3.将 HOSTNAME">
+<meta property="og:type" content="article">
 <meta property="og:title" content="sheerLi">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/03/06/bigdata/index.html">
 <meta property="og:site_name" content="sheerLi">
-<meta property="og:description" content="前端知识点总结">
+<meta property="og:description" content="Linux 基本环境配置 以下修改操作需要在 root 管理员权限下所以先通过 su - 命令切换到 root 环境下  修改主机名 执行下面命令修改主机名（临时）1hostname bigdata01-huadian.com   修改主机名（永久）1.执行下面命令进入相应文件2.按下键盘的 “i” 键进入编辑模式1vim /etc/sysconfig/network   3.将 HOSTNAME">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/bigdata/network.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/bigdata/network2.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/bigdata/network3.png">
+<meta property="og:updated_time" content="2019-03-06T10:47:37.254Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sheerLi">
-<meta name="twitter:description" content="前端知识点总结">
+<meta name="twitter:description" content="Linux 基本环境配置 以下修改操作需要在 root 管理员权限下所以先通过 su - 命令切换到 root 环境下  修改主机名 执行下面命令修改主机名（临时）1hostname bigdata01-huadian.com   修改主机名（永久）1.执行下面命令进入相应文件2.按下键盘的 “i” 键进入编辑模式1vim /etc/sysconfig/network   3.将 HOSTNAME">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/06/bigdata/network.png">
   
     <link rel="alternative" href="/atom.xml" title="sheerLi" type="application/atom+xml">
   
@@ -149,9 +154,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-bigdata" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-bigdata" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
@@ -194,6 +197,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -201,16 +225,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/06/bigdata/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/06/bigdata/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/02/23/sort/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基本排序的方式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -230,99 +313,14 @@
 
 
 
-
   
-    <article id="post-sort" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/23/sort/">基本排序的方式</a>
-    </h1>
   
 
-        
-        <a href="/2019/02/23/sort/" class="archive-article-date">
-  	<time datetime="2019-02-23T02:11:11.170Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>以下是 <strong>js</strong> 实现常用的基本排序，包括 <strong>快速排序</strong>、<strong>冒泡排序</strong>、<strong>堆排序</strong>、<strong>桶排序</strong>、<strong>插入排序</strong>、<strong>归并排序</strong>.</p>
-<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><blockquote>
-<p>   排序过程只需要三步:<br>（1）在数据集之中，选择一个元素作为”基准”（pivot）。<br>（2）所有小于”基准”的元素，都移到”基准”的左边；所有大于”基准”的元素，都移到”基准”的右边。<br>（3）对”基准”左边和右边的两个子集，不断重复第一步和第二步，直到所有子集只剩下一个元素为止。  </p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>( arr.length &lt;= <span class="number">1</span> ) &#123;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 找出数组中的基准值</span></span><br><span class="line">  <span class="keyword">var</span> pivotIndex = <span class="built_in">Math</span>.floor(arr.length / <span class="number">2</span>);</span><br><span class="line">  <span class="keyword">var</span> pivot = arr.splice(pivotIndex, <span class="number">1</span>)[<span class="number">0</span>];</span><br><span class="line">  <span class="comment">// 定义左右两个个空数组</span></span><br><span class="line">  <span class="keyword">var</span> left = [], right = [];</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>, len = arr.length; i &lt; len; i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr[i] &lt; pivot) &#123;</span><br><span class="line">      left.push(arr[i])</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      right.push(arr[i])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 递归调用快排</span></span><br><span class="line">  <span class="keyword">return</span> quickSort(left).concat([pivot], quickSort(right));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><blockquote>
-<p>数组中有 n 个数，比较每相邻两个数，如果前者大于后者，就把两个数交换位置;<br>这样一来，第一轮就可以选出一个最大的数放在最后面；<br>那么经过 n-1（数组的 length - 1） 轮，就完成了所有数的排序。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++)&#123;</span><br><span class="line">    <span class="comment">// 声明一个变量，作为标志位</span></span><br><span class="line">    <span class="keyword">var</span> done = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; arr.length<span class="number">-1</span>-i; j++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(arr[j] &gt; arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">        <span class="keyword">var</span> smtp = arr[j];</span><br><span class="line">        arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">        arr[j+<span class="number">1</span>] = smtp;</span><br><span class="line">        <span class="comment">// 若有交换过，标志位置为 false</span></span><br><span class="line">        done = <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 可以减少不必要的排序，提高性能</span></span><br><span class="line">    <span class="keyword">if</span>(done)&#123;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;   </span><br><span class="line">  <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><blockquote>
-<p>1.从第一个元素开始，该元素可以认为已经被排序；<br>2.取出下一个元素，在已经排序的元素序列中从后向前扫描；<br>3.如果该元素（已排序）大于新元素，将该元素移到下一位置；<br>4.重复步骤3，直到找到已排序的元素小于或者等于新元素的位置；<br>5.将新元素插入到该位置后；<br>重复步骤2~5。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertionSort</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">Object</span>.prototype.toString.call(array).slice(<span class="number">8</span>, <span class="number">-1</span>) === <span class="string">'Array'</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> key = array[i];</span><br><span class="line">        <span class="keyword">var</span> j = i - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; array[j] &gt; key) &#123;</span><br><span class="line">            array[j + <span class="number">1</span>] = array[j];</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        array[j + <span class="number">1</span>] = key;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> array;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">'array is not an Array!'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><blockquote>
-<p>初始状态：无序区为R[1..n]，有序区为空；<br>第i趟排序(i=1,2,3…n-1)开始时，当前有序区和无序区分别为R[1..i-1]和R(i..n）。该趟排序从当前无序区中选出关键字最 小的记录 R[k]，将它与无序区的第1个记录R交换，使R[1..i]和R[i+1..n)分别变为记录个数增加1个的新有序区和记录个数减少1个的新无序区；<br>n-1趟结束，数组有序化了。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectionSort</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">Object</span>.prototype.toString.call(array).slice(<span class="number">8</span>, <span class="number">-1</span>) === <span class="string">'Array'</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> len = array.length, temp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">      <span class="keyword">var</span> min = array[i];</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (array[j] &lt; min) &#123;</span><br><span class="line">          temp = min;</span><br><span class="line">          min = array[j];</span><br><span class="line">          array[j] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      array[i] = min;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> array;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">'array is not an Array!'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h3><blockquote>
-<p>设置一个定量的数组当作空桶；<br>遍历输入数据，并且把数据一个一个放到对应的桶里去；<br>对每个不是空的桶进行排序；<br>从不是空的桶里把排好序的数据拼接起来。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*方法说明：桶排序</span></span><br><span class="line"><span class="comment">@param  array 数组</span></span><br><span class="line"><span class="comment">@param  num   桶的数量*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bucketSort</span>(<span class="params">array, num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (array.length &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> array;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> len = array.length, buckets = [], result = [], min = max = array[<span class="number">0</span>], regex = <span class="string">'/^[1-9]+[0-9]*$/'</span>, space, n = <span class="number">0</span>;</span><br><span class="line">  num = num || ((num &gt; <span class="number">1</span> &amp;&amp; regex.test(num)) ? num : <span class="number">10</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; len; i++) &#123;</span><br><span class="line">    min = min &lt;= array[i] ? min : array[i];</span><br><span class="line">    max = max &gt;= array[i] ? max : array[i];</span><br><span class="line">  &#125;</span><br><span class="line">  space = (max - min + <span class="number">1</span>) / num;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; len; j++) &#123;</span><br><span class="line">    <span class="keyword">var</span> index = <span class="built_in">Math</span>.floor((array[j] - min) / space);</span><br><span class="line">    <span class="keyword">if</span> (buckets[index]) &#123;   <span class="comment">//  非空桶，插入排序</span></span><br><span class="line">      <span class="keyword">var</span> k = buckets[index].length - <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">while</span> (k &gt;= <span class="number">0</span> &amp;&amp; buckets[index][k] &gt; array[j]) &#123;</span><br><span class="line">          buckets[index][k + <span class="number">1</span>] = buckets[index][k];</span><br><span class="line">          k--;</span><br><span class="line">      &#125;</span><br><span class="line">      buckets[index][k + <span class="number">1</span>] = array[j];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;    <span class="comment">//空桶，初始化</span></span><br><span class="line">        buckets[index] = [];</span><br><span class="line">        buckets[index].push(array[j]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> (n &lt; num) &#123;</span><br><span class="line">    result = result.concat(buckets[n]);</span><br><span class="line">    n++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><blockquote>
-<p>把长度为n的输入序列分成两个长度为n/2的子序列；<br>对这两个子序列分别采用归并排序；<br>将两个排序好的子序列合并成一个最终的排序序列。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mergeSort</span>(<span class="params">array, p, r</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (p &lt; r) &#123;</span><br><span class="line">    <span class="keyword">var</span> q = <span class="built_in">Math</span>.floor((p + r) / <span class="number">2</span>);</span><br><span class="line">    mergeSort(array, p, q);</span><br><span class="line">    mergeSort(array, q + <span class="number">1</span>, r);</span><br><span class="line">    merge(array, p, q, r);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">merge</span>(<span class="params">array, p, q, r</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> n1 = q - p + <span class="number">1</span>, n2 = r - q, left = [], right = [], m = n = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; n1; i++) &#123;</span><br><span class="line">    left[i] = array[p + i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; n2; j++) &#123;</span><br><span class="line">    right[j] = array[q + <span class="number">1</span> + j];</span><br><span class="line">  &#125;</span><br><span class="line">  left[n1] = right[n2] = <span class="built_in">Number</span>.MAX_VALUE;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> k = p; k &lt;= r; k++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (left[m] &lt;= right[n]) &#123;</span><br><span class="line">      array[k] = left[m];</span><br><span class="line">      m++;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        array[k] = right[n];</span><br><span class="line">        n++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><blockquote>
-<p>将初始待排序关键字序列(R1,R2….Rn)构建成大顶堆，此堆为初始的无序区；<br>将堆顶元素R[1]与最后一个元素R[n]交换，此时得到新的无序区(R1,R2,……Rn-1)和新的有序区(Rn),且满足R[1,2…n-1]&lt;=R[n]；<br>由于交换后新的堆顶R[1]可能违反堆的性质，因此需要对当前无序区(R1,R2,……Rn-1)调整为新堆，然后再次将R[1]与无序区最后一个元素交换，得到新的无序区(R1,R2….Rn-2)和新的有序区(Rn-1,Rn)。不断重复此过程直到有序区的元素个数为n-1，则整个排序过程完成。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*方法说明：堆排序</span></span><br><span class="line"><span class="comment">@param  array 待排序数组*/</span>           </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">heapSort</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">Object</span>.prototype.toString.call(array).slice(<span class="number">8</span>, <span class="number">-1</span>) === <span class="string">'Array'</span>) &#123;</span><br><span class="line">    <span class="comment">//建堆</span></span><br><span class="line">    <span class="keyword">var</span> heapSize = array.length, temp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="built_in">Math</span>.floor(heapSize / <span class="number">2</span>); i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">      heapify(array, i, heapSize);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//堆排序</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = heapSize - <span class="number">1</span>; j &gt;= <span class="number">1</span>; j--) &#123;</span><br><span class="line">      temp = array[<span class="number">0</span>];</span><br><span class="line">      array[<span class="number">0</span>] = array[j];</span><br><span class="line">      array[j] = temp;</span><br><span class="line">      heapify(array, <span class="number">0</span>, --heapSize);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">'array is not an Array!'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*方法说明：维护堆的性质</span></span><br><span class="line"><span class="comment">@param  arr 数组</span></span><br><span class="line"><span class="comment">@param  x   数组下标</span></span><br><span class="line"><span class="comment">@param  len 堆大小*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">heapify</span>(<span class="params">arr, x, len</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">Object</span>.prototype.toString.call(arr).slice(<span class="number">8</span>, <span class="number">-1</span>) === <span class="string">'Array'</span> &amp;&amp; <span class="keyword">typeof</span> x === <span class="string">'number'</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> l = <span class="number">2</span> * x, r = <span class="number">2</span> * x + <span class="number">1</span>, largest = x, temp;</span><br><span class="line">    <span class="keyword">if</span> (l &lt; len &amp;&amp; arr[l] &gt; arr[largest]) &#123;</span><br><span class="line">      largest = l;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (r &lt; len &amp;&amp; arr[r] &gt; arr[largest]) &#123;</span><br><span class="line">      largest = r;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (largest != x) &#123;</span><br><span class="line">      temp = arr[x];</span><br><span class="line">      arr[x] = arr[largest];</span><br><span class="line">      arr[largest] = temp;</span><br><span class="line">      heapify(arr, largest, len);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">'arr is not an Array or x is not a number!'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/23/sort/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+
   
 
 
@@ -345,8 +343,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
