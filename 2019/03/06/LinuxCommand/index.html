@@ -6,18 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/3 | sheerLi</title>
+  <title>学习大数据的前期准备工作（二） | sheerLi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前端知识点总结">
-<meta property="og:type" content="website">
-<meta property="og:title" content="sheerLi">
-<meta property="og:url" content="http://yoursite.com/archives/2019/03/index.html">
+  <meta name="description" content="Linux 常用命令 命令通用格式 : 命令 选项（参数） 操作的文件或者目录  普通命令 ls格式：ls 目录参数: a : 列举包含隐藏文件      l : 使用长格式查看  ls -l 等同于  ll   cd改变目录     pwd打印当前所在目录     clear清屏 等同于 ctrl + l     history查看命令的历史记录    文件操作命令创建 创建文件touch a.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习大数据的前期准备工作（二）">
+<meta property="og:url" content="http://yoursite.com/2019/03/06/LinuxCommand/index.html">
 <meta property="og:site_name" content="sheerLi">
-<meta property="og:description" content="前端知识点总结">
+<meta property="og:description" content="Linux 常用命令 命令通用格式 : 命令 选项（参数） 操作的文件或者目录  普通命令 ls格式：ls 目录参数: a : 列举包含隐藏文件      l : 使用长格式查看  ls -l 等同于  ll   cd改变目录     pwd打印当前所在目录     clear清屏 等同于 ctrl + l     history查看命令的历史记录    文件操作命令创建 创建文件touch a.">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/touch.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/mkdir1.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/mkdir2.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/rm1.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/rm2.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/cp.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/cp2.png">
+<meta property="og:updated_time" content="2019-03-06T14:22:19.229Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sheerLi">
-<meta name="twitter:description" content="前端知识点总结">
+<meta name="twitter:title" content="学习大数据的前期准备工作（二）">
+<meta name="twitter:description" content="Linux 常用命令 命令通用格式 : 命令 选项（参数） 操作的文件或者目录  普通命令 ls格式：ls 目录参数: a : 列举包含隐藏文件      l : 使用长格式查看  ls -l 等同于  ll   cd改变目录     pwd打印当前所在目录     clear清屏 等同于 ctrl + l     history查看命令的历史记录    文件操作命令创建 创建文件touch a.">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/06/LinuxCommand/touch.png">
   
     <link rel="alternative" href="/atom.xml" title="sheerLi" type="application/atom+xml">
   
@@ -149,76 +158,219 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-LinuxCommand" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      学习大数据的前期准备工作（二）
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/06/LinuxCommand/" class="archive-article-date">
+
+        
+        <a href="/2019/03/06/LinuxCommand/" class="archive-article-date">
   	<time datetime="2019-03-06T11:47:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-06</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/06/LinuxCommand/">学习大数据的前期准备工作（二）</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Linux-常用命令"><a href="#Linux-常用命令" class="headerlink" title="Linux 常用命令"></a>Linux 常用命令</h2><blockquote>
+<p>命令通用格式 : <strong>命令 选项（参数） 操作的文件或者目录</strong></p>
+</blockquote>
+<h3 id="普通命令"><a href="#普通命令" class="headerlink" title="普通命令"></a>普通命令</h3><blockquote>
+<p><strong>ls</strong><br>格式：<strong>ls 目录</strong><br>参数: <strong>a</strong> : 列举包含隐藏文件<br>      <strong>l</strong> : 使用长格式查看  <strong>ls -l</strong> 等同于  <strong>ll</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>cd</strong><br>改变目录  </p>
+</blockquote>
+<blockquote>
+<p><strong>pwd</strong><br>打印当前所在目录  </p>
+</blockquote>
+<blockquote>
+<p><strong>clear</strong><br>清屏 等同于 <strong>ctrl</strong> + <strong>l</strong>  </p>
+</blockquote>
+<blockquote>
+<p><strong>history</strong><br>查看命令的历史记录  </p>
+</blockquote>
+<h3 id="文件操作命令"><a href="#文件操作命令" class="headerlink" title="文件操作命令"></a>文件操作命令</h3><h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><blockquote>
+<p>创建文件<br>touch a.txt</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/touch.png" alt></p>
+<blockquote>
+<p>创建一个空目录<br>mkdir dir1  </p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/mkdir1.png" alt></p>
+<blockquote>
+<p>递归创建一个非空目录<br>mkdir -p dir2/dir3 </p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/mkdir2.png" alt></p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><blockquote>
+<p>删除文件<br>rm a.txt<br>-f 参数 命令是免确认</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/rm1.png" alt></p>
+<blockquote>
+<p>删除目录（只能删空目录）<br>rm -rf mkdir2</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/rm2.png" alt>  </p>
+<h4 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h4><blockquote>
+<p>vi / vim  </p>
+</blockquote>
+<h5 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h5><blockquote>
+<p>复制文件<br>cp a.txt dir1/  </p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/cp.png" alt></p>
+<blockquote>
+<p>复制目录<br>cp -r dir1 dir2/</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/cp2.png" alt> </p>
+<h5 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h5><blockquote>
+<p>mv source_file target_file  </p>
+</blockquote>
+<h4 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h4><blockquote>
+<p>more<br>分页查看 显示一屏数据，按“enter”往下翻页</p>
+</blockquote>
+<blockquote>
+<p>less<br>分页查看 显示一屏数据，按方向上下键翻页 按“q”退出预览</p>
+</blockquote>
+<blockquote>
+<p>head<br>查看文件头部内容，默认读取文件前10行<br>常用参数：<strong>n</strong>: 查看行数</p>
+</blockquote>
+<blockquote>
+<p>tail<br>查看文件尾部内容，默认读取文件后10行<br>常用参数:<br>-n:查看行数<br>-F:动态查看，监听一个文件的变化</p>
+</blockquote>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/06/LinuxCommand/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/06/bigdata/" class="archive-article-date">
-  	<time datetime="2019-03-06T06:54:08.270Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-06</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/06/bigdata/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">学习大数据的前期准备工作（一）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/06/bigdata/">学习大数据的前期准备工作（一）</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -241,8 +393,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
