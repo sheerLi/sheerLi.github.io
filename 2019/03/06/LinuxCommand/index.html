@@ -35,7 +35,15 @@
 <meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/chown.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/gohome.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/override.png">
-<meta property="og:updated_time" content="2019-03-07T05:31:34.639Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/visudo.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/sudo.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/wc.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/du.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/option.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/chkconfig.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/chkconfig2.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/redhatsecurity.png">
+<meta property="og:updated_time" content="2019-03-07T11:24:05.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习大数据的前期准备工作（二）">
 <meta name="twitter:description" content="Linux 常用命令 命令通用格式 : 命令 选项（参数） 操作的文件或者目录  普通命令 ls格式：ls 目录参数: a : 列举包含隐藏文件      l : 使用长格式查看  ls -l 等同于  ll   cd改变目录     pwd打印当前所在目录     clear清屏 等同于 ctrl + l     history查看命令的历史记录    文件操作命令创建 创建文件touch a.">
@@ -291,7 +299,7 @@
 <h4 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h4><blockquote>
 <p>格式：passwd username<br>例: passwd LW</p>
 </blockquote>
-<h4 id="删除密码"><a href="#删除密码" class="headerlink" title="删除密码"></a>删除密码</h4><blockquote>
+<h4 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h4><blockquote>
 <p>格式：userdel username<br>参数：-r  既删除用户又删除该用户的家<br>例: userdel LW</p>
 </blockquote>
 <h3 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h3><h4 id="用户分类"><a href="#用户分类" class="headerlink" title="用户分类"></a>用户分类</h4><blockquote>
@@ -358,6 +366,91 @@
 <p>追加到某个文件</p>
 </blockquote>
 <p><img src="/2019/03/06/LinuxCommand/override.png" alt></p>
+<h3 id="文本编辑-vi-vim"><a href="#文本编辑-vi-vim" class="headerlink" title="文本编辑 vi / vim"></a>文本编辑 vi / vim</h3><h4 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h4><blockquote>
+<p>　vi 文件名<br> 如果编辑一个不存在的文件，默认会创建一个文件</p>
+</blockquote>
+<h4 id="3-种模式"><a href="#3-种模式" class="headerlink" title="3 种模式"></a>3 种模式</h4><h5 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h5><blockquote>
+<p>gg：跳转到第一行<br>G:跳转到最后一行<br>5gg:跳转到第5行<br>yy:复制当前行<br>p:在当前位置粘贴<br>dd:删除光标所在行<br>5dd:从当行开始，删除连续5行<br>99999999999999dd: 清除文档<br>u:撤销上一步<br>i:进入插入模式<br>o:在光标所在行 下一行 进入插入模式<br>O:在光标所在乎 前一行进入插入模式   </p>
+</blockquote>
+<h5 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h5><blockquote>
+<p>在命令模式下，输入“i”,进入插入模式</p>
+</blockquote>
+<h5 id="最后行模式"><a href="#最后行模式" class="headerlink" title="最后行模式"></a>最后行模式</h5><blockquote>
+<p>进入方式:<br>按下“ESC”进入命令模式<br>   按下shift + : 进入最后行模式</p>
+</blockquote>
+<blockquote>
+<p>命令:<br>wq：保存退出<br>   q: 不保存退出<br>   !: 强制<br>   q!: 强制退出<br>   set nu(number): 显示行号<br>   /string 检索字符串  按“n”找下一个</p>
+</blockquote>
+<h3 id="常用工具命令"><a href="#常用工具命令" class="headerlink" title="常用工具命令"></a>常用工具命令</h3><h4 id="visudo-较重要"><a href="#visudo-较重要" class="headerlink" title="visudo (较重要)"></a>visudo (较重要)</h4><blockquote>
+<p>在企业中，通常不会使用root，为了安全，一般使用普通用户。<br>普通用户有时候，也需要操作一些管理员需要的权限</p>
+</blockquote>
+<blockquote>
+<p>例：让 huadian 用户拥有 root 所有权限   操作如下<br>切换到 root 用户<br>执行 visudo 命令<br>添加如下配置</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/visudo.png" alt></p>
+<blockquote>
+<p>普通用户如果使用额外赋予的权限<br>sudo 额外权限名</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/sudo.png" alt></p>
+<h4 id="man"><a href="#man" class="headerlink" title="man"></a>man</h4><blockquote>
+<p>帮助命令<br>例: man ls</p>
+</blockquote>
+<h4 id="wc"><a href="#wc" class="headerlink" title="wc"></a>wc</h4><blockquote>
+<p>文本统计工具<br>例： wc a.txt<br>结果：行 单词书 字符数 文件名</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/wc.png" alt></p>
+<h4 id="du"><a href="#du" class="headerlink" title="du"></a>du</h4><blockquote>
+<p>文件大小统计<br>du -a.txt/</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/du.png" alt></p>
+<h3 id="系统管理命令"><a href="#系统管理命令" class="headerlink" title="系统管理命令"></a>系统管理命令</h3><h4 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h4><blockquote>
+<p>shutdown  -h now<br>   halt<br>   init 0</p>
+</blockquote>
+<h4 id="开机选项配置"><a href="#开机选项配置" class="headerlink" title="开机选项配置"></a>开机选项配置</h4><blockquote>
+<p>Vi /etc/inittab<br>id:3:initdefault:  启动linux，不启动图形化界面<br>init 5:恢复图形化界面</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/option.png" alt></p>
+<h4 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h4><blockquote>
+<p>init 6<br>reboot</p>
+</blockquote>
+<h3 id="服务管理命令"><a href="#服务管理命令" class="headerlink" title="服务管理命令"></a>服务管理命令</h3><blockquote>
+<p>语法： service s_name start|stop|status|restart|<br>查看防火墙: sudo service iptables status<br>查看网络：sudo service network status<br>Mysql数据：mysql/mysqld(低版本)</p>
+</blockquote>
+<h3 id="chkconfig-查看或设置开机是否启动"><a href="#chkconfig-查看或设置开机是否启动" class="headerlink" title="chkconfig 查看或设置开机是否启动"></a>chkconfig 查看或设置开机是否启动</h3><blockquote>
+<p>查看开机是否启动<br>chkconfig iptables –list<br>结果：2~5都是on :开机启动</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/chkconfig.png" alt></p>
+<blockquote>
+<p>设置开机是否启动<br>chkconfig iptables off|on</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/chkconfig2.png" alt></p>
+<h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><h4 id="查看进程-ps"><a href="#查看进程-ps" class="headerlink" title="查看进程 ps"></a>查看进程 ps</h4><blockquote>
+<p>　ps –ef |grep java<br>含义：查看所有 java 进程</p>
+</blockquote>
+<h4 id="杀死进程-kill"><a href="#杀死进程-kill" class="headerlink" title="杀死进程 kill"></a>杀死进程 kill</h4><blockquote>
+<p>kill -9 进程id<br>含义：彻底杀死进程</p>
+</blockquote>
+<h3 id="Redhat的slinux安全机制"><a href="#Redhat的slinux安全机制" class="headerlink" title="Redhat的slinux安全机制"></a>Redhat的slinux安全机制</h3><blockquote>
+<p>vi /etc/selinux/config<br>重启成效</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/redhatsecurity.png" alt></p>
+<h3 id="压缩管理"><a href="#压缩管理" class="headerlink" title="压缩管理"></a>压缩管理</h3><h4 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h4><h4 id="gzip"><a href="#gzip" class="headerlink" title="gzip"></a>gzip</h4><blockquote>
+<p>后缀: .gz<br>压缩: gzip file_path<br>解压: gunzip file.gz<br>特点: 压缩后源文件没有了,  不能对目录进行压缩</p>
+</blockquote>
+<h4 id="bzip2"><a href="#bzip2" class="headerlink" title="bzip2"></a>bzip2</h4><blockquote>
+<p>适合较大文件压缩<br>   后缀.bz2<br>   压缩：bzip2 file_path<br>   解压：bunzip2 file.bz2<br>特点：压缩后源文件没有了,不能对目录进行压缩</p>
+</blockquote>
+<h4 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h4><p>打包命令，将多个文件或者目录打包成一个文件  </p>
+<blockquote>
+<p>格式：<br>打包：tar [选项参数]  file.tar  source<br>解包：tar  [选项参数]  file.tar –C  source<br>参数：<br>-C: 指定解压的目录<br>-x: 解压<br>-v: 是否显示进度<br>-z: 是否使用gzip压缩<br>-j: 是否使用bzip2压缩  </p>
+</blockquote>
+<blockquote>
+<p>应用（使用最频繁）：使用tar + gzip<br>压缩：tar –zcvf  jdk-8u91-linux-x64.tar.gz  source<br>   解压：tar –zxvf jdk-8u91-linux-x64.tar.gz  -C  target  </p>
+</blockquote>
+<blockquote>
+<p>使用 tar + bzip2<br>压缩：tar –jcvf  jdk-8u91-linux-x64.tar.gz  source<br>   解压：tar –jxvf jdk-8u91-linux-x64.tar.gz  -C  target</p>
+</blockquote>
+<p>以上差不多是 Linux 工作中常用到的命令。</p>
 
       
 
