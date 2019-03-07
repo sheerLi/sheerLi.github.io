@@ -6,18 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | sheerLi</title>
+  <title>学习大数据的前期准备工作（三） | sheerLi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前端知识点总结">
-<meta property="og:type" content="website">
-<meta property="og:title" content="sheerLi">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="本篇文章主要是讲 linux 命令下载并安装 jdk 和 mysql，为后面的大数据做准备 Linux 软件安装命令rpm 安装 rpm 结尾的软件包软件查询： rpm –qa: 列举所有当前安装rpm包安装软件:  rpm – ivh XXX.rpm问题： A &amp;lt;-B &amp;lt;-C  需要自己手动解决依赖卸载： rpm -e  –nodeps  XXXXX  yum 通过软件源进行安装,类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习大数据的前期准备工作（三）">
+<meta property="og:url" content="http://yoursite.com/2019/03/07/jdkandmysql/index.html">
 <meta property="og:site_name" content="sheerLi">
-<meta property="og:description" content="前端知识点总结">
+<meta property="og:description" content="本篇文章主要是讲 linux 命令下载并安装 jdk 和 mysql，为后面的大数据做准备 Linux 软件安装命令rpm 安装 rpm 结尾的软件包软件查询： rpm –qa: 列举所有当前安装rpm包安装软件:  rpm – ivh XXX.rpm问题： A &amp;lt;-B &amp;lt;-C  需要自己手动解决依赖卸载： rpm -e  –nodeps  XXXXX  yum 通过软件源进行安装,类">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/upload.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/processing.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/jdkdeperate.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/javaenvironment.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/jdkcomple.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/checkmysql.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/uninstallmysql.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/installComple.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/startmysql.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/loginmysql.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/showdatabases.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/startkaiji.png">
+<meta property="og:updated_time" content="2019-03-07T12:50:39.707Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sheerLi">
-<meta name="twitter:description" content="前端知识点总结">
+<meta name="twitter:title" content="学习大数据的前期准备工作（三）">
+<meta name="twitter:description" content="本篇文章主要是讲 linux 命令下载并安装 jdk 和 mysql，为后面的大数据做准备 Linux 软件安装命令rpm 安装 rpm 结尾的软件包软件查询： rpm –qa: 列举所有当前安装rpm包安装软件:  rpm – ivh XXX.rpm问题： A &amp;lt;-B &amp;lt;-C  需要自己手动解决依赖卸载： rpm -e  –nodeps  XXXXX  yum 通过软件源进行安装,类">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/07/jdkandmysql/upload.png">
   
     <link rel="alternative" href="/atom.xml" title="sheerLi" type="application/atom+xml">
   
@@ -149,130 +163,217 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-jdkandmysql" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      学习大数据的前期准备工作（三）
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/07/jdkandmysql/" class="archive-article-date">
+
+        
+        <a href="/2019/03/07/jdkandmysql/" class="archive-article-date">
   	<time datetime="2019-03-07T11:27:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-07</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/07/jdkandmysql/">学习大数据的前期准备工作（三）</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本篇文章主要是讲 linux 命令下载并安装 jdk 和 mysql，为后面的大数据做准备</p>
+<h3 id="Linux-软件安装命令"><a href="#Linux-软件安装命令" class="headerlink" title="Linux 软件安装命令"></a>Linux 软件安装命令</h3><h4 id="rpm"><a href="#rpm" class="headerlink" title="rpm"></a>rpm</h4><blockquote>
+<p>安装 rpm 结尾的软件包<br>软件查询： rpm –qa: 列举所有当前安装rpm包<br>安装软件:  rpm – ivh XXX.rpm<br>问题： A &lt;-B &lt;-C  需要自己手动解决依赖<br>卸载： rpm -e  –nodeps  XXXXX</p>
+</blockquote>
+<h4 id="yum"><a href="#yum" class="headerlink" title="yum"></a>yum</h4><blockquote>
+<p>通过软件源进行安装,类似 软件软件 点击“安装”<br>查看所有yum支持的包:yum list<br>   查看当前已经安装的包：yum list installed<br>   卸载：yum remove XX<br>   安装：yum install –y zip  </p>
+</blockquote>
+<h4 id="绿色版本"><a href="#绿色版本" class="headerlink" title="绿色版本"></a>绿色版本</h4><blockquote>
+<p>绝大部分都是解压直接能用</p>
+</blockquote>
+<h3 id="Linux-虚拟机安装-jdk-并-配置环境变量"><a href="#Linux-虚拟机安装-jdk-并-配置环境变量" class="headerlink" title="Linux 虚拟机安装 jdk 并 配置环境变量"></a>Linux 虚拟机安装 jdk 并 配置环境变量</h3><blockquote>
+<p><strong>步骤 1</strong><br>将 jdk 的包通过 远程控制工具 SearchSRC 上传到 Linux 虚拟机中</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/upload.png" alt></p>
+<blockquote>
+<p><strong>步骤 2</strong><br>使用 tar –zxvf jdk-8u91-linux-x64.tar.gz  -C  ./ 解压到当前文件夹</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/processing.png" alt></p>
+<blockquote>
+<p>查看 test 文件夹</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/jdkdeperate.png" alt></p>
+<blockquote>
+<p><strong>步骤 3</strong><br>sudo vi /etc/profile 配置环境变量</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/javaenvironment.png" alt></p>
+<blockquote>
+<p>保存退出后 source /etc/profile 使其生效</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/jdkcomple.png" alt></p>
+<h3 id="安装-mysql"><a href="#安装-mysql" class="headerlink" title="安装 mysql"></a>安装 mysql</h3><blockquote>
+<p><strong>步骤 1</strong><br>检查是否已经安装 mysql<br>命令: rpm -qa | grep mysql</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/checkmysql.png" alt></p>
+<blockquote>
+<p>卸载依赖<br>命令：sudo rpm -e  –nodeps mysql-libs-5.1.66-2.el6_3.x86_64</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/uninstallmysql.png" alt></p>
+<blockquote>
+<p>安装mysql<br>命令：sudo yum install -y mysql-server</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/installComple.png" alt></p>
+<blockquote>
+<p>启动 mysql 服务<br>命令: sudo service mysqld start</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/startmysql.png" alt></p>
+<blockquote>
+<p>修改 mysql 密码为 123456<br>命令：/usr/bin/mysqladmin -u root password ‘123456’</p>
+</blockquote>
+<blockquote>
+<p>登录 mysql<br>命令：mysql -u root -p123456</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/loginmysql.png" alt></p>
+<blockquote>
+<p>展示数据库<br>命令：show databases</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/showdatabases.png" alt></p>
+<blockquote>
+<p>设置开机启动 </p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/startkaiji.png" alt></p>
+<p>经过以上步骤，jdk 和 mysql 都安装完成!</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/07/jdkandmysql/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/06/LinuxCommand/" class="archive-article-date">
-  	<time datetime="2019-03-06T11:47:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-06</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/06/LinuxCommand/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">学习大数据的前期准备工作（二）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/06/LinuxCommand/">学习大数据的前期准备工作（二）</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/06/bigdata/" class="archive-article-date">
-  	<time datetime="2019-03-06T06:54:08.270Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/06/bigdata/">学习大数据的前期准备工作（一）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/23/sort/" class="archive-article-date">
-  	<time datetime="2019-02-23T02:11:11.170Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/23/sort/">基本排序的方式</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -295,8 +396,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

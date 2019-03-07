@@ -151,6 +151,130 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-jdkandmysql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/07/jdkandmysql/">学习大数据的前期准备工作（三）</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/07/jdkandmysql/" class="archive-article-date">
+  	<time datetime="2019-03-07T11:27:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本篇文章主要是讲 linux 命令下载并安装 jdk 和 mysql，为后面的大数据做准备</p>
+<h3 id="Linux-软件安装命令"><a href="#Linux-软件安装命令" class="headerlink" title="Linux 软件安装命令"></a>Linux 软件安装命令</h3><h4 id="rpm"><a href="#rpm" class="headerlink" title="rpm"></a>rpm</h4><blockquote>
+<p>安装 rpm 结尾的软件包<br>软件查询： rpm –qa: 列举所有当前安装rpm包<br>安装软件:  rpm – ivh XXX.rpm<br>问题： A &lt;-B &lt;-C  需要自己手动解决依赖<br>卸载： rpm -e  –nodeps  XXXXX</p>
+</blockquote>
+<h4 id="yum"><a href="#yum" class="headerlink" title="yum"></a>yum</h4><blockquote>
+<p>通过软件源进行安装,类似 软件软件 点击“安装”<br>查看所有yum支持的包:yum list<br>   查看当前已经安装的包：yum list installed<br>   卸载：yum remove XX<br>   安装：yum install –y zip  </p>
+</blockquote>
+<h4 id="绿色版本"><a href="#绿色版本" class="headerlink" title="绿色版本"></a>绿色版本</h4><blockquote>
+<p>绝大部分都是解压直接能用</p>
+</blockquote>
+<h3 id="Linux-虚拟机安装-jdk-并-配置环境变量"><a href="#Linux-虚拟机安装-jdk-并-配置环境变量" class="headerlink" title="Linux 虚拟机安装 jdk 并 配置环境变量"></a>Linux 虚拟机安装 jdk 并 配置环境变量</h3><blockquote>
+<p><strong>步骤 1</strong><br>将 jdk 的包通过 远程控制工具 SearchSRC 上传到 Linux 虚拟机中</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/upload.png" alt></p>
+<blockquote>
+<p><strong>步骤 2</strong><br>使用 tar –zxvf jdk-8u91-linux-x64.tar.gz  -C  ./ 解压到当前文件夹</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/processing.png" alt></p>
+<blockquote>
+<p>查看 test 文件夹</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/jdkdeperate.png" alt></p>
+<blockquote>
+<p><strong>步骤 3</strong><br>sudo vi /etc/profile 配置环境变量</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/javaenvironment.png" alt></p>
+<blockquote>
+<p>保存退出后 source /etc/profile 使其生效</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/jdkcomple.png" alt></p>
+<h3 id="安装-mysql"><a href="#安装-mysql" class="headerlink" title="安装 mysql"></a>安装 mysql</h3><blockquote>
+<p><strong>步骤 1</strong><br>检查是否已经安装 mysql<br>命令: rpm -qa | grep mysql</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/checkmysql.png" alt></p>
+<blockquote>
+<p>卸载依赖<br>命令：sudo rpm -e  –nodeps mysql-libs-5.1.66-2.el6_3.x86_64</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/uninstallmysql.png" alt></p>
+<blockquote>
+<p>安装mysql<br>命令：sudo yum install -y mysql-server</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/installComple.png" alt></p>
+<blockquote>
+<p>启动 mysql 服务<br>命令: sudo service mysqld start</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/startmysql.png" alt></p>
+<blockquote>
+<p>修改 mysql 密码为 123456<br>命令：/usr/bin/mysqladmin -u root password ‘123456’</p>
+</blockquote>
+<blockquote>
+<p>登录 mysql<br>命令：mysql -u root -p123456</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/loginmysql.png" alt></p>
+<blockquote>
+<p>展示数据库<br>命令：show databases</p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/showdatabases.png" alt></p>
+<blockquote>
+<p>设置开机启动 </p>
+</blockquote>
+<p><img src="/2019/03/07/jdkandmysql/startkaiji.png" alt></p>
+<p>经过以上步骤，jdk 和 mysql 都安装完成!</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/07/jdkandmysql/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-LinuxCommand" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
