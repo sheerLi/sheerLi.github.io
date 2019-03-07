@@ -22,7 +22,20 @@
 <meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/rm2.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/cp.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/cp2.png">
-<meta property="og:updated_time" content="2019-03-06T14:22:19.229Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/mv1.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/viewuser.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/viewuserinfo.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/per.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/chmod1.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/chmod2.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/chmod3.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/chmod4.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/chmod5.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/chmod6.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/chown.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/gohome.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/override.png">
+<meta property="og:updated_time" content="2019-03-07T05:31:34.639Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习大数据的前期准备工作（二）">
 <meta name="twitter:description" content="Linux 常用命令 命令通用格式 : 命令 选项（参数） 操作的文件或者目录  普通命令 ls格式：ls 目录参数: a : 列举包含隐藏文件      l : 使用长格式查看  ls -l 等同于  ll   cd改变目录     pwd打印当前所在目录     clear清屏 等同于 ctrl + l     history查看命令的历史记录    文件操作命令创建 创建文件touch a.">
@@ -219,7 +232,7 @@
 <h4 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h4><blockquote>
 <p>vi / vim  </p>
 </blockquote>
-<h5 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h5><blockquote>
+<h4 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h4><blockquote>
 <p>复制文件<br>cp a.txt dir1/  </p>
 </blockquote>
 <p><img src="/2019/03/06/LinuxCommand/cp.png" alt></p>
@@ -227,9 +240,10 @@
 <p>复制目录<br>cp -r dir1 dir2/</p>
 </blockquote>
 <p><img src="/2019/03/06/LinuxCommand/cp2.png" alt> </p>
-<h5 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h5><blockquote>
-<p>mv source_file target_file  </p>
+<h4 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h4><blockquote>
+<p>将 a.txt 文件移动到 dir2 目录<br>mv a.txt dir2</p>
 </blockquote>
+<p><img src="/2019/03/06/LinuxCommand/mv1.png" alt></p>
 <h4 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h4><blockquote>
 <p>more<br>分页查看 显示一屏数据，按“enter”往下翻页</p>
 </blockquote>
@@ -237,11 +251,113 @@
 <p>less<br>分页查看 显示一屏数据，按方向上下键翻页 按“q”退出预览</p>
 </blockquote>
 <blockquote>
-<p>head<br>查看文件头部内容，默认读取文件前10行<br>常用参数：<strong>n</strong>: 查看行数</p>
+<p>head<br>查看文件头部内容，默认读取文件前10行<br>常用参数：<strong>-n</strong>: 查看行数</p>
 </blockquote>
 <blockquote>
 <p>tail<br>查看文件尾部内容，默认读取文件后10行<br>常用参数:<br>-n:查看行数<br>-F:动态查看，监听一个文件的变化</p>
 </blockquote>
+<h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><h4 id="管理员"><a href="#管理员" class="headerlink" title="管理员"></a>管理员</h4><blockquote>
+<p>用户 id 是 0</p>
+</blockquote>
+<h4 id="普通用户"><a href="#普通用户" class="headerlink" title="普通用户"></a>普通用户</h4><blockquote>
+<p>用户 id 从 500 开始,可以自己创建普通用户</p>
+</blockquote>
+<h4 id="用户信息文件"><a href="#用户信息文件" class="headerlink" title="用户信息文件"></a>用户信息文件</h4><blockquote>
+<p>more /etc/passwd</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/viewuser.png" alt></p>
+<blockquote>
+<p>标红意思<br>用户名:密码:uid:gid:所属组的名字:家目录:所用shell</p>
+</blockquote>
+<h4 id="用户组信息文件"><a href="#用户组信息文件" class="headerlink" title="用户组信息文件"></a>用户组信息文件</h4><blockquote>
+<p>more /etc/group</p>
+</blockquote>
+<h4 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h4><h5 id="切换到管理员"><a href="#切换到管理员" class="headerlink" title="切换到管理员"></a>切换到管理员</h5><blockquote>
+<p>su -</p>
+</blockquote>
+<h5 id="切换到普通用户"><a href="#切换到普通用户" class="headerlink" title="切换到普通用户"></a>切换到普通用户</h5><blockquote>
+<p>su -用户名</p>
+</blockquote>
+<h4 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h4><blockquote>
+<p>exit</p>
+</blockquote>
+<h4 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h4><blockquote>
+<p>格式：useradd username<br>例: useradd LW</p>
+</blockquote>
+<h4 id="查看用户"><a href="#查看用户" class="headerlink" title="查看用户"></a>查看用户</h4><blockquote>
+<p>格式：id username<br>例: id LW</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/viewuserinfo.png" alt></p>
+<h4 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h4><blockquote>
+<p>格式：passwd username<br>例: passwd LW</p>
+</blockquote>
+<h4 id="删除密码"><a href="#删除密码" class="headerlink" title="删除密码"></a>删除密码</h4><blockquote>
+<p>格式：userdel username<br>参数：-r  既删除用户又删除该用户的家<br>例: userdel LW</p>
+</blockquote>
+<h3 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h3><h4 id="用户分类"><a href="#用户分类" class="headerlink" title="用户分类"></a>用户分类</h4><blockquote>
+<p>所有者: <strong>u</strong><br>同组用户: <strong>g</strong><br>其他人: <strong>o</strong></p>
+</blockquote>
+<h4 id="权限分类"><a href="#权限分类" class="headerlink" title="权限分类"></a>权限分类</h4><blockquote>
+<p>读: <strong>r</strong><br>写: <strong>w</strong><br>执行: <strong>x</strong><br>没有权限: <strong>-</strong></p>
+</blockquote>
+<h4 id="文件权限详情"><a href="#文件权限详情" class="headerlink" title="文件权限详情"></a>文件权限详情</h4><p><img src="/2019/03/06/LinuxCommand/per.png" alt></p>
+<blockquote>
+<p>第一位：文件类型，<strong>d</strong>:目录，<strong>-</strong>：文件<br>剩下9位，3位一组<br>rwx：所有者拥有的 <strong>读</strong> <strong>写</strong> <strong>执行</strong> 权限<br>rwx：同组用户拥有的  <strong>读</strong> <strong>写</strong> <strong>执行</strong> 权限<br>r-x：其他人拥有的  <strong>读</strong> <strong>执行</strong> 权限<br>huadian huadian：所有者 所属组<br>4096：文件大小<br>Mar  6 09:14: 日期<br>b: 文件名</p>
+</blockquote>
+<h4 id="修改权限"><a href="#修改权限" class="headerlink" title="修改权限"></a>修改权限</h4><blockquote>
+<p>语法： Chmod  [添加或者删除权限]  文件或者目录  </p>
+</blockquote>
+<h5 id="通过字符修改"><a href="#通过字符修改" class="headerlink" title="通过字符修改"></a>通过字符修改</h5><blockquote>
+<p>给其他人添加 写的 权限</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/chmod1.png" alt></p>
+<blockquote>
+<p>给其他人删除 写的 权限</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/chmod2.png" alt></p>
+<blockquote>
+<p>给任何人都添加上 可执行 权限  </p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/chmod3.png" alt></p>
+<blockquote>
+<p>给所属者和同组用户删除权限</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/chmod4.png" alt></p>
+<h5 id="通过数组修改"><a href="#通过数组修改" class="headerlink" title="通过数组修改"></a>通过数组修改</h5><blockquote>
+<p><strong>说明</strong><br>该位有权限用 1 表示,没有用 0 表示<br><strong>rwx</strong>  111  =&gt; 7(十进制)<br><strong>r-x</strong>  101  =&gt; 5(十进制)<br><strong>rw-</strong>  110  =&gt; 6(十进制)</p>
+</blockquote>
+<blockquote>
+<p>例子：让 <strong>任何用户</strong> 拥有 <strong>全部权限</strong><br>例子：chmod 777 a.txt</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/chmod5.png" alt></p>
+<blockquote>
+<p>例子：让 <strong>任何用户</strong> 拥有 <strong>读写</strong> 没有 <strong>执行</strong> 的权限<br>例子：chmod 666 a.txt</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/chmod6.png" alt></p>
+<h4 id="修改文件-所有者-和-所属组"><a href="#修改文件-所有者-和-所属组" class="headerlink" title="修改文件 所有者 和 所属组"></a>修改文件 所有者 和 所属组</h4><blockquote>
+<p>语法格式：<strong>chown username:groupname 文件或者目录</strong><br>参数： -R 递归修改所有的文件<br>例：chown -R root:root b</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/chown.png" alt></p>
+<h3 id="常见符号"><a href="#常见符号" class="headerlink" title="常见符号"></a>常见符号</h3><h4 id><a href="#" class="headerlink" title="."></a>.</h4><blockquote>
+<p>表示当前目录</p>
+</blockquote>
+<h4 id="-1"><a href="#-1" class="headerlink" title=".."></a>..</h4><blockquote>
+<p>表示上一级目录</p>
+</blockquote>
+<h4 id="-2"><a href="#-2" class="headerlink" title="~"></a>~</h4><blockquote>
+<p>用户的家目录<br>例如： cd ~</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/gohome.png" alt></p>
+<h4 id="-3"><a href="#-3" class="headerlink" title="|"></a>|</h4><blockquote>
+<p>表示管道符<br>例如：Ps –ef | grep java   过滤留下java的进程</p>
+</blockquote>
+<h4 id="gt"><a href="#gt" class="headerlink" title="&gt;"></a>&gt;</h4><blockquote>
+<p>覆盖重写某个文件</p>
+</blockquote>
+<h4 id="gt-gt"><a href="#gt-gt" class="headerlink" title="&gt;&gt;"></a>&gt;&gt;</h4><blockquote>
+<p>追加到某个文件</p>
+</blockquote>
+<p><img src="/2019/03/06/LinuxCommand/override.png" alt></p>
 
       
 
