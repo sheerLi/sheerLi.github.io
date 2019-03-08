@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>学习大数据的前期准备工作（二） | sheerLi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="autoauto- Linux 常用命令auto  - 普通命令auto  - 文件操作命令auto    - 创建auto    - 删除auto    - 编辑auto    - 复制auto    - 移动auto    - 查看auto  - 用户管理auto    - 管理员auto    - 普通用户auto    - 用户信息文件auto    - 用户组信息文件auto    -">
+  <meta name="description" content="Linux 常用命令 普通命令 文件操作命令 创建 删除 编辑 复制 移动 查看   用户管理 管理员 普通用户 用户信息文件 用户组信息文件 切换用户 切换到管理员 切换到普通用户   退出 创建用户 查看用户 设置密码 删除用户   权限管理 用户分类 权限分类 文件权限详情 修改权限 通过字符修改 通过数组修改   修改文件 所有者 和 所属组   常见符号 . .. ~ | &amp;gt;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习大数据的前期准备工作（二）">
 <meta property="og:url" content="http://yoursite.com/2019/03/06/LinuxCommand/index.html">
 <meta property="og:site_name" content="sheerLi">
-<meta property="og:description" content="autoauto- Linux 常用命令auto  - 普通命令auto  - 文件操作命令auto    - 创建auto    - 删除auto    - 编辑auto    - 复制auto    - 移动auto    - 查看auto  - 用户管理auto    - 管理员auto    - 普通用户auto    - 用户信息文件auto    - 用户组信息文件auto    -">
+<meta property="og:description" content="Linux 常用命令 普通命令 文件操作命令 创建 删除 编辑 复制 移动 查看   用户管理 管理员 普通用户 用户信息文件 用户组信息文件 切换用户 切换到管理员 切换到普通用户   退出 创建用户 查看用户 设置密码 删除用户   权限管理 用户分类 权限分类 文件权限详情 修改权限 通过字符修改 通过数组修改   修改文件 所有者 和 所属组   常见符号 . .. ~ | &amp;gt;">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/touch.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/mkdir1.png">
@@ -43,10 +43,10 @@
 <meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/chkconfig.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/chkconfig2.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/redhatsecurity.png">
-<meta property="og:updated_time" content="2019-03-08T04:27:20.146Z">
+<meta property="og:updated_time" content="2019-03-08T04:42:01.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习大数据的前期准备工作（二）">
-<meta name="twitter:description" content="autoauto- Linux 常用命令auto  - 普通命令auto  - 文件操作命令auto    - 创建auto    - 删除auto    - 编辑auto    - 复制auto    - 移动auto    - 查看auto  - 用户管理auto    - 管理员auto    - 普通用户auto    - 用户信息文件auto    - 用户组信息文件auto    -">
+<meta name="twitter:description" content="Linux 常用命令 普通命令 文件操作命令 创建 删除 编辑 复制 移动 查看   用户管理 管理员 普通用户 用户信息文件 用户组信息文件 切换用户 切换到管理员 切换到普通用户   退出 创建用户 查看用户 设置密码 删除用户   权限管理 用户分类 权限分类 文件权限详情 修改权限 通过字符修改 通过数组修改   修改文件 所有者 和 所属组   常见符号 . .. ~ | &amp;gt;">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/06/LinuxCommand/touch.png">
   
     <link rel="alternative" href="/atom.xml" title="sheerLi" type="application/atom+xml">
@@ -199,7 +199,99 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!-- TOC -->autoauto- <a href="#linux-常用命令">Linux 常用命令</a>auto  - <a href="#普通命令">普通命令</a>auto  - <a href="#文件操作命令">文件操作命令</a>auto    - <a href="#创建">创建</a>auto    - <a href="#删除">删除</a>auto    - <a href="#编辑">编辑</a>auto    - <a href="#复制">复制</a>auto    - <a href="#移动">移动</a>auto    - <a href="#查看">查看</a>auto  - <a href="#用户管理">用户管理</a>auto    - <a href="#管理员">管理员</a>auto    - <a href="#普通用户">普通用户</a>auto    - <a href="#用户信息文件">用户信息文件</a>auto    - <a href="#用户组信息文件">用户组信息文件</a>auto    - <a href="#切换用户">切换用户</a>auto      - <a href="#切换到管理员">切换到管理员</a>auto      - <a href="#切换到普通用户">切换到普通用户</a>auto    - <a href="#退出">退出</a>auto    - <a href="#创建用户">创建用户</a>auto    - <a href="#查看用户">查看用户</a>auto    - <a href="#设置密码">设置密码</a>auto    - <a href="#删除用户">删除用户</a>auto  - <a href="#权限管理">权限管理</a>auto    - <a href="#用户分类">用户分类</a>auto    - <a href="#权限分类">权限分类</a>auto    - <a href="#文件权限详情">文件权限详情</a>auto    - <a href="#修改权限">修改权限</a>auto      - <a href="#通过字符修改">通过字符修改</a>auto      - <a href="#通过数组修改">通过数组修改</a>auto    - <a href="#修改文件-所有者-和-所属组">修改文件 所有者 和 所属组</a>auto  - <a href="#常见符号">常见符号</a>auto    - <a href="#">.</a>auto    - <a href="#">..</a>auto    - <a href="#">~</a>auto    - <a href="#">|</a>auto    - <a href="#">&gt;</a>auto    - <a href="#">&gt;&gt;</a>auto  - <a href="#文本编辑-vi--vim">文本编辑 vi / vim</a>auto    - <a href="#语法格式">语法格式</a>auto    - <a href="#3-种模式">3 种模式</a>auto      - <a href="#命令行模式">命令行模式</a>auto      - <a href="#插入模式">插入模式</a>auto      - <a href="#最后行模式">最后行模式</a>auto  - <a href="#常用工具命令">常用工具命令</a>auto    - <a href="#visudo-较重要">visudo (较重要)</a>auto    - <a href="#man">man</a>auto    - <a href="#wc">wc</a>auto    - <a href="#du">du</a>auto  - <a href="#系统管理命令">系统管理命令</a>auto    - <a href="#关机">关机</a>auto    - <a href="#开机选项配置">开机选项配置</a>auto    - <a href="#重启">重启</a>auto  - <a href="#服务管理命令">服务管理命令</a>auto  - <a href="#chkconfig-查看或设置开机是否启动">chkconfig 查看或设置开机是否启动</a>auto  - <a href="#进程管理">进程管理</a>auto    - <a href="#查看进程-ps">查看进程 ps</a>auto    - <a href="#杀死进程-kill">杀死进程 kill</a>auto  - <a href="#redhat的slinux安全机制">Redhat的slinux安全机制</a>auto  - <a href="#压缩管理">压缩管理</a>auto    - <a href="#zip">zip</a>auto    - <a href="#gzip">gzip</a>auto    - <a href="#bzip2">bzip2</a>auto    - <a href="#tar">tar</a>autoauto<!-- /TOC -->
+        <!-- TOC -->
+<ul>
+<li><a href="#linux-常用命令">Linux 常用命令</a><ul>
+<li><a href="#普通命令">普通命令</a></li>
+<li><a href="#文件操作命令">文件操作命令</a><ul>
+<li><a href="#创建">创建</a></li>
+<li><a href="#删除">删除</a></li>
+<li><a href="#编辑">编辑</a></li>
+<li><a href="#复制">复制</a></li>
+<li><a href="#移动">移动</a></li>
+<li><a href="#查看">查看</a></li>
+</ul>
+</li>
+<li><a href="#用户管理">用户管理</a><ul>
+<li><a href="#管理员">管理员</a></li>
+<li><a href="#普通用户">普通用户</a></li>
+<li><a href="#用户信息文件">用户信息文件</a></li>
+<li><a href="#用户组信息文件">用户组信息文件</a></li>
+<li><a href="#切换用户">切换用户</a><ul>
+<li><a href="#切换到管理员">切换到管理员</a></li>
+<li><a href="#切换到普通用户">切换到普通用户</a></li>
+</ul>
+</li>
+<li><a href="#退出">退出</a></li>
+<li><a href="#创建用户">创建用户</a></li>
+<li><a href="#查看用户">查看用户</a></li>
+<li><a href="#设置密码">设置密码</a></li>
+<li><a href="#删除用户">删除用户</a></li>
+</ul>
+</li>
+<li><a href="#权限管理">权限管理</a><ul>
+<li><a href="#用户分类">用户分类</a></li>
+<li><a href="#权限分类">权限分类</a></li>
+<li><a href="#文件权限详情">文件权限详情</a></li>
+<li><a href="#修改权限">修改权限</a><ul>
+<li><a href="#通过字符修改">通过字符修改</a></li>
+<li><a href="#通过数组修改">通过数组修改</a></li>
+</ul>
+</li>
+<li><a href="#修改文件-所有者-和-所属组">修改文件 所有者 和 所属组</a></li>
+</ul>
+</li>
+<li><a href="#常见符号">常见符号</a><ul>
+<li><a href="#">.</a></li>
+<li><a href="#">..</a></li>
+<li><a href="#">~</a></li>
+<li><a href="#">|</a></li>
+<li><a href="#">&gt;</a></li>
+<li><a href="#">&gt;&gt;</a></li>
+</ul>
+</li>
+<li><a href="#文本编辑-vi--vim">文本编辑 vi / vim</a><ul>
+<li><a href="#语法格式">语法格式</a></li>
+<li><a href="#3-种模式">3 种模式</a><ul>
+<li><a href="#命令行模式">命令行模式</a></li>
+<li><a href="#插入模式">插入模式</a></li>
+<li><a href="#最后行模式">最后行模式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#常用工具命令">常用工具命令</a><ul>
+<li><a href="#visudo-较重要">visudo (较重要)</a></li>
+<li><a href="#man">man</a></li>
+<li><a href="#wc">wc</a></li>
+<li><a href="#du">du</a></li>
+</ul>
+</li>
+<li><a href="#系统管理命令">系统管理命令</a><ul>
+<li><a href="#关机">关机</a></li>
+<li><a href="#开机选项配置">开机选项配置</a></li>
+<li><a href="#重启">重启</a></li>
+</ul>
+</li>
+<li><a href="#服务管理命令">服务管理命令</a></li>
+<li><a href="#chkconfig-查看或设置开机是否启动">chkconfig 查看或设置开机是否启动</a></li>
+<li><a href="#进程管理">进程管理</a><ul>
+<li><a href="#查看进程-ps">查看进程 ps</a></li>
+<li><a href="#杀死进程-kill">杀死进程 kill</a></li>
+</ul>
+</li>
+<li><a href="#redhat的slinux安全机制">Redhat的slinux安全机制</a></li>
+<li><a href="#压缩管理">压缩管理</a><ul>
+<li><a href="#zip">zip</a></li>
+<li><a href="#gzip">gzip</a></li>
+<li><a href="#bzip2">bzip2</a></li>
+<li><a href="#tar">tar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
 <h2 id="Linux-常用命令"><a href="#Linux-常用命令" class="headerlink" title="Linux 常用命令"></a>Linux 常用命令</h2><blockquote>
 <p>命令通用格式 : <strong>命令 选项（参数） 操作的文件或者目录</strong></p>
 </blockquote>
