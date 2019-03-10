@@ -6,18 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>sheerLi</title>
+  <title>初识 hadoop | sheerLi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前端知识点总结">
-<meta property="og:type" content="website">
-<meta property="og:title" content="sheerLi">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="Google的三篇论文 Google FS (Google File System)  1.可扩展的分布式文件系统，用于大型的、分布式的、对大量数据进行访问的应用2.对海量数据进程存储3.后人根据此论文开发出 HDFS 本质： 文件被分割成很多块，使用冗余的方式（备份）储存于商用机器集群上。  MapReduce  大数据的分布式计算方式，主要思想是将任务分解然后在多台处理能力较弱的计算节点中同时">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识 hadoop">
+<meta property="og:url" content="http://yoursite.com/2019/03/10/hadoopIntro/index.html">
 <meta property="og:site_name" content="sheerLi">
-<meta property="og:description" content="前端知识点总结">
+<meta property="og:description" content="Google的三篇论文 Google FS (Google File System)  1.可扩展的分布式文件系统，用于大型的、分布式的、对大量数据进行访问的应用2.对海量数据进程存储3.后人根据此论文开发出 HDFS 本质： 文件被分割成很多块，使用冗余的方式（备份）储存于商用机器集群上。  MapReduce  大数据的分布式计算方式，主要思想是将任务分解然后在多台处理能力较弱的计算节点中同时">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/03/10/hadoopIntro/modules.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/10/hadoopIntro/hdfs.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/10/hadoopIntro/mapreduce.png">
+<meta property="og:updated_time" content="2019-03-10T14:59:00.149Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sheerLi">
-<meta name="twitter:description" content="前端知识点总结">
+<meta name="twitter:title" content="初识 hadoop">
+<meta name="twitter:description" content="Google的三篇论文 Google FS (Google File System)  1.可扩展的分布式文件系统，用于大型的、分布式的、对大量数据进行访问的应用2.对海量数据进程存储3.后人根据此论文开发出 HDFS 本质： 文件被分割成很多块，使用冗余的方式（备份）储存于商用机器集群上。  MapReduce  大数据的分布式计算方式，主要思想是将任务分解然后在多台处理能力较弱的计算节点中同时">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/10/hadoopIntro/modules.png">
   
     <link rel="alternative" href="/atom.xml" title="sheerLi" type="application/atom+xml">
   
@@ -149,16 +154,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="blog-hadoopIntro" class="article article-type-blog  article-index" itemscope itemprop="blogPost">
+            <article id="blog-hadoopIntro" class="article article-type-blog " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/10/hadoopIntro/">初识 hadoop</a>
+    <h1 class="article-title" itemprop="name">
+      初识 hadoop
     </h1>
   
 
@@ -214,6 +217,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -221,16 +245,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/10/hadoopIntro/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/10/hadoopIntro/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/07/jdkandmysql/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">学习大数据的前期准备工作（三）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -250,736 +333,14 @@
 
 
 
-
   
-    <article id="post-jdkandmysql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/07/jdkandmysql/">学习大数据的前期准备工作（三）</a>
-    </h1>
   
 
-        
-        <a href="/2019/03/07/jdkandmysql/" class="archive-article-date">
-  	<time datetime="2019-03-07T11:27:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本篇文章主要是讲 linux 命令下载并安装 jdk 和 mysql，为后面的大数据做准备</p>
-<h3 id="Linux-软件安装命令"><a href="#Linux-软件安装命令" class="headerlink" title="Linux 软件安装命令"></a>Linux 软件安装命令</h3><h4 id="rpm"><a href="#rpm" class="headerlink" title="rpm"></a>rpm</h4><blockquote>
-<p>安装 rpm 结尾的软件包<br>软件查询： rpm –qa: 列举所有当前安装rpm包<br>安装软件:  rpm – ivh XXX.rpm<br>问题： A &lt;-B &lt;-C  需要自己手动解决依赖<br>卸载： rpm -e  –nodeps  XXXXX</p>
-</blockquote>
-<h4 id="yum"><a href="#yum" class="headerlink" title="yum"></a>yum</h4><blockquote>
-<p>通过软件源进行安装,类似 软件软件 点击“安装”<br>查看所有yum支持的包:yum list<br>   查看当前已经安装的包：yum list installed<br>   卸载：yum remove XX<br>   安装：yum install –y zip  </p>
-</blockquote>
-<h4 id="绿色版本"><a href="#绿色版本" class="headerlink" title="绿色版本"></a>绿色版本</h4><blockquote>
-<p>绝大部分都是解压直接能用</p>
-</blockquote>
-<h3 id="Linux-虚拟机安装-jdk-并-配置环境变量"><a href="#Linux-虚拟机安装-jdk-并-配置环境变量" class="headerlink" title="Linux 虚拟机安装 jdk 并 配置环境变量"></a>Linux 虚拟机安装 jdk 并 配置环境变量</h3><blockquote>
-<p><strong>步骤 1</strong><br>将 jdk 的包通过 远程控制工具 SearchSRC 上传到 Linux 虚拟机中</p>
-</blockquote>
-<p><img src="/2019/03/07/jdkandmysql/upload.png" alt></p>
-<blockquote>
-<p><strong>步骤 2</strong><br>使用 tar –zxvf jdk-8u91-linux-x64.tar.gz  -C  ./ 解压到当前文件夹</p>
-</blockquote>
-<p><img src="/2019/03/07/jdkandmysql/processing.png" alt></p>
-<blockquote>
-<p>查看 test 文件夹</p>
-</blockquote>
-<p><img src="/2019/03/07/jdkandmysql/jdkdeperate.png" alt></p>
-<blockquote>
-<p><strong>步骤 3</strong><br>sudo vi /etc/profile 配置环境变量</p>
-</blockquote>
-<p><img src="/2019/03/07/jdkandmysql/javaenvironment.png" alt></p>
-<blockquote>
-<p>保存退出后 source /etc/profile 使其生效</p>
-</blockquote>
-<p><img src="/2019/03/07/jdkandmysql/jdkcomple.png" alt></p>
-<h3 id="安装-mysql"><a href="#安装-mysql" class="headerlink" title="安装 mysql"></a>安装 mysql</h3><blockquote>
-<p><strong>步骤 1</strong><br>检查是否已经安装 mysql<br>命令: rpm -qa | grep mysql</p>
-</blockquote>
-<p><img src="/2019/03/07/jdkandmysql/checkmysql.png" alt></p>
-<blockquote>
-<p>卸载依赖<br>命令：sudo rpm -e  –nodeps mysql-libs-5.1.66-2.el6_3.x86_64</p>
-</blockquote>
-<p><img src="/2019/03/07/jdkandmysql/uninstallmysql.png" alt></p>
-<blockquote>
-<p>安装mysql<br>命令：sudo yum install -y mysql-server</p>
-</blockquote>
-<p><img src="/2019/03/07/jdkandmysql/installComple.png" alt></p>
-<blockquote>
-<p>启动 mysql 服务<br>命令: sudo service mysqld start</p>
-</blockquote>
-<p><img src="/2019/03/07/jdkandmysql/startmysql.png" alt></p>
-<blockquote>
-<p>修改 mysql 密码为 123456<br>命令：/usr/bin/mysqladmin -u root password ‘123456’</p>
-</blockquote>
-<blockquote>
-<p>登录 mysql<br>命令：mysql -u root -p123456</p>
-</blockquote>
-<p><img src="/2019/03/07/jdkandmysql/loginmysql.png" alt></p>
-<blockquote>
-<p>展示数据库<br>命令：show databases</p>
-</blockquote>
-<p><img src="/2019/03/07/jdkandmysql/showdatabases.png" alt></p>
-<blockquote>
-<p>设置开机启动 </p>
-</blockquote>
-<p><img src="/2019/03/07/jdkandmysql/startkaiji.png" alt></p>
-<p>经过以上步骤，jdk 和 mysql 都安装完成!</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/07/jdkandmysql/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LinuxCommand" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/06/LinuxCommand/">学习大数据的前期准备工作（二）</a>
-    </h1>
   
 
-        
-        <a href="/2019/03/06/LinuxCommand/" class="archive-article-date">
-  	<time datetime="2019-03-06T11:47:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- TOC -->
-<ul>
-<li><a href="#linux-常用命令">Linux 常用命令</a><ul>
-<li><a href="#普通命令">普通命令</a></li>
-<li><a href="#文件操作命令">文件操作命令</a><ul>
-<li><a href="#创建">创建</a></li>
-<li><a href="#删除">删除</a></li>
-<li><a href="#编辑">编辑</a></li>
-<li><a href="#复制">复制</a></li>
-<li><a href="#移动">移动</a></li>
-<li><a href="#查看">查看</a></li>
-</ul>
-</li>
-<li><a href="#用户管理">用户管理</a><ul>
-<li><a href="#管理员">管理员</a></li>
-<li><a href="#普通用户">普通用户</a></li>
-<li><a href="#用户信息文件">用户信息文件</a></li>
-<li><a href="#用户组信息文件">用户组信息文件</a></li>
-<li><a href="#切换用户">切换用户</a><ul>
-<li><a href="#切换到管理员">切换到管理员</a></li>
-<li><a href="#切换到普通用户">切换到普通用户</a></li>
-</ul>
-</li>
-<li><a href="#退出">退出</a></li>
-<li><a href="#创建用户">创建用户</a></li>
-<li><a href="#查看用户">查看用户</a></li>
-<li><a href="#设置密码">设置密码</a></li>
-<li><a href="#删除用户">删除用户</a></li>
-</ul>
-</li>
-<li><a href="#权限管理">权限管理</a><ul>
-<li><a href="#用户分类">用户分类</a></li>
-<li><a href="#权限分类">权限分类</a></li>
-<li><a href="#文件权限详情">文件权限详情</a></li>
-<li><a href="#修改权限">修改权限</a><ul>
-<li><a href="#通过字符修改">通过字符修改</a></li>
-<li><a href="#通过数组修改">通过数组修改</a></li>
-</ul>
-</li>
-<li><a href="#修改文件-所有者-和-所属组">修改文件 所有者 和 所属组</a></li>
-</ul>
-</li>
-<li><a href="#常见符号">常见符号</a><ul>
-<li><a href="#">.</a></li>
-<li><a href="#-1">.</a></li>
-<li><a href="#">~</a></li>
-<li><a href="#">|</a></li>
-<li><a href="#">&gt;</a></li>
-<li><a href="#">&gt;&gt;</a></li>
-</ul>
-</li>
-<li><a href="#文本编辑-vi--vim">文本编辑 vi / vim</a><ul>
-<li><a href="#语法格式">语法格式</a></li>
-<li><a href="#种模式">种模式</a><ul>
-<li><a href="#命令行模式">命令行模式</a></li>
-<li><a href="#插入模式">插入模式</a></li>
-<li><a href="#最后行模式">最后行模式</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#常用工具命令">常用工具命令</a><ul>
-<li><a href="#visudo-较重要">visudo (较重要)</a></li>
-<li><a href="#man">man</a></li>
-<li><a href="#wc">wc</a></li>
-<li><a href="#du">du</a></li>
-</ul>
-</li>
-<li><a href="#系统管理命令">系统管理命令</a><ul>
-<li><a href="#关机">关机</a></li>
-<li><a href="#开机选项配置">开机选项配置</a></li>
-<li><a href="#重启">重启</a></li>
-</ul>
-</li>
-<li><a href="#服务管理命令">服务管理命令</a></li>
-<li><a href="#chkconfig-查看或设置开机是否启动">chkconfig 查看或设置开机是否启动</a></li>
-<li><a href="#进程管理">进程管理</a><ul>
-<li><a href="#查看进程-ps">查看进程 ps</a></li>
-<li><a href="#杀死进程-kill">杀死进程 kill</a></li>
-</ul>
-</li>
-<li><a href="#redhat的slinux安全机制">Redhat的slinux安全机制</a></li>
-<li><a href="#压缩管理">压缩管理</a><ul>
-<li><a href="#zip">zip</a></li>
-<li><a href="#gzip">gzip</a></li>
-<li><a href="#bzip2">bzip2</a></li>
-<li><a href="#tar">tar</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<!-- /TOC -->
-<h2 id="Linux-常用命令"><a href="#Linux-常用命令" class="headerlink" title="Linux 常用命令"></a>Linux 常用命令</h2><blockquote>
-<p>命令通用格式 : <strong>命令 选项（参数） 操作的文件或者目录</strong></p>
-</blockquote>
-<h3 id="普通命令"><a href="#普通命令" class="headerlink" title="普通命令"></a>普通命令</h3><blockquote>
-<p><strong>ls</strong><br>格式：<strong>ls 目录</strong><br>参数: <strong>a</strong> : 列举包含隐藏文件<br>      <strong>l</strong> : 使用长格式查看  <strong>ls -l</strong> 等同于  <strong>ll</strong></p>
-</blockquote>
-<blockquote>
-<p><strong>cd</strong><br>改变目录  </p>
-</blockquote>
-<blockquote>
-<p><strong>pwd</strong><br>打印当前所在目录  </p>
-</blockquote>
-<blockquote>
-<p><strong>clear</strong><br>清屏 等同于 <strong>ctrl</strong> + <strong>l</strong>  </p>
-</blockquote>
-<blockquote>
-<p><strong>history</strong><br>查看命令的历史记录  </p>
-</blockquote>
-<h3 id="文件操作命令"><a href="#文件操作命令" class="headerlink" title="文件操作命令"></a>文件操作命令</h3><h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><blockquote>
-<p>创建文件<br>touch a.txt</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/touch.png" alt></p>
-<blockquote>
-<p>创建一个空目录<br>mkdir dir1  </p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/mkdir1.png" alt></p>
-<blockquote>
-<p>递归创建一个非空目录<br>mkdir -p dir2/dir3 </p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/mkdir2.png" alt></p>
-<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><blockquote>
-<p>删除文件<br>rm a.txt<br>-f 参数 命令是免确认</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/rm1.png" alt></p>
-<blockquote>
-<p>删除目录（只能删空目录）<br>rm -rf mkdir2</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/rm2.png" alt>  </p>
-<h4 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h4><blockquote>
-<p>vi / vim  </p>
-</blockquote>
-<h4 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h4><blockquote>
-<p>复制文件<br>cp a.txt dir1/  </p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/cp.png" alt></p>
-<blockquote>
-<p>复制目录<br>cp -r dir1 dir2/</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/cp2.png" alt> </p>
-<h4 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h4><blockquote>
-<p>将 a.txt 文件移动到 dir2 目录<br>mv a.txt dir2</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/mv1.png" alt></p>
-<h4 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h4><blockquote>
-<p>more<br>分页查看 显示一屏数据，按“enter”往下翻页</p>
-</blockquote>
-<blockquote>
-<p>less<br>分页查看 显示一屏数据，按方向上下键翻页 按“q”退出预览</p>
-</blockquote>
-<blockquote>
-<p>head<br>查看文件头部内容，默认读取文件前10行<br>常用参数：<strong>-n</strong>: 查看行数</p>
-</blockquote>
-<blockquote>
-<p>tail<br>查看文件尾部内容，默认读取文件后10行<br>常用参数:<br>-n:查看行数<br>-F:动态查看，监听一个文件的变化</p>
-</blockquote>
-<h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><h4 id="管理员"><a href="#管理员" class="headerlink" title="管理员"></a>管理员</h4><blockquote>
-<p>用户 id 是 0</p>
-</blockquote>
-<h4 id="普通用户"><a href="#普通用户" class="headerlink" title="普通用户"></a>普通用户</h4><blockquote>
-<p>用户 id 从 500 开始,可以自己创建普通用户</p>
-</blockquote>
-<h4 id="用户信息文件"><a href="#用户信息文件" class="headerlink" title="用户信息文件"></a>用户信息文件</h4><blockquote>
-<p>more /etc/passwd</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/viewuser.png" alt></p>
-<blockquote>
-<p>标红意思<br>用户名:密码:uid:gid:所属组的名字:家目录:所用shell</p>
-</blockquote>
-<h4 id="用户组信息文件"><a href="#用户组信息文件" class="headerlink" title="用户组信息文件"></a>用户组信息文件</h4><blockquote>
-<p>more /etc/group</p>
-</blockquote>
-<h4 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h4><h5 id="切换到管理员"><a href="#切换到管理员" class="headerlink" title="切换到管理员"></a>切换到管理员</h5><blockquote>
-<p>su -</p>
-</blockquote>
-<h5 id="切换到普通用户"><a href="#切换到普通用户" class="headerlink" title="切换到普通用户"></a>切换到普通用户</h5><blockquote>
-<p>su -用户名</p>
-</blockquote>
-<h4 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h4><blockquote>
-<p>exit</p>
-</blockquote>
-<h4 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h4><blockquote>
-<p>格式：useradd username<br>例: useradd LW</p>
-</blockquote>
-<h4 id="查看用户"><a href="#查看用户" class="headerlink" title="查看用户"></a>查看用户</h4><blockquote>
-<p>格式：id username<br>例: id LW</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/viewuserinfo.png" alt></p>
-<h4 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h4><blockquote>
-<p>格式：passwd username<br>例: passwd LW</p>
-</blockquote>
-<h4 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h4><blockquote>
-<p>格式：userdel username<br>参数：-r  既删除用户又删除该用户的家<br>例: userdel LW</p>
-</blockquote>
-<h3 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h3><h4 id="用户分类"><a href="#用户分类" class="headerlink" title="用户分类"></a>用户分类</h4><blockquote>
-<p>所有者: <strong>u</strong><br>同组用户: <strong>g</strong><br>其他人: <strong>o</strong></p>
-</blockquote>
-<h4 id="权限分类"><a href="#权限分类" class="headerlink" title="权限分类"></a>权限分类</h4><blockquote>
-<p>读: <strong>r</strong><br>写: <strong>w</strong><br>执行: <strong>x</strong><br>没有权限: <strong>-</strong></p>
-</blockquote>
-<h4 id="文件权限详情"><a href="#文件权限详情" class="headerlink" title="文件权限详情"></a>文件权限详情</h4><p><img src="/2019/03/06/LinuxCommand/per.png" alt></p>
-<blockquote>
-<p>第一位：文件类型，<strong>d</strong>:目录，<strong>-</strong>：文件<br>剩下9位，3位一组<br>rwx：所有者拥有的 <strong>读</strong> <strong>写</strong> <strong>执行</strong> 权限<br>rwx：同组用户拥有的  <strong>读</strong> <strong>写</strong> <strong>执行</strong> 权限<br>r-x：其他人拥有的  <strong>读</strong> <strong>执行</strong> 权限<br>huadian huadian：所有者 所属组<br>4096：文件大小<br>Mar  6 09:14: 日期<br>b: 文件名</p>
-</blockquote>
-<h4 id="修改权限"><a href="#修改权限" class="headerlink" title="修改权限"></a>修改权限</h4><blockquote>
-<p>语法： Chmod  [添加或者删除权限]  文件或者目录  </p>
-</blockquote>
-<h5 id="通过字符修改"><a href="#通过字符修改" class="headerlink" title="通过字符修改"></a>通过字符修改</h5><blockquote>
-<p>给其他人添加 写的 权限</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/chmod1.png" alt></p>
-<blockquote>
-<p>给其他人删除 写的 权限</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/chmod2.png" alt></p>
-<blockquote>
-<p>给任何人都添加上 可执行 权限  </p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/chmod3.png" alt></p>
-<blockquote>
-<p>给所属者和同组用户删除权限</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/chmod4.png" alt></p>
-<h5 id="通过数组修改"><a href="#通过数组修改" class="headerlink" title="通过数组修改"></a>通过数组修改</h5><blockquote>
-<p><strong>说明</strong><br>该位有权限用 1 表示,没有用 0 表示<br><strong>rwx</strong>  111  =&gt; 7(十进制)<br><strong>r-x</strong>  101  =&gt; 5(十进制)<br><strong>rw-</strong>  110  =&gt; 6(十进制)</p>
-</blockquote>
-<blockquote>
-<p>例子：让 <strong>任何用户</strong> 拥有 <strong>全部权限</strong><br>例子：chmod 777 a.txt</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/chmod5.png" alt></p>
-<blockquote>
-<p>例子：让 <strong>任何用户</strong> 拥有 <strong>读写</strong> 没有 <strong>执行</strong> 的权限<br>例子：chmod 666 a.txt</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/chmod6.png" alt></p>
-<h4 id="修改文件-所有者-和-所属组"><a href="#修改文件-所有者-和-所属组" class="headerlink" title="修改文件 所有者 和 所属组"></a>修改文件 所有者 和 所属组</h4><blockquote>
-<p>语法格式：<strong>chown username:groupname 文件或者目录</strong><br>参数： -R 递归修改所有的文件<br>例：chown -R root:root b</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/chown.png" alt></p>
-<h3 id="常见符号"><a href="#常见符号" class="headerlink" title="常见符号"></a>常见符号</h3><h4 id><a href="#" class="headerlink" title="."></a>.</h4><blockquote>
-<p>表示当前目录</p>
-</blockquote>
-<h4 id="-1"><a href="#-1" class="headerlink" title="."></a>.</h4><blockquote>
-<p>表示上一级目录</p>
-</blockquote>
-<h4 id="-2"><a href="#-2" class="headerlink" title="~"></a>~</h4><blockquote>
-<p>用户的家目录<br>例如： cd ~</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/gohome.png" alt></p>
-<h4 id="-3"><a href="#-3" class="headerlink" title="|"></a>|</h4><blockquote>
-<p>表示管道符<br>例如：Ps –ef | grep java   过滤留下java的进程</p>
-</blockquote>
-<h4 id="gt"><a href="#gt" class="headerlink" title="&gt;"></a>&gt;</h4><blockquote>
-<p>覆盖重写某个文件</p>
-</blockquote>
-<h4 id="gt-gt"><a href="#gt-gt" class="headerlink" title="&gt;&gt;"></a>&gt;&gt;</h4><blockquote>
-<p>追加到某个文件</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/override.png" alt></p>
-<h3 id="文本编辑-vi-vim"><a href="#文本编辑-vi-vim" class="headerlink" title="文本编辑 vi / vim"></a>文本编辑 vi / vim</h3><h4 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h4><blockquote>
-<p>　vi 文件名<br> 如果编辑一个不存在的文件，默认会创建一个文件</p>
-</blockquote>
-<h4 id="种模式"><a href="#种模式" class="headerlink" title="种模式"></a>种模式</h4><h5 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h5><blockquote>
-<p>gg：跳转到第一行<br>G:跳转到最后一行<br>5gg:跳转到第5行<br>yy:复制当前行<br>p:在当前位置粘贴<br>dd:删除光标所在行<br>5dd:从当行开始，删除连续5行<br>99999999999999dd: 清除文档<br>u:撤销上一步<br>i:进入插入模式<br>o:在光标所在行 下一行 进入插入模式<br>O:在光标所在乎 前一行进入插入模式   </p>
-</blockquote>
-<h5 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h5><blockquote>
-<p>在命令模式下，输入“i”,进入插入模式</p>
-</blockquote>
-<h5 id="最后行模式"><a href="#最后行模式" class="headerlink" title="最后行模式"></a>最后行模式</h5><blockquote>
-<p>进入方式:<br>按下“ESC”进入命令模式<br>   按下shift + : 进入最后行模式</p>
-</blockquote>
-<blockquote>
-<p>命令:<br>wq：保存退出<br>   q: 不保存退出<br>   !: 强制<br>   q!: 强制退出<br>   set nu(number): 显示行号<br>   /string 检索字符串  按“n”找下一个</p>
-</blockquote>
-<h3 id="常用工具命令"><a href="#常用工具命令" class="headerlink" title="常用工具命令"></a>常用工具命令</h3><h4 id="visudo-较重要"><a href="#visudo-较重要" class="headerlink" title="visudo (较重要)"></a>visudo (较重要)</h4><blockquote>
-<p>在企业中，通常不会使用root，为了安全，一般使用普通用户。<br>普通用户有时候，也需要操作一些管理员需要的权限</p>
-</blockquote>
-<blockquote>
-<p>例：让 huadian 用户拥有 root 所有权限   操作如下<br>切换到 root 用户<br>执行 visudo 命令<br>添加如下配置</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/visudo.png" alt></p>
-<blockquote>
-<p>普通用户如果使用额外赋予的权限<br>sudo 额外权限名</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/sudo.png" alt></p>
-<h4 id="man"><a href="#man" class="headerlink" title="man"></a>man</h4><blockquote>
-<p>帮助命令<br>例: man ls</p>
-</blockquote>
-<h4 id="wc"><a href="#wc" class="headerlink" title="wc"></a>wc</h4><blockquote>
-<p>文本统计工具<br>例： wc a.txt<br>结果：行 单词书 字符数 文件名</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/wc.png" alt></p>
-<h4 id="du"><a href="#du" class="headerlink" title="du"></a>du</h4><blockquote>
-<p>文件大小统计<br>du -a.txt/</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/du.png" alt></p>
-<h3 id="系统管理命令"><a href="#系统管理命令" class="headerlink" title="系统管理命令"></a>系统管理命令</h3><h4 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h4><blockquote>
-<p>shutdown  -h now<br>   halt<br>   init 0</p>
-</blockquote>
-<h4 id="开机选项配置"><a href="#开机选项配置" class="headerlink" title="开机选项配置"></a>开机选项配置</h4><blockquote>
-<p>Vi /etc/inittab<br>id:3:initdefault:  启动linux，不启动图形化界面<br>init 5:恢复图形化界面</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/option.png" alt></p>
-<h4 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h4><blockquote>
-<p>init 6<br>reboot</p>
-</blockquote>
-<h3 id="服务管理命令"><a href="#服务管理命令" class="headerlink" title="服务管理命令"></a>服务管理命令</h3><blockquote>
-<p>语法： service s_name start|stop|status|restart|<br>查看防火墙: sudo service iptables status<br>查看网络：sudo service network status<br>Mysql数据：mysql/mysqld(低版本)</p>
-</blockquote>
-<h3 id="chkconfig-查看或设置开机是否启动"><a href="#chkconfig-查看或设置开机是否启动" class="headerlink" title="chkconfig 查看或设置开机是否启动"></a>chkconfig 查看或设置开机是否启动</h3><blockquote>
-<p>查看开机是否启动<br>chkconfig iptables –list<br>结果：2~5都是on :开机启动</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/chkconfig.png" alt></p>
-<blockquote>
-<p>设置开机是否启动<br>chkconfig iptables off|on</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/chkconfig2.png" alt></p>
-<h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><h4 id="查看进程-ps"><a href="#查看进程-ps" class="headerlink" title="查看进程 ps"></a>查看进程 ps</h4><blockquote>
-<p>　ps –ef |grep java<br>含义：查看所有 java 进程</p>
-</blockquote>
-<h4 id="杀死进程-kill"><a href="#杀死进程-kill" class="headerlink" title="杀死进程 kill"></a>杀死进程 kill</h4><blockquote>
-<p>kill -9 进程id<br>含义：彻底杀死进程</p>
-</blockquote>
-<h3 id="Redhat的slinux安全机制"><a href="#Redhat的slinux安全机制" class="headerlink" title="Redhat的slinux安全机制"></a>Redhat的slinux安全机制</h3><blockquote>
-<p>vi /etc/selinux/config<br>重启成效</p>
-</blockquote>
-<p><img src="/2019/03/06/LinuxCommand/redhatsecurity.png" alt></p>
-<h3 id="压缩管理"><a href="#压缩管理" class="headerlink" title="压缩管理"></a>压缩管理</h3><h4 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h4><h4 id="gzip"><a href="#gzip" class="headerlink" title="gzip"></a>gzip</h4><blockquote>
-<p>后缀: .gz<br>压缩: gzip file_path<br>解压: gunzip file.gz<br>特点: 压缩后源文件没有了,  不能对目录进行压缩</p>
-</blockquote>
-<h4 id="bzip2"><a href="#bzip2" class="headerlink" title="bzip2"></a>bzip2</h4><blockquote>
-<p>适合较大文件压缩<br>   后缀.bz2<br>   压缩：bzip2 file_path<br>   解压：bunzip2 file.bz2<br>特点：压缩后源文件没有了,不能对目录进行压缩</p>
-</blockquote>
-<h4 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h4><p>打包命令，将多个文件或者目录打包成一个文件  </p>
-<blockquote>
-<p>格式：<br>打包：tar [选项参数]  file.tar  source<br>解包：tar  [选项参数]  file.tar –C  source<br>参数：<br>-C: 指定解压的目录<br>-x: 解压<br>-v: 是否显示进度<br>-z: 是否使用gzip压缩<br>-j: 是否使用bzip2压缩  </p>
-</blockquote>
-<blockquote>
-<p>应用（使用最频繁）：使用tar + gzip<br>压缩：tar –zcvf  jdk-8u91-linux-x64.tar.gz  source<br>   解压：tar –zxvf jdk-8u91-linux-x64.tar.gz  -C  target  </p>
-</blockquote>
-<blockquote>
-<p>使用 tar + bzip2<br>压缩：tar –jcvf  jdk-8u91-linux-x64.tar.gz  source<br>   解压：tar –jxvf jdk-8u91-linux-x64.tar.gz  -C  target</p>
-</blockquote>
-<p>以上差不多是 Linux 工作中常用到的命令。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/06/LinuxCommand/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-bigdata" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/06/bigdata/">学习大数据的前期准备工作（一）</a>
-    </h1>
   
 
-        
-        <a href="/2019/03/06/bigdata/" class="archive-article-date">
-  	<time datetime="2019-03-06T06:54:08.270Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Linux-基本环境配置"><a href="#Linux-基本环境配置" class="headerlink" title="Linux 基本环境配置"></a>Linux 基本环境配置</h2><blockquote>
-<p>以下修改操作需要在 root 管理员权限下<br>所以先通过 su - 命令切换到 root 环境下</p>
-</blockquote>
-<h3 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h3><blockquote>
-<p>执行下面命令修改主机名（临时）<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hostname bigdata01-huadian.com</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>修改主机名（永久）<br>1.执行下面命令进入相应文件<br>2.按下键盘的 “i” 键进入编辑模式<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysconfig/network</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>3.将 <strong>HOSTNAME</strong> 修改如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HOSTNAME=bigdata01-huadian.com</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>4.按下 <strong>esc</strong> 输入 <strong>:wq</strong> 保存并退出  </p>
-</blockquote>
-<h3 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h3><blockquote>
-<p>修改虚拟机<br>1.打开 <strong>VMware</strong> -&gt; 编辑 -&gt; 虚拟网络编辑器<br>2.将 VMware 当成一个路由器使用，设置路由器网段 <strong>192.168.59.0</strong></p>
-</blockquote>
-<p><img src="/2019/03/06/bigdata/network.png" alt></p>
-<blockquote>
-<p>设置网络方式<br>1.打开 <strong>Linux</strong> 中 <strong>System</strong> -&gt; <strong>Preferences</strong> -&gt; <strong>Network Connections</strong><br>2.使用图形化界面操作将 ip 设置成 <strong>192.168.59.250</strong></p>
-</blockquote>
-<p><img src="/2019/03/06/bigdata/network2.png" alt>  </p>
-<h3 id="重启机器"><a href="#重启机器" class="headerlink" title="重启机器"></a>重启机器</h3><blockquote>
-<p>执行命令 reboot 命令<br>使用 <strong>ifconfig</strong> 查看</p>
-</blockquote>
-<p><img src="/2019/03/06/bigdata/network3.png" alt></p>
-<h3 id="网络映射"><a href="#网络映射" class="headerlink" title="网络映射"></a>网络映射</h3><blockquote>
-<p>(在 <strong>Linux</strong> 上执行)<br>目的：让linux的IP和主机名称一一对应，后期可以通过主机名找到机器<br>执行命令 进入 <strong>hosts</strong> 文件<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>添加以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">192.168.59.250 bigdata01-huadian.com</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>终端中 <strong>ping bigdata01-huadian.com</strong><br>出现以下结果表示成功</p>
-</blockquote>
-<p><img src="/2019/03/06/bigdata/network4.png" alt></p>
-<blockquote>
-<p>(在 <strong>windows</strong> 上执行)<br>目的：在 window 下也能够通过主机名访问 linux<br>修改文件：C:\Windows\System32\drivers\etc\hosts<br>新增如下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">192.168.59.250 bigdata01-huadian.com</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>在 <strong>cmd</strong> 中 <strong>ping bigdata01-huadian.com</strong></p>
-</blockquote>
-<p><img src="/2019/03/06/bigdata/network5.png" alt></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/06/bigdata/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-sort" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/23/sort/">基本排序的方式</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/23/sort/" class="archive-article-date">
-  	<time datetime="2019-02-23T02:11:11.170Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>以下是 <strong>js</strong> 实现常用的基本排序，包括 <strong>快速排序</strong>、<strong>冒泡排序</strong>、<strong>堆排序</strong>、<strong>桶排序</strong>、<strong>插入排序</strong>、<strong>归并排序</strong>.</p>
-<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><blockquote>
-<p>   排序过程只需要三步:<br>（1）在数据集之中，选择一个元素作为”基准”（pivot）。<br>（2）所有小于”基准”的元素，都移到”基准”的左边；所有大于”基准”的元素，都移到”基准”的右边。<br>（3）对”基准”左边和右边的两个子集，不断重复第一步和第二步，直到所有子集只剩下一个元素为止。  </p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>( arr.length &lt;= <span class="number">1</span> ) &#123;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 找出数组中的基准值</span></span><br><span class="line">  <span class="keyword">var</span> pivotIndex = <span class="built_in">Math</span>.floor(arr.length / <span class="number">2</span>);</span><br><span class="line">  <span class="keyword">var</span> pivot = arr.splice(pivotIndex, <span class="number">1</span>)[<span class="number">0</span>];</span><br><span class="line">  <span class="comment">// 定义左右两个个空数组</span></span><br><span class="line">  <span class="keyword">var</span> left = [], right = [];</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>, len = arr.length; i &lt; len; i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr[i] &lt; pivot) &#123;</span><br><span class="line">      left.push(arr[i])</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      right.push(arr[i])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 递归调用快排</span></span><br><span class="line">  <span class="keyword">return</span> quickSort(left).concat([pivot], quickSort(right));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><blockquote>
-<p>数组中有 n 个数，比较每相邻两个数，如果前者大于后者，就把两个数交换位置;<br>这样一来，第一轮就可以选出一个最大的数放在最后面；<br>那么经过 n-1（数组的 length - 1） 轮，就完成了所有数的排序。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++)&#123;</span><br><span class="line">    <span class="comment">// 声明一个变量，作为标志位</span></span><br><span class="line">    <span class="keyword">var</span> done = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; arr.length<span class="number">-1</span>-i; j++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(arr[j] &gt; arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">        <span class="keyword">var</span> smtp = arr[j];</span><br><span class="line">        arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">        arr[j+<span class="number">1</span>] = smtp;</span><br><span class="line">        <span class="comment">// 若有交换过，标志位置为 false</span></span><br><span class="line">        done = <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 可以减少不必要的排序，提高性能</span></span><br><span class="line">    <span class="keyword">if</span>(done)&#123;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;   </span><br><span class="line">  <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><blockquote>
-<p>1.从第一个元素开始，该元素可以认为已经被排序；<br>2.取出下一个元素，在已经排序的元素序列中从后向前扫描；<br>3.如果该元素（已排序）大于新元素，将该元素移到下一位置；<br>4.重复步骤3，直到找到已排序的元素小于或者等于新元素的位置；<br>5.将新元素插入到该位置后；<br>重复步骤2~5。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertionSort</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">Object</span>.prototype.toString.call(array).slice(<span class="number">8</span>, <span class="number">-1</span>) === <span class="string">'Array'</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> key = array[i];</span><br><span class="line">        <span class="keyword">var</span> j = i - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; array[j] &gt; key) &#123;</span><br><span class="line">            array[j + <span class="number">1</span>] = array[j];</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        array[j + <span class="number">1</span>] = key;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> array;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">'array is not an Array!'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><blockquote>
-<p>初始状态：无序区为R[1..n]，有序区为空；<br>第i趟排序(i=1,2,3…n-1)开始时，当前有序区和无序区分别为R[1..i-1]和R(i..n）。该趟排序从当前无序区中选出关键字最 小的记录 R[k]，将它与无序区的第1个记录R交换，使R[1..i]和R[i+1..n)分别变为记录个数增加1个的新有序区和记录个数减少1个的新无序区；<br>n-1趟结束，数组有序化了。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectionSort</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">Object</span>.prototype.toString.call(array).slice(<span class="number">8</span>, <span class="number">-1</span>) === <span class="string">'Array'</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> len = array.length, temp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">      <span class="keyword">var</span> min = array[i];</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (array[j] &lt; min) &#123;</span><br><span class="line">          temp = min;</span><br><span class="line">          min = array[j];</span><br><span class="line">          array[j] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      array[i] = min;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> array;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">'array is not an Array!'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h3><blockquote>
-<p>设置一个定量的数组当作空桶；<br>遍历输入数据，并且把数据一个一个放到对应的桶里去；<br>对每个不是空的桶进行排序；<br>从不是空的桶里把排好序的数据拼接起来。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*方法说明：桶排序</span></span><br><span class="line"><span class="comment">@param  array 数组</span></span><br><span class="line"><span class="comment">@param  num   桶的数量*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bucketSort</span>(<span class="params">array, num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (array.length &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> array;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> len = array.length, buckets = [], result = [], min = max = array[<span class="number">0</span>], regex = <span class="string">'/^[1-9]+[0-9]*$/'</span>, space, n = <span class="number">0</span>;</span><br><span class="line">  num = num || ((num &gt; <span class="number">1</span> &amp;&amp; regex.test(num)) ? num : <span class="number">10</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; len; i++) &#123;</span><br><span class="line">    min = min &lt;= array[i] ? min : array[i];</span><br><span class="line">    max = max &gt;= array[i] ? max : array[i];</span><br><span class="line">  &#125;</span><br><span class="line">  space = (max - min + <span class="number">1</span>) / num;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; len; j++) &#123;</span><br><span class="line">    <span class="keyword">var</span> index = <span class="built_in">Math</span>.floor((array[j] - min) / space);</span><br><span class="line">    <span class="keyword">if</span> (buckets[index]) &#123;   <span class="comment">//  非空桶，插入排序</span></span><br><span class="line">      <span class="keyword">var</span> k = buckets[index].length - <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">while</span> (k &gt;= <span class="number">0</span> &amp;&amp; buckets[index][k] &gt; array[j]) &#123;</span><br><span class="line">          buckets[index][k + <span class="number">1</span>] = buckets[index][k];</span><br><span class="line">          k--;</span><br><span class="line">      &#125;</span><br><span class="line">      buckets[index][k + <span class="number">1</span>] = array[j];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;    <span class="comment">//空桶，初始化</span></span><br><span class="line">        buckets[index] = [];</span><br><span class="line">        buckets[index].push(array[j]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> (n &lt; num) &#123;</span><br><span class="line">    result = result.concat(buckets[n]);</span><br><span class="line">    n++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><blockquote>
-<p>把长度为n的输入序列分成两个长度为n/2的子序列；<br>对这两个子序列分别采用归并排序；<br>将两个排序好的子序列合并成一个最终的排序序列。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mergeSort</span>(<span class="params">array, p, r</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (p &lt; r) &#123;</span><br><span class="line">    <span class="keyword">var</span> q = <span class="built_in">Math</span>.floor((p + r) / <span class="number">2</span>);</span><br><span class="line">    mergeSort(array, p, q);</span><br><span class="line">    mergeSort(array, q + <span class="number">1</span>, r);</span><br><span class="line">    merge(array, p, q, r);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">merge</span>(<span class="params">array, p, q, r</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> n1 = q - p + <span class="number">1</span>, n2 = r - q, left = [], right = [], m = n = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; n1; i++) &#123;</span><br><span class="line">    left[i] = array[p + i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; n2; j++) &#123;</span><br><span class="line">    right[j] = array[q + <span class="number">1</span> + j];</span><br><span class="line">  &#125;</span><br><span class="line">  left[n1] = right[n2] = <span class="built_in">Number</span>.MAX_VALUE;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> k = p; k &lt;= r; k++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (left[m] &lt;= right[n]) &#123;</span><br><span class="line">      array[k] = left[m];</span><br><span class="line">      m++;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        array[k] = right[n];</span><br><span class="line">        n++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><blockquote>
-<p>将初始待排序关键字序列(R1,R2….Rn)构建成大顶堆，此堆为初始的无序区；<br>将堆顶元素R[1]与最后一个元素R[n]交换，此时得到新的无序区(R1,R2,……Rn-1)和新的有序区(Rn),且满足R[1,2…n-1]&lt;=R[n]；<br>由于交换后新的堆顶R[1]可能违反堆的性质，因此需要对当前无序区(R1,R2,……Rn-1)调整为新堆，然后再次将R[1]与无序区最后一个元素交换，得到新的无序区(R1,R2….Rn-2)和新的有序区(Rn-1,Rn)。不断重复此过程直到有序区的元素个数为n-1，则整个排序过程完成。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*方法说明：堆排序</span></span><br><span class="line"><span class="comment">@param  array 待排序数组*/</span>           </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">heapSort</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">Object</span>.prototype.toString.call(array).slice(<span class="number">8</span>, <span class="number">-1</span>) === <span class="string">'Array'</span>) &#123;</span><br><span class="line">    <span class="comment">//建堆</span></span><br><span class="line">    <span class="keyword">var</span> heapSize = array.length, temp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="built_in">Math</span>.floor(heapSize / <span class="number">2</span>); i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">      heapify(array, i, heapSize);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//堆排序</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = heapSize - <span class="number">1</span>; j &gt;= <span class="number">1</span>; j--) &#123;</span><br><span class="line">      temp = array[<span class="number">0</span>];</span><br><span class="line">      array[<span class="number">0</span>] = array[j];</span><br><span class="line">      array[j] = temp;</span><br><span class="line">      heapify(array, <span class="number">0</span>, --heapSize);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">'array is not an Array!'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*方法说明：维护堆的性质</span></span><br><span class="line"><span class="comment">@param  arr 数组</span></span><br><span class="line"><span class="comment">@param  x   数组下标</span></span><br><span class="line"><span class="comment">@param  len 堆大小*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">heapify</span>(<span class="params">arr, x, len</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">Object</span>.prototype.toString.call(arr).slice(<span class="number">8</span>, <span class="number">-1</span>) === <span class="string">'Array'</span> &amp;&amp; <span class="keyword">typeof</span> x === <span class="string">'number'</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> l = <span class="number">2</span> * x, r = <span class="number">2</span> * x + <span class="number">1</span>, largest = x, temp;</span><br><span class="line">    <span class="keyword">if</span> (l &lt; len &amp;&amp; arr[l] &gt; arr[largest]) &#123;</span><br><span class="line">      largest = l;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (r &lt; len &amp;&amp; arr[r] &gt; arr[largest]) &#123;</span><br><span class="line">      largest = r;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (largest != x) &#123;</span><br><span class="line">      temp = arr[x];</span><br><span class="line">      arr[x] = arr[largest];</span><br><span class="line">      arr[largest] = temp;</span><br><span class="line">      heapify(arr, largest, len);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">'arr is not an Array or x is not a number!'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/23/sort/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -1002,8 +363,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

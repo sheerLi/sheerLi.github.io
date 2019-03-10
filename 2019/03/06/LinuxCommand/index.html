@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>学习大数据的前期准备工作（二） | sheerLi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Linux 常用命令 普通命令 文件操作命令 创建 删除 编辑 复制 移动 查看   用户管理 管理员 普通用户 用户信息文件 用户组信息文件 切换用户 切换到管理员 切换到普通用户   退出 创建用户 查看用户 设置密码 删除用户   权限管理 用户分类 权限分类 文件权限详情 修改权限 通过字符修改 通过数组修改   修改文件 所有者 和 所属组   常见符号 . .. ~ | &amp;gt;">
+  <meta name="description" content="Linux 常用命令 普通命令 文件操作命令 创建 删除 编辑 复制 移动 查看   用户管理 管理员 普通用户 用户信息文件 用户组信息文件 切换用户 切换到管理员 切换到普通用户   退出 创建用户 查看用户 设置密码 删除用户   权限管理 用户分类 权限分类 文件权限详情 修改权限 通过字符修改 通过数组修改   修改文件 所有者 和 所属组   常见符号 . . ~ | &amp;gt; &amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习大数据的前期准备工作（二）">
 <meta property="og:url" content="http://yoursite.com/2019/03/06/LinuxCommand/index.html">
 <meta property="og:site_name" content="sheerLi">
-<meta property="og:description" content="Linux 常用命令 普通命令 文件操作命令 创建 删除 编辑 复制 移动 查看   用户管理 管理员 普通用户 用户信息文件 用户组信息文件 切换用户 切换到管理员 切换到普通用户   退出 创建用户 查看用户 设置密码 删除用户   权限管理 用户分类 权限分类 文件权限详情 修改权限 通过字符修改 通过数组修改   修改文件 所有者 和 所属组   常见符号 . .. ~ | &amp;gt;">
+<meta property="og:description" content="Linux 常用命令 普通命令 文件操作命令 创建 删除 编辑 复制 移动 查看   用户管理 管理员 普通用户 用户信息文件 用户组信息文件 切换用户 切换到管理员 切换到普通用户   退出 创建用户 查看用户 设置密码 删除用户   权限管理 用户分类 权限分类 文件权限详情 修改权限 通过字符修改 通过数组修改   修改文件 所有者 和 所属组   常见符号 . . ~ | &amp;gt; &amp;">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/touch.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/mkdir1.png">
@@ -43,10 +43,10 @@
 <meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/chkconfig.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/chkconfig2.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/06/LinuxCommand/redhatsecurity.png">
-<meta property="og:updated_time" content="2019-03-08T04:42:01.017Z">
+<meta property="og:updated_time" content="2019-03-08T04:53:58.890Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习大数据的前期准备工作（二）">
-<meta name="twitter:description" content="Linux 常用命令 普通命令 文件操作命令 创建 删除 编辑 复制 移动 查看   用户管理 管理员 普通用户 用户信息文件 用户组信息文件 切换用户 切换到管理员 切换到普通用户   退出 创建用户 查看用户 设置密码 删除用户   权限管理 用户分类 权限分类 文件权限详情 修改权限 通过字符修改 通过数组修改   修改文件 所有者 和 所属组   常见符号 . .. ~ | &amp;gt;">
+<meta name="twitter:description" content="Linux 常用命令 普通命令 文件操作命令 创建 删除 编辑 复制 移动 查看   用户管理 管理员 普通用户 用户信息文件 用户组信息文件 切换用户 切换到管理员 切换到普通用户   退出 创建用户 查看用户 设置密码 删除用户   权限管理 用户分类 权限分类 文件权限详情 修改权限 通过字符修改 通过数组修改   修改文件 所有者 和 所属组   常见符号 . . ~ | &amp;gt; &amp;">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/06/LinuxCommand/touch.png">
   
     <link rel="alternative" href="/atom.xml" title="sheerLi" type="application/atom+xml">
@@ -243,7 +243,7 @@
 </li>
 <li><a href="#常见符号">常见符号</a><ul>
 <li><a href="#">.</a></li>
-<li><a href="#">..</a></li>
+<li><a href="#-1">.</a></li>
 <li><a href="#">~</a></li>
 <li><a href="#">|</a></li>
 <li><a href="#">&gt;</a></li>
@@ -252,7 +252,7 @@
 </li>
 <li><a href="#文本编辑-vi--vim">文本编辑 vi / vim</a><ul>
 <li><a href="#语法格式">语法格式</a></li>
-<li><a href="#3-种模式">3 种模式</a><ul>
+<li><a href="#种模式">种模式</a><ul>
 <li><a href="#命令行模式">命令行模式</a></li>
 <li><a href="#插入模式">插入模式</a></li>
 <li><a href="#最后行模式">最后行模式</a></li>
@@ -442,7 +442,7 @@
 <h3 id="常见符号"><a href="#常见符号" class="headerlink" title="常见符号"></a>常见符号</h3><h4 id><a href="#" class="headerlink" title="."></a>.</h4><blockquote>
 <p>表示当前目录</p>
 </blockquote>
-<h4 id="-1"><a href="#-1" class="headerlink" title=".."></a>..</h4><blockquote>
+<h4 id="-1"><a href="#-1" class="headerlink" title="."></a>.</h4><blockquote>
 <p>表示上一级目录</p>
 </blockquote>
 <h4 id="-2"><a href="#-2" class="headerlink" title="~"></a>~</h4><blockquote>
@@ -462,7 +462,7 @@
 <h3 id="文本编辑-vi-vim"><a href="#文本编辑-vi-vim" class="headerlink" title="文本编辑 vi / vim"></a>文本编辑 vi / vim</h3><h4 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h4><blockquote>
 <p>　vi 文件名<br> 如果编辑一个不存在的文件，默认会创建一个文件</p>
 </blockquote>
-<h4 id="3-种模式"><a href="#3-种模式" class="headerlink" title="3 种模式"></a>3 种模式</h4><h5 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h5><blockquote>
+<h4 id="种模式"><a href="#种模式" class="headerlink" title="种模式"></a>种模式</h4><h5 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h5><blockquote>
 <p>gg：跳转到第一行<br>G:跳转到最后一行<br>5gg:跳转到第5行<br>yy:复制当前行<br>p:在当前位置粘贴<br>dd:删除光标所在行<br>5dd:从当行开始，删除连续5行<br>99999999999999dd: 清除文档<br>u:撤销上一步<br>i:进入插入模式<br>o:在光标所在行 下一行 进入插入模式<br>O:在光标所在乎 前一行进入插入模式   </p>
 </blockquote>
 <h5 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h5><blockquote>
