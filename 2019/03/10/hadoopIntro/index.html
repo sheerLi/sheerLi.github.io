@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/03/10/hadoopIntro/modules.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/10/hadoopIntro/hdfs.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/10/hadoopIntro/mapreduce.png">
-<meta property="og:updated_time" content="2019-03-10T14:59:00.149Z">
+<meta property="og:updated_time" content="2019-03-10T15:00:55.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识 hadoop">
 <meta name="twitter:description" content="Google的三篇论文 Google FS (Google File System)  1.可扩展的分布式文件系统，用于大型的、分布式的、对大量数据进行访问的应用2.对海量数据进程存储3.后人根据此论文开发出 HDFS 本质： 文件被分割成很多块，使用冗余的方式（备份）储存于商用机器集群上。  MapReduce  大数据的分布式计算方式，主要思想是将任务分解然后在多台处理能力较弱的计算节点中同时">
@@ -66,6 +66,10 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/archives">所有文章</a></li>
+	        
+				<li><a href="/categories">分类</a></li>
+	        
+				<li><a href="/tags">标签</a></li>
 	        
 			</ul>
 		</nav>
@@ -119,6 +123,10 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -134,12 +142,16 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/archives">所有文章</a></li>
+					<li style="width: 25%"><a href="/archives">所有文章</a></li>
+		        
+					<li style="width: 25%"><a href="/categories">分类</a></li>
+		        
+					<li style="width: 25%"><a href="/tags">标签</a></li>
 		        
 				</ul>
 			</nav>
@@ -174,7 +186,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Google的三篇论文"><a href="#Google的三篇论文" class="headerlink" title="Google的三篇论文"></a>Google的三篇论文</h3><blockquote>
+        
+          
+            <h3 id="Google的三篇论文"><a href="#Google的三篇论文" class="headerlink" title="Google的三篇论文"></a>Google的三篇论文</h3><blockquote>
 <p>Google FS (Google File System)</p>
 </blockquote>
 <p>1.可扩展的分布式文件系统，用于大型的、分布式的、对大量数据进行访问的应用<br>2.对海量数据进程存储<br>3.后人根据此论文开发出 <strong>HDFS</strong></p>
@@ -214,30 +228,8 @@
 <p><img src="/2019/03/10/hadoopIntro/mapreduce.png" alt></p>
 <p>总结：<br>HDFS: namenode/datanode<br>YARN: resoureManager/nodemanager<br>都属于Java进程，启动JVM进程，运行服务</p>
 
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
+          
+        
     </div>
     <div class="article-info article-info-index">
       
