@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="大数据,hadoop,">
+  <meta name="keywords" content="JavaScript,">
 
 
 
@@ -79,22 +79,18 @@
 
 
 
-<meta name="description" content="Google的三篇论文 Google FS (Google File System)  1.可扩展的分布式文件系统，用于大型的、分布式的、对大量数据进行访问的应用2.对海量数据进程存储3.后人根据此论文开发出 HDFS 本质： 文件被分割成很多块，使用冗余的方式（备份）储存于商用机器集群上。  MapReduce  大数据的分布式计算方式，主要思想是将任务分解然后在多台处理能力较弱的计算节点中同时">
-<meta name="keywords" content="大数据,hadoop">
+<meta name="description" content="基本概念cookie  cookie 是小甜饼的意思。顾名思义，cookie 确实非常小，它的大小限制为4KB左右，是网景公司的前雇员 Lou Montulli 在1993年3月的发明。它的主要用途有保存登录信息，比如你登录某个网站市场可以看到“记住密码”，这通常就是通过在 cookie 中存入一段辨别用户身份的数据来实现的。  数据的生命周期： 一般由服务器生成，可设置失效时间。如果在浏览器端生">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="初识 hadoop">
-<meta property="og:url" content="http://yoursite.com/2019/03/10/hadoopIntro/index.html">
+<meta property="og:title" content="cookie、sessionStorage、localStorage的区别">
+<meta property="og:url" content="http://yoursite.com/2019/04/05/webStorageApi/index.html">
 <meta property="og:site_name" content="sheerLi">
-<meta property="og:description" content="Google的三篇论文 Google FS (Google File System)  1.可扩展的分布式文件系统，用于大型的、分布式的、对大量数据进行访问的应用2.对海量数据进程存储3.后人根据此论文开发出 HDFS 本质： 文件被分割成很多块，使用冗余的方式（备份）储存于商用机器集群上。  MapReduce  大数据的分布式计算方式，主要思想是将任务分解然后在多台处理能力较弱的计算节点中同时">
+<meta property="og:description" content="基本概念cookie  cookie 是小甜饼的意思。顾名思义，cookie 确实非常小，它的大小限制为4KB左右，是网景公司的前雇员 Lou Montulli 在1993年3月的发明。它的主要用途有保存登录信息，比如你登录某个网站市场可以看到“记住密码”，这通常就是通过在 cookie 中存入一段辨别用户身份的数据来实现的。  数据的生命周期： 一般由服务器生成，可设置失效时间。如果在浏览器端生">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/03/10/hadoopIntro/modules.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/10/hadoopIntro/hdfs.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/10/hadoopIntro/mapreduce.png">
-<meta property="og:updated_time" content="2019-04-05T07:21:55.719Z">
+<meta property="og:updated_time" content="2019-04-05T09:36:58.143Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="初识 hadoop">
-<meta name="twitter:description" content="Google的三篇论文 Google FS (Google File System)  1.可扩展的分布式文件系统，用于大型的、分布式的、对大量数据进行访问的应用2.对海量数据进程存储3.后人根据此论文开发出 HDFS 本质： 文件被分割成很多块，使用冗余的方式（备份）储存于商用机器集群上。  MapReduce  大数据的分布式计算方式，主要思想是将任务分解然后在多台处理能力较弱的计算节点中同时">
-<meta name="twitter:image" content="http://yoursite.com/2019/03/10/hadoopIntro/modules.png">
+<meta name="twitter:title" content="cookie、sessionStorage、localStorage的区别">
+<meta name="twitter:description" content="基本概念cookie  cookie 是小甜饼的意思。顾名思义，cookie 确实非常小，它的大小限制为4KB左右，是网景公司的前雇员 Lou Montulli 在1993年3月的发明。它的主要用途有保存登录信息，比如你登录某个网站市场可以看到“记住密码”，这通常就是通过在 cookie 中存入一段辨别用户身份的数据来实现的。  数据的生命周期： 一般由服务器生成，可设置失效时间。如果在浏览器端生">
 
 
 
@@ -124,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/10/hadoopIntro/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/05/webStorageApi/">
 
 
 
 
 
-  <title>初识 hadoop | sheerLi</title>
+  <title>cookie、sessionStorage、localStorage的区别 | sheerLi</title>
   
 
 
@@ -257,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/10/hadoopIntro/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/05/webStorageApi/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sheerLi">
@@ -274,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">初识 hadoop</h1>
+          <h1 class="post-title" itemprop="name headline">cookie、sessionStorage、localStorage的区别</h1>
         
 
         <div class="post-meta">
@@ -286,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-10T21:00:24+08:00">
-                2019-03-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-05T16:40:20+08:00">
+                2019-04-05
               </time>
             
 
@@ -309,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/大数据/" itemprop="url" rel="index">
-                    <span itemprop="name">大数据</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -346,45 +342,22 @@
       
 
       
-        <h3 id="Google的三篇论文"><a href="#Google的三篇论文" class="headerlink" title="Google的三篇论文"></a>Google的三篇论文</h3><blockquote>
-<p>Google FS (Google File System)</p>
-</blockquote>
-<p>1.可扩展的分布式文件系统，用于大型的、分布式的、对大量数据进行访问的应用<br>2.对海量数据进程存储<br>3.后人根据此论文开发出 <strong>HDFS</strong></p>
-<p>本质： 文件被分割成很多块，使用冗余的方式（备份）储存于商用机器集群上。</p>
+        <h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><h4 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h4><p>  cookie 是小甜饼的意思。顾名思义，cookie 确实非常小，它的大小限制为4KB左右，是网景公司的前雇员 Lou Montulli 在1993年3月的发明。它的主要用途有<strong>保存登录信息</strong>，比如你登录某个网站市场可以看到“记住密码”，这通常就是通过在 cookie 中存入一段辨别用户身份的数据来实现的。</p>
 <blockquote>
-<p>MapReduce</p>
+<p>数据的生命周期： 一般由服务器生成，可设置失效时间。如果在浏览器端生成Cookie，默认是关闭浏览器后失效<br>存放数据的大小： 4k 左右<br>与服务器端通信： <strong>每次都会携带在HTTP头中</strong>，如果使用cookie保存过多数据会带来性能问题<br>易用性：需要程序员自己封装，源生的Cookie接口不友好</p>
 </blockquote>
-<p>大数据的分布式计算方式，主要思想是将任务分解然后在多台处理能力较弱的计算节点中同时处理，然后将结果合并从而完成大数据处理。<br>后人根据此论文开发出 <strong>MapReduce</strong></p>
+<h4 id="sessionStorage"><a href="#sessionStorage" class="headerlink" title="sessionStorage"></a>sessionStorage</h4><p>  sessionStorage 将一部分数据在当前会话中保存下来，刷新页面数据依旧存在。但当页面关闭后，sessionStorage 中的数据就会被清空。</p>
 <blockquote>
-<p>BigTable</p>
+<p>数据的生命周期： <strong>仅在当前会话下有效，关闭页面或浏览器后被清除</strong><br>存放数据的大小： 一般为5MB<br>与服务器端通信： 仅在客户端（即浏览器）中保存，不参与和服务器的通信<br>易用性：源生接口可以接受，亦可再次封装来对Object和Array有更好的支持  </p>
 </blockquote>
-<p>十几亿行，百万列的数据库<br>演变成后来的 <strong>Hbase</strong></p>
-<h3 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h3><blockquote>
-<p>分布式 </p>
-</blockquote>
-<p>相对于集中式<br>集中式：一台机器，将所有的东西（软件）放在一台机器上（安装）<br>分布式：多台机器，将东西进行划分，每台机器存储一部分  </p>
-<p>主从架构：<br>主节点：只有一个（管理者，调度）<br>从节点：多个（被管理者，干活的）</p>
-<h3 id="hadoop-模块"><a href="#hadoop-模块" class="headerlink" title="hadoop 模块"></a>hadoop 模块</h3><p>附上一张官网 hadoop 模块图  </p>
-<p><img src="/2019/03/10/hadoopIntro/modules.png" alt></p>
+<h4 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h4><p>  localStorage 是 HTML5 标准中新加入的技术，它并不是什么划时代的新东西。早在 IE 6 时代，就有一个叫 userData 的东西用于本地存储，而当时考虑到浏览器兼容性，更通用的方案是使用 Flash。而如今，localStorage 被大多数浏览器所支持，如果你的网站需要支持 IE6+，那以 userData 作为你的 polyfill 的方案是种不错的选择。</p>
 <blockquote>
-<p>common  </p>
+<p>数据的生命周期： <strong>除非被清除，否则永久保存</strong><br>存放数据的大小： 一般为5MB<br>与服务器端通信： 仅在客户端（即浏览器）中保存，不参与和服务器的通信<br>易用性：源生接口可以接受，亦可再次封装来对Object和Array有更好的支持</p>
 </blockquote>
-<p>公共模块，工具，为其他模式提供支撑的。</p>
-<blockquote>
-<p>HDFS (Hadoop Distributed File System)</p>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><blockquote>
+<p>cookie:  每个 HTTP 请求都会带着 cookie 的信息，所以 cookie 当然是能精简就精简啦，比较常用的一个应用场景就是判断用户是否登录<br>sessionStorage: 如果遇到一些内容特别多的表单，为了优化用户体验，我们可能要把表单页面拆分成多个子页面，然后按步骤引导用户填写<br>localStorage: 保存用户在电商网站的购物车信息、存储一些 HTML5 游戏产生的本地数据</p>
 </blockquote>
-<p>功能： 存储数据<br>主节点： <strong>namenode</strong> 决定数据存储到哪个 <strong>datanode</strong><br>从节点： datanode 真正存储数据的  </p>
-<p><img src="/2019/03/10/hadoopIntro/hdfs.png" alt></p>
-<blockquote>
-<p>YARN  </p>
-</blockquote>
-<p>分布式集群资源管理和任务调度<br>管理着整个集群的资源（内存、CPU）<br>主节点： resourceManager  管理整个集群资源的<br>从节点： nodeManager  管理当前机器资源  </p>
-<blockquote>
-<p>MapReduce  </p>
-</blockquote>
-<p>1.并行数据处理框架<br>2.分而治之思想：将海量的数据划分为多块，每块数据进行单独处理，最终将结果进行合并。<br>3.map: map task<br>　　单独处理每一部分数据 各个Map Task是并行的，各跑各的，在不同的机器里面<br>4.reduce: reduce task<br>　　合并所有的Map Task 结果</p>
-<p><img src="/2019/03/10/hadoopIntro/mapreduce.png" alt></p>
-<p>总结：<br>HDFS: namenode/datanode<br>YARN: resoureManager/nodemanager<br>都属于Java进程，启动JVM进程，运行服务</p>
+<h3 id="安全性的考虑"><a href="#安全性的考虑" class="headerlink" title="安全性的考虑"></a>安全性的考虑</h3><p>需要注意的是，不是什么数据都适合放在 Cookie、localStorage 和 sessionStorage 中的。使用它们的时候，需要时刻注意是否有代码存在 XSS 注入的风险。因为只要打开控制台，你就随意修改它们的值，也就是说如果你的网站中有 XSS 的风险，它们就能对你的 localStorage 肆意妄为。所以千万不要用它们存储你系统中的敏感数据。</p>
 
       
     </div>
@@ -402,9 +375,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/大数据/" rel="tag"># 大数据</a>
-          
-            <a href="/tags/hadoop/" rel="tag"># hadoop</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -417,8 +388,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/07/jdkandmysql/" rel="next" title="学习大数据的前期准备工作（三）">
-                <i class="fa fa-chevron-left"></i> 学习大数据的前期准备工作（三）
+              <a href="/2019/03/10/hadoopIntro/" rel="next" title="初识 hadoop">
+                <i class="fa fa-chevron-left"></i> 初识 hadoop
               </a>
             
           </div>
@@ -426,10 +397,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/05/webStorageApi/" rel="prev" title="cookie、sessionStorage、localStorage的区别">
-                cookie、sessionStorage、localStorage的区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -571,7 +538,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Google的三篇论文"><span class="nav-number">1.</span> <span class="nav-text">Google的三篇论文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关概念"><span class="nav-number">2.</span> <span class="nav-text">相关概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hadoop-模块"><span class="nav-number">3.</span> <span class="nav-text">hadoop 模块</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cookie"><span class="nav-number">1.1.</span> <span class="nav-text">cookie</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sessionStorage"><span class="nav-number">1.2.</span> <span class="nav-text">sessionStorage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#localStorage"><span class="nav-number">1.3.</span> <span class="nav-text">localStorage</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用场景"><span class="nav-number">2.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全性的考虑"><span class="nav-number">3.</span> <span class="nav-text">安全性的考虑</span></a></li></ol></div>
             
 
           </div>
