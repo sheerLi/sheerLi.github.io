@@ -262,7 +262,7 @@
                 目前共计 6 个标签
             </div>
             <div class="tag-cloud-tags">
-              <a href="/tags/JavaScript/" style="font-size: 21px; color: #6f6f6f">JavaScript</a> <a href="/tags/Linux/" style="font-size: 21px; color: #6f6f6f">Linux</a> <a href="/tags/hadoop/" style="font-size: 12px; color: #ccc">hadoop</a> <a href="/tags/前端/" style="font-size: 12px; color: #ccc">前端</a> <a href="/tags/大数据/" style="font-size: 30px; color: #111">大数据</a> <a href="/tags/排序/" style="font-size: 12px; color: #ccc">排序</a>
+              <a href="/tags/JavaScript/" style="font-size: 30px; color: #111">JavaScript</a> <a href="/tags/Linux/" style="font-size: 21px; color: #6f6f6f">Linux</a> <a href="/tags/hadoop/" style="font-size: 12px; color: #ccc">hadoop</a> <a href="/tags/前端/" style="font-size: 12px; color: #ccc">前端</a> <a href="/tags/大数据/" style="font-size: 30px; color: #111">大数据</a> <a href="/tags/排序/" style="font-size: 12px; color: #ccc">排序</a>
             </div>
           </div>
         
@@ -320,7 +320,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -557,6 +557,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'HIivikUBt8wze6E8cNpuvUk7-gzGzoHsz',
+        appKey: 'pIeJV2mi5hNAAqaJkX380YCq',
+        placeholder: '请在此输入你的留言',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
