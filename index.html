@@ -1,23 +1,2208 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
-{% block title %}{{ config.title }}{% if theme.index_with_subtitle and config.subtitle %} - {{config.subtitle }}{% endif %}{% endblock %}
 
-{% block page_class %}
-  {% if is_home() %}page-home{% endif -%}
-{% endblock %}
 
-{% block content %}
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一位只会cv的前端码农">
+<meta property="og:type" content="website">
+<meta property="og:title" content="sheerLi">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="sheerLi">
+<meta property="og:description" content="一位只会cv的前端码农">
+<meta property="og:locale">
+<meta property="article:author" content="sheerLi">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>sheerLi</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">sheerLi</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">凛冬已至，冰冷刺骨</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
   <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/01/sort/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sheerLi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/01/sort/" itemprop="url">基本排序的方式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-01T19:47:13+08:00">
+                2019-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>以下是 <strong>js</strong> 实现常用的基本排序，包括 <strong>快速排序</strong>、<strong>冒泡排序</strong>、<strong>堆排序</strong>、<strong>桶排序</strong>、<strong>插入排序</strong>、<strong>归并排序</strong>.</p>
+<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><blockquote>
+<p>   排序过程只需要三步:<br>（1）在数据集之中，选择一个元素作为”基准”（pivot）。<br>（2）所有小于”基准”的元素，都移到”基准”的左边；所有大于”基准”的元素，都移到”基准”的右边。<br>（3）对”基准”左边和右边的两个子集，不断重复第一步和第二步，直到所有子集只剩下一个元素为止。  </p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">quickSort</span>(<span class="params">array</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span>( arr.<span class="property">length</span> &lt;= <span class="number">1</span> ) &#123;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 找出数组中的基准值</span></span><br><span class="line">  <span class="keyword">var</span> pivotIndex = <span class="title class_">Math</span>.<span class="title function_">floor</span>(arr.<span class="property">length</span> / <span class="number">2</span>);</span><br><span class="line">  <span class="keyword">var</span> pivot = arr.<span class="title function_">splice</span>(pivotIndex, <span class="number">1</span>)[<span class="number">0</span>];</span><br><span class="line">  <span class="comment">// 定义左右两个个空数组</span></span><br><span class="line">  <span class="keyword">var</span> left = [], right = [];</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>, len = arr.<span class="property">length</span>; i &lt; len; i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr[i] &lt; pivot) &#123;</span><br><span class="line">      left.<span class="title function_">push</span>(arr[i])</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      right.<span class="title function_">push</span>(arr[i])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 递归调用快排</span></span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">quickSort</span>(left).<span class="title function_">concat</span>([pivot], <span class="title function_">quickSort</span>(right));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><blockquote>
+<p>数组中有 n 个数，比较每相邻两个数，如果前者大于后者，就把两个数交换位置;<br>这样一来，第一轮就可以选出一个最大的数放在最后面；<br>那么经过 n-1（数组的 length - 1） 轮，就完成了所有数的排序。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">bubbleSort</span>(<span class="params">arr</span>)&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span> - <span class="number">1</span>; i++)&#123;</span><br><span class="line">    <span class="comment">// 声明一个变量，作为标志位</span></span><br><span class="line">    <span class="keyword">var</span> done = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; arr.<span class="property">length</span>-<span class="number">1</span>-i; j++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(arr[j] &gt; arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">        <span class="keyword">var</span> smtp = arr[j];</span><br><span class="line">        arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">        arr[j+<span class="number">1</span>] = smtp;</span><br><span class="line">        <span class="comment">// 若有交换过，标志位置为 false</span></span><br><span class="line">        done = <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 可以减少不必要的排序，提高性能</span></span><br><span class="line">    <span class="keyword">if</span>(done)&#123;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;   </span><br><span class="line">  <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><blockquote>
+<p>1.从第一个元素开始，该元素可以认为已经被排序；<br>2.取出下一个元素，在已经排序的元素序列中从后向前扫描；<br>3.如果该元素（已排序）大于新元素，将该元素移到下一位置；<br>4.重复步骤3，直到找到已排序的元素小于或者等于新元素的位置；<br>5.将新元素插入到该位置后；<br>重复步骤2~5。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">insertionSort</span>(<span class="params">array</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">toString</span>.<span class="title function_">call</span>(array).<span class="title function_">slice</span>(<span class="number">8</span>, -<span class="number">1</span>) === <span class="string">&#x27;Array&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; array.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> key = array[i];</span><br><span class="line">        <span class="keyword">var</span> j = i - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; array[j] &gt; key) &#123;</span><br><span class="line">            array[j + <span class="number">1</span>] = array[j];</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        array[j + <span class="number">1</span>] = key;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> array;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&#x27;array is not an Array!&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><blockquote>
+<p>初始状态：无序区为R[1..n]，有序区为空；<br>第i趟排序(i&#x3D;1,2,3…n-1)开始时，当前有序区和无序区分别为R[1..i-1]和R(i..n）。该趟排序从当前无序区中选出关键字最 小的记录 R[k]，将它与无序区的第1个记录R交换，使R[1..i]和R[i+1..n)分别变为记录个数增加1个的新有序区和记录个数减少1个的新无序区；<br>n-1趟结束，数组有序化了。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">selectionSort</span>(<span class="params">array</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">toString</span>.<span class="title function_">call</span>(array).<span class="title function_">slice</span>(<span class="number">8</span>, -<span class="number">1</span>) === <span class="string">&#x27;Array&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> len = array.<span class="property">length</span>, temp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">      <span class="keyword">var</span> min = array[i];</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (array[j] &lt; min) &#123;</span><br><span class="line">          temp = min;</span><br><span class="line">          min = array[j];</span><br><span class="line">          array[j] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      array[i] = min;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> array;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&#x27;array is not an Array!&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h3><blockquote>
+<p>设置一个定量的数组当作空桶；<br>遍历输入数据，并且把数据一个一个放到对应的桶里去；<br>对每个不是空的桶进行排序；<br>从不是空的桶里把排好序的数据拼接起来。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*方法说明：桶排序</span></span><br><span class="line"><span class="comment">@param  array 数组</span></span><br><span class="line"><span class="comment">@param  num   桶的数量*/</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">bucketSort</span>(<span class="params">array, num</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (array.<span class="property">length</span> &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> array;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> len = array.<span class="property">length</span>, buckets = [], result = [], min = max = array[<span class="number">0</span>], regex = <span class="string">&#x27;/^[1-9]+[0-9]*$/&#x27;</span>, space, n = <span class="number">0</span>;</span><br><span class="line">  num = num || ((num &gt; <span class="number">1</span> &amp;&amp; regex.<span class="title function_">test</span>(num)) ? num : <span class="number">10</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; len; i++) &#123;</span><br><span class="line">    min = min &lt;= array[i] ? min : array[i];</span><br><span class="line">    max = max &gt;= array[i] ? max : array[i];</span><br><span class="line">  &#125;</span><br><span class="line">  space = (max - min + <span class="number">1</span>) / num;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; len; j++) &#123;</span><br><span class="line">    <span class="keyword">var</span> index = <span class="title class_">Math</span>.<span class="title function_">floor</span>((array[j] - min) / space);</span><br><span class="line">    <span class="keyword">if</span> (buckets[index]) &#123;   <span class="comment">//  非空桶，插入排序</span></span><br><span class="line">      <span class="keyword">var</span> k = buckets[index].<span class="property">length</span> - <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">while</span> (k &gt;= <span class="number">0</span> &amp;&amp; buckets[index][k] &gt; array[j]) &#123;</span><br><span class="line">          buckets[index][k + <span class="number">1</span>] = buckets[index][k];</span><br><span class="line">          k--;</span><br><span class="line">      &#125;</span><br><span class="line">      buckets[index][k + <span class="number">1</span>] = array[j];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;    <span class="comment">//空桶，初始化</span></span><br><span class="line">        buckets[index] = [];</span><br><span class="line">        buckets[index].<span class="title function_">push</span>(array[j]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> (n &lt; num) &#123;</span><br><span class="line">    result = result.<span class="title function_">concat</span>(buckets[n]);</span><br><span class="line">    n++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><blockquote>
+<p>把长度为n的输入序列分成两个长度为n&#x2F;2的子序列；<br>对这两个子序列分别采用归并排序；<br>将两个排序好的子序列合并成一个最终的排序序列。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">mergeSort</span>(<span class="params">array, p, r</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (p &lt; r) &#123;</span><br><span class="line">    <span class="keyword">var</span> q = <span class="title class_">Math</span>.<span class="title function_">floor</span>((p + r) / <span class="number">2</span>);</span><br><span class="line">    <span class="title function_">mergeSort</span>(array, p, q);</span><br><span class="line">    <span class="title function_">mergeSort</span>(array, q + <span class="number">1</span>, r);</span><br><span class="line">    <span class="title function_">merge</span>(array, p, q, r);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">merge</span>(<span class="params">array, p, q, r</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> n1 = q - p + <span class="number">1</span>, n2 = r - q, left = [], right = [], m = n = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; n1; i++) &#123;</span><br><span class="line">    left[i] = array[p + i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; n2; j++) &#123;</span><br><span class="line">    right[j] = array[q + <span class="number">1</span> + j];</span><br><span class="line">  &#125;</span><br><span class="line">  left[n1] = right[n2] = <span class="title class_">Number</span>.<span class="property">MAX_VALUE</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> k = p; k &lt;= r; k++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (left[m] &lt;= right[n]) &#123;</span><br><span class="line">      array[k] = left[m];</span><br><span class="line">      m++;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        array[k] = right[n];</span><br><span class="line">        n++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><blockquote>
+<p>将初始待排序关键字序列(R1,R2….Rn)构建成大顶堆，此堆为初始的无序区；<br>将堆顶元素R[1]与最后一个元素R[n]交换，此时得到新的无序区(R1,R2,……Rn-1)和新的有序区(Rn),且满足R[1,2…n-1]&lt;&#x3D;R[n]；<br>由于交换后新的堆顶R[1]可能违反堆的性质，因此需要对当前无序区(R1,R2,……Rn-1)调整为新堆，然后再次将R[1]与无序区最后一个元素交换，得到新的无序区(R1,R2….Rn-2)和新的有序区(Rn-1,Rn)。不断重复此过程直到有序区的元素个数为n-1，则整个排序过程完成。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*方法说明：堆排序</span></span><br><span class="line"><span class="comment">@param  array 待排序数组*/</span>           </span><br><span class="line"><span class="keyword">function</span> <span class="title function_">heapSort</span>(<span class="params">array</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">toString</span>.<span class="title function_">call</span>(array).<span class="title function_">slice</span>(<span class="number">8</span>, -<span class="number">1</span>) === <span class="string">&#x27;Array&#x27;</span>) &#123;</span><br><span class="line">    <span class="comment">//建堆</span></span><br><span class="line">    <span class="keyword">var</span> heapSize = array.<span class="property">length</span>, temp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="title class_">Math</span>.<span class="title function_">floor</span>(heapSize / <span class="number">2</span>); i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">      <span class="title function_">heapify</span>(array, i, heapSize);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//堆排序</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = heapSize - <span class="number">1</span>; j &gt;= <span class="number">1</span>; j--) &#123;</span><br><span class="line">      temp = array[<span class="number">0</span>];</span><br><span class="line">      array[<span class="number">0</span>] = array[j];</span><br><span class="line">      array[j] = temp;</span><br><span class="line">      <span class="title function_">heapify</span>(array, <span class="number">0</span>, --heapSize);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&#x27;array is not an Array!&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*方法说明：维护堆的性质</span></span><br><span class="line"><span class="comment">@param  arr 数组</span></span><br><span class="line"><span class="comment">@param  x   数组下标</span></span><br><span class="line"><span class="comment">@param  len 堆大小*/</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">heapify</span>(<span class="params">arr, x, len</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">toString</span>.<span class="title function_">call</span>(arr).<span class="title function_">slice</span>(<span class="number">8</span>, -<span class="number">1</span>) === <span class="string">&#x27;Array&#x27;</span> &amp;&amp; <span class="keyword">typeof</span> x === <span class="string">&#x27;number&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> l = <span class="number">2</span> * x, r = <span class="number">2</span> * x + <span class="number">1</span>, largest = x, temp;</span><br><span class="line">    <span class="keyword">if</span> (l &lt; len &amp;&amp; arr[l] &gt; arr[largest]) &#123;</span><br><span class="line">      largest = l;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (r &lt; len &amp;&amp; arr[r] &gt; arr[largest]) &#123;</span><br><span class="line">      largest = r;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (largest != x) &#123;</span><br><span class="line">      temp = arr[x];</span><br><span class="line">      arr[x] = arr[largest];</span><br><span class="line">      arr[largest] = temp;</span><br><span class="line">      <span class="title function_">heapify</span>(arr, largest, len);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&#x27;arr is not an Array or x is not a number!&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/06/fileDownloadAndUpload/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sheerLi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/06/fileDownloadAndUpload/" itemprop="url">前端实现文件的下载和上传</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-06T14:03:39+08:00">
+                2019-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近项目中遇到文件的上传和下载，这部分的知识之前也是比较陌生的，借此机会熟悉了这方面的知识。对此做一个简单的总结。</p>
+<h3 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h3><blockquote>
+<p>前端实现文件下载的方式主要是 3 种 <strong>window.open()<strong>、 <strong>form表单</strong> 、</strong>a标签</strong></p>
+</blockquote>
+<h4 id="方式1-通过-window-open"><a href="#方式1-通过-window-open" class="headerlink" title="方式1 通过 window.open()"></a>方式1 通过 window.open()</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">windowOpen</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="comment">// window.open(&#x27;./static/thumb3.jpg&#x27;)</span></span><br><span class="line">  <span class="variable language_">window</span>.<span class="title function_">open</span>(<span class="string">&#x27;./static/wendang.doc&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>具体表现</p>
+<blockquote>
+<p>img: 打开新网页，显示图片  </p>
+</blockquote>
+<blockquote>
+<p>word文档：下载该文件</p>
+</blockquote>
+<h4 id="方式2-通过-form表单提交"><a href="#方式2-通过-form表单提交" class="headerlink" title="方式2 通过 form表单提交"></a>方式2 通过 form表单提交</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">formDownload</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> form = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;form&#x27;</span>)</span><br><span class="line">  form.<span class="property">method</span> = <span class="string">&#x27;get&#x27;</span></span><br><span class="line">  form.<span class="property">style</span>.<span class="property">display</span> = <span class="string">&#x27;none&#x27;</span></span><br><span class="line">  <span class="comment">// form.action = &#x27;./static/thumb3.jpg&#x27;</span></span><br><span class="line">  form.<span class="property">action</span> = <span class="string">&#x27;./static/wendang.doc&#x27;</span></span><br><span class="line">  <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(form)</span><br><span class="line">  form.<span class="title function_">submit</span>()</span><br><span class="line">  <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">removeChild</span>(form)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>具体表现</p>
+<blockquote>
+<p>img: form 未设置 <strong>target</strong> 则在当前 url 显示图片  </p>
+</blockquote>
+<blockquote>
+<p>word文档：下载该文件</p>
+</blockquote>
+<p>注：以上两种方式若请求的 url 对应的是 img、txt 等格式时，浏览器直接打开相应的文件，而不是下载</p>
+<h4 id="方式3-通过-a标签"><a href="#方式3-通过-a标签" class="headerlink" title="方式3 通过 a标签"></a>方式3 通过 a标签</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">aDownload</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">  <span class="comment">// a.href = &#x27;./static/wendang.doc&#x27;</span></span><br><span class="line">  a.<span class="property">href</span> = <span class="string">&#x27;./static/thumb3.jpg&#x27;</span>    </span><br><span class="line">  a.<span class="property">download</span> = <span class="string">&#x27;thumb&#x27;</span></span><br><span class="line">  a.<span class="title function_">click</span>()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>具体表现</p>
+<blockquote>
+<p>未设置 download 属性，和上面两种表现形式一样<br>设置了 download 属性，图片也是会下载的</p>
+</blockquote>
+<h3 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h3><p>我在项目中使用的是 <strong>type&#x3D;”file”</strong> 的 input 标签，然后使用 formData 传输数据。<br>示例代码如下：</p>
+<p>html 部分</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">&quot;layui-form&quot;</span> <span class="attr">action</span>=<span class="string">&quot;&quot;</span> <span class="attr">id</span>=<span class="string">&quot;formload&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-item&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-label&quot;</span>&gt;</span>文件<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-input-block&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">name</span>=<span class="string">&quot;file&quot;</span> <span class="attr">id</span>=<span class="string">&quot;file&quot;</span> <span class="attr">required</span> <span class="attr">lay-verify</span>=<span class="string">&quot;required&quot;</span> </span></span><br><span class="line"><span class="tag">            <span class="attr">autocomplete</span>=<span class="string">&quot;off&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span>  </span><br></pre></td></tr></table></figure>
+
+<p>js 部分 文件上传</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> formData = <span class="keyword">new</span> <span class="title class_">FormData</span>($(<span class="string">&#x27;#formload&#x27;</span>)[<span class="number">0</span>])</span><br><span class="line">$.<span class="title function_">ajax</span>(&#123;</span><br><span class="line">  <span class="attr">url</span>: api + <span class="string">&#x27;/web/file/uploadFile&#x27;</span>,</span><br><span class="line">  <span class="attr">type</span>: <span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">  <span class="attr">cache</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">data</span>: formData,</span><br><span class="line">  <span class="attr">processData</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">contentType</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">error</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="comment">// 失败回调</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">success</span>: <span class="keyword">function</span>(<span class="params">res</span>)&#123;</span><br><span class="line">    <span class="comment">// 成功回调</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>文件对象的属性：lastModified、type、name 和 size，可根据需求自定义检查文档格式  </p>
+</blockquote>
+<blockquote>
+<p>文件对象 file 可通过 elem.files[0] 或者 elem.files.items[0] 获得。<br>其中 elem 为 type&#x3D;”file” 的 input 对象</p>
+</blockquote>
+<p>检查文档的代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">checkoutFile</span>(<span class="params">file</span>)&#123;</span><br><span class="line">  <span class="keyword">const</span> accept = [<span class="string">&#x27;.doc&#x27;</span>, <span class="string">&#x27;.docx&#x27;</span>]</span><br><span class="line">  <span class="keyword">const</span> index = file.<span class="property">name</span>.<span class="title function_">lastIndexOf</span>(<span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">  <span class="keyword">const</span> flag = <span class="literal">true</span></span><br><span class="line">  <span class="comment">// 文件格式不支持</span></span><br><span class="line">  <span class="keyword">if</span>(index &lt; <span class="number">0</span> || accept.<span class="title function_">indexOf</span>(<span class="params">file.name.substr(index).toLowerCase() &lt; <span class="number">0</span></span>) &#123;</span><br><span class="line">    flag = <span class="literal">false</span> </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 文件太大</span></span><br><span class="line">  <span class="keyword">if</span>(file.<span class="property">size</span> &gt; <span class="number">2</span> * <span class="number">1024</span> * <span class="number">1024</span>) &#123;</span><br><span class="line">    flag = <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote>
+<p>前面提到的 下载 给定的都是文件地址，但项目中往往为了安全，后台返回的是 文件流。  </p>
+</blockquote>
+<blockquote>
+<p>针对这种情况：  </p>
+</blockquote>
+<blockquote>
+<p>之前的 form表单提交方式同样适用（我在项目中用过）<br>这种方式有一个缺点，拿不到后端处理这个过程的时机，无法根据回调函数做交互以及进度提示  </p>
+</blockquote>
+<blockquote>
+<p>还有一个是 html5 提供的新方式 <a target="_blank" rel="noopener" href="https://juejin.im/post/5bd1b0aa6fb9a05d2c43f004">借助 blob 实现文本信息的下载</a>。感兴趣的可自行查阅 </p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/05/cookie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sheerLi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/05/cookie/" itemprop="url">聊一聊 cookie</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-05T17:42:04+08:00">
+                2019-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>最近在项目中遇到 <strong>请求后台接口时的身份验证</strong> 问题，需要使用 cookie 存储用户登录信息，便于每次在请求后台接口时，带上 cookie 达到身份的校验。借此机会，恶补了一下 cookie 方面的知识</p>
+<h3 id="cookie-的工作方式"><a href="#cookie-的工作方式" class="headerlink" title="cookie 的工作方式"></a>cookie 的工作方式</h3><p><strong>cookie</strong> 是浏览器提供的功能，它其实是存储在浏览器中的纯文本，浏览器的安装目录下会专门有一个 cookie 文件夹来存放各个域下的设置的 <strong>cookie</strong></p>
+<p>每当发送请求时，浏览器会自动检查是否有相应的 <strong>cookie</strong>, 有则添加到 <strong>request header</strong> 中的 cookie 字段中。</p>
+<p>由于 <strong>cookie</strong> 存放的数据每次都会放到 http 请求头中，如果其中的数据没有必要发送给服务器，无疑增加了网络开销；但是这些数据每个请求到需要发送给服务器，那么免去了重复添加请求参数的操作。所以每个请求都需要携带的数据特别适合存放在 <strong>cookie</strong> 中（例如身份认证）</p>
+<h3 id="cookie-的格式"><a href="#cookie-的格式" class="headerlink" title="cookie 的格式"></a>cookie 的格式</h3><p>JS 原生的方法 <strong>document.cookie</strong> 能够获取到 <strong>cookie</strong> 。获取到的是一个字符串，这个字符串是有格式的, 由键值对 <strong>key&#x3D;value</strong> 构成, 键值对之间有一个 <strong>分号</strong> 和一个 <strong>空格</strong> 隔开</p>
+<h3 id="cookie-的属性"><a href="#cookie-的属性" class="headerlink" title="cookie 的属性"></a>cookie 的属性</h3><h4 id="expires"><a href="#expires" class="headerlink" title="expires"></a>expires</h4><blockquote>
+<p>expires: 用来设置 <strong>cookie什么时间内有效</strong>。<strong>expires</strong> 是 <strong>cookie</strong> 的失效时间, 格式必须是 <strong>GMT</strong> 格式的时间(可以通过 <strong>new Date().toGMTString()</strong> 或者 <strong>new Date().toUTCString()</strong> 来获得)<br>如 <strong>expires&#x3D;Thu, 25 Feb 2016 04:18:00 GMT</strong> 表示 <strong>cookie</strong> 将 在2016年2月25日4:<strong>18分之后失效，对于失效的cookie</strong> 浏览器会清空。如果没有设置该选项，则默认有效期为<strong>session</strong>，即会话 cookie。这种<strong>cookie</strong>在浏览器关闭后就没有了。</p>
+</blockquote>
+<h4 id="domain-和-path"><a href="#domain-和-path" class="headerlink" title="domain 和 path"></a>domain 和 path</h4><blockquote>
+<p>domain: 是域名  若未设置，默认为 设置该cookie的网页所在的域名<br>path: 是路径 若未设置，默认为 设置该cookie的网页所在的目录<br>两者加起来限制 cookie 能够被哪些URL访问</p>
+</blockquote>
+<h4 id="secure"><a href="#secure" class="headerlink" title="secure"></a>secure</h4><blockquote>
+<p>用来设置<strong>cookie</strong>只在确保安全的请求中才会发送。当请求是HTTPS或者其他安全协议时，包含 <strong>secure</strong> 选项的 <strong>cookie</strong> 才能被发送至服务器。<br>默认 secure 为空，所以默认按情况下，不管是 https 还是 http 请求, cookie 都能被发送到服务端<br>注：在http协议的网页中是无法设置secure类型cookie的。</p>
+</blockquote>
+<h4 id="httpOnly"><a href="#httpOnly" class="headerlink" title="httpOnly"></a>httpOnly</h4><blockquote>
+<p>这个选项用来设置cookie是否能通过 js 去访问<br>默认 httpOnly 为空,所以默认情况下 js 可以访问（读取、修改、删除）这个cookie 的<br>这种类型的 cookie 只能通过 服务端来设置<br>这个选项是 限制客户端去访问cookie 保障安全</p>
+</blockquote>
+<h3 id="如何设置-cookie"><a href="#如何设置-cookie" class="headerlink" title="如何设置 cookie"></a>如何设置 cookie</h3><h4 id="服务端设置-cookie"><a href="#服务端设置-cookie" class="headerlink" title="服务端设置 cookie"></a>服务端设置 cookie</h4><p>  无论是请求资源文件还是发送一个 ajax 请求，服务端都会返回response。而response-header中有一个叫做 set-cookie，是服务端专门用来设置 cookie 的。</p>
+<p>  注意：</p>
+<blockquote>
+<p>一个set-Cookie字段只能设置一个cookie，当你要想设置多个 cookie，需要添加同样多的set-Cookie字段<br>服务端可以设置cookie 的所有选项：expires、domain、path、secure、HttpOnly</p>
+</blockquote>
+<h4 id="客户端设置-cookie"><a href="#客户端设置-cookie" class="headerlink" title="客户端设置 cookie"></a>客户端设置 cookie</h4><p>  通过 js 来设置 cookie</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="property">cookie</span> = <span class="string">&quot;name=jack; &quot;</span>;</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">cookie</span> = <span class="string">&quot;age=12; expires=Thu, 26 Feb 2116 11:50:25 GMT; domain=baidu.com; path=/&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>  下面的写法 无法创建多个 cookie ，只是添加了 “name&#x3D;jack”，若是想添加多个 cookie 那么需要重复执行document.cookie &#x3D; “key&#x3D;name”。如上面所示</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="property">cookie</span> = <span class="string">&quot;name=jack; age=12; &quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何修改、删除"><a href="#如何修改、删除" class="headerlink" title="如何修改、删除"></a>如何修改、删除</h3><h4 id="修改-cookie"><a href="#修改-cookie" class="headerlink" title="修改 cookie"></a>修改 cookie</h4><p>  要想修改一个<strong>cookie</strong>，只需要重新赋值就行，旧的值会被新的值覆盖。但要注意一点，在设置新<strong>cookie</strong>时，<strong>path&#x2F;domain</strong>这几个选项一定要旧<strong>cookie</strong> 保持一样。否则不会修改旧值，而是添加了一个新的 <strong>cookie</strong>。</p>
+<h4 id="删除-cookie"><a href="#删除-cookie" class="headerlink" title="删除 cookie"></a>删除 cookie</h4><p>  删除一个cookie 也挺简单，也是重新赋值，只要将这个新cookie的expires 选项设置为一个过去的时间点就行了。但同样要注意，path&#x2F;domain&#x2F;这几个选项一定要旧 cookie 保持一样。</p>
+<h3 id="跨域请求中的-cookie"><a href="#跨域请求中的-cookie" class="headerlink" title="跨域请求中的 cookie"></a>跨域请求中的 cookie</h3><blockquote>
+<p>在发同域请求时，浏览器会将cookie自动加在request header中。但大家是否遇到过这样的场景：在发送跨域请求时，cookie并没有自动加在request header中。</p>
+</blockquote>
+<p>解决办法：</p>
+<blockquote>
+<p>在跨域请求中，client端必须手动设置xhr.withCredentials&#x3D;true，且server端也必须允许request能携带认证信息（即response header中包含Access-Control-Allow-Credentials:true），这样浏览器才会自动将cookie加在request header中。  </p>
+</blockquote>
+<blockquote>
+<p>注意： 一旦跨域request能够携带认证信息，server端一定不能将Access-Control-Allow-Origin设置为*，而必须设置为请求页面的域名。</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/05/webStorageApi/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sheerLi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/05/webStorageApi/" itemprop="url">cookie、sessionStorage、localStorage的区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-05T16:40:20+08:00">
+                2019-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><h4 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h4><p>  cookie 是小甜饼的意思。顾名思义，cookie 确实非常小，它的大小限制为4KB左右，是网景公司的前雇员 Lou Montulli 在1993年3月的发明。它的主要用途有<strong>保存登录信息</strong>，比如你登录某个网站市场可以看到“记住密码”，这通常就是通过在 cookie 中存入一段辨别用户身份的数据来实现的。</p>
+<blockquote>
+<p>数据的生命周期： 一般由服务器生成，可设置失效时间。如果在浏览器端生成Cookie，默认是关闭浏览器后失效<br>存放数据的大小： 4k 左右<br>与服务器端通信： <strong>每次都会携带在HTTP头中</strong>，如果使用cookie保存过多数据会带来性能问题<br>易用性：需要程序员自己封装，源生的Cookie接口不友好</p>
+</blockquote>
+<h4 id="sessionStorage"><a href="#sessionStorage" class="headerlink" title="sessionStorage"></a>sessionStorage</h4><p>  sessionStorage 将一部分数据在当前会话中保存下来，刷新页面数据依旧存在。但当页面关闭后，sessionStorage 中的数据就会被清空。</p>
+<blockquote>
+<p>数据的生命周期： <strong>仅在当前会话下有效，关闭页面或浏览器后被清除</strong><br>存放数据的大小： 一般为5MB<br>与服务器端通信： 仅在客户端（即浏览器）中保存，不参与和服务器的通信<br>易用性：源生接口可以接受，亦可再次封装来对Object和Array有更好的支持  </p>
+</blockquote>
+<h4 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h4><p>  localStorage 是 HTML5 标准中新加入的技术，它并不是什么划时代的新东西。早在 IE 6 时代，就有一个叫 userData 的东西用于本地存储，而当时考虑到浏览器兼容性，更通用的方案是使用 Flash。而如今，localStorage 被大多数浏览器所支持，如果你的网站需要支持 IE6+，那以 userData 作为你的 polyfill 的方案是种不错的选择。</p>
+<blockquote>
+<p>数据的生命周期： <strong>除非被清除，否则永久保存</strong><br>存放数据的大小： 一般为5MB<br>与服务器端通信： 仅在客户端（即浏览器）中保存，不参与和服务器的通信<br>易用性：源生接口可以接受，亦可再次封装来对Object和Array有更好的支持</p>
+</blockquote>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><blockquote>
+<p>cookie:  每个 HTTP 请求都会带着 cookie 的信息，所以 cookie 当然是能精简就精简啦，比较常用的一个应用场景就是判断用户是否登录<br>sessionStorage: 如果遇到一些内容特别多的表单，为了优化用户体验，我们可能要把表单页面拆分成多个子页面，然后按步骤引导用户填写<br>localStorage: 保存用户在电商网站的购物车信息、存储一些 HTML5 游戏产生的本地数据</p>
+</blockquote>
+<h3 id="安全性的考虑"><a href="#安全性的考虑" class="headerlink" title="安全性的考虑"></a>安全性的考虑</h3><p>需要注意的是，不是什么数据都适合放在 Cookie、localStorage 和 sessionStorage 中的。使用它们的时候，需要时刻注意是否有代码存在 XSS 注入的风险。因为只要打开控制台，你就随意修改它们的值，也就是说如果你的网站中有 XSS 的风险，它们就能对你的 localStorage 肆意妄为。所以千万不要用它们存储你系统中的敏感数据。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/10/hadoopIntro/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sheerLi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/10/hadoopIntro/" itemprop="url">初识 hadoop</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-10T21:00:24+08:00">
+                2019-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Google的三篇论文"><a href="#Google的三篇论文" class="headerlink" title="Google的三篇论文"></a>Google的三篇论文</h3><blockquote>
+<p>Google FS (Google File System)</p>
+</blockquote>
+<p>1.可扩展的分布式文件系统，用于大型的、分布式的、对大量数据进行访问的应用<br>2.对海量数据进程存储<br>3.后人根据此论文开发出 <strong>HDFS</strong></p>
+<p>本质： 文件被分割成很多块，使用冗余的方式（备份）储存于商用机器集群上。</p>
+<blockquote>
+<p>MapReduce</p>
+</blockquote>
+<p>大数据的分布式计算方式，主要思想是将任务分解然后在多台处理能力较弱的计算节点中同时处理，然后将结果合并从而完成大数据处理。<br>后人根据此论文开发出 <strong>MapReduce</strong></p>
+<blockquote>
+<p>BigTable</p>
+</blockquote>
+<p>十几亿行，百万列的数据库<br>演变成后来的 <strong>Hbase</strong></p>
+<h3 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h3><blockquote>
+<p>分布式 </p>
+</blockquote>
+<p>相对于集中式<br>集中式：一台机器，将所有的东西（软件）放在一台机器上（安装）<br>分布式：多台机器，将东西进行划分，每台机器存储一部分  </p>
+<p>主从架构：<br>主节点：只有一个（管理者，调度）<br>从节点：多个（被管理者，干活的）</p>
+<h3 id="hadoop-模块"><a href="#hadoop-模块" class="headerlink" title="hadoop 模块"></a>hadoop 模块</h3><p>附上一张官网 hadoop 模块图  </p>
+<p><img src="/.com//modules.png"></p>
+<blockquote>
+<p>common  </p>
+</blockquote>
+<p>公共模块，工具，为其他模式提供支撑的。</p>
+<blockquote>
+<p>HDFS (Hadoop Distributed File System)</p>
+</blockquote>
+<p>功能： 存储数据<br>主节点： <strong>namenode</strong> 决定数据存储到哪个 <strong>datanode</strong><br>从节点： datanode 真正存储数据的  </p>
+<p><img src="/.com//hdfs.png"></p>
+<blockquote>
+<p>YARN  </p>
+</blockquote>
+<p>分布式集群资源管理和任务调度<br>管理着整个集群的资源（内存、CPU）<br>主节点： resourceManager  管理整个集群资源的<br>从节点： nodeManager  管理当前机器资源  </p>
+<blockquote>
+<p>MapReduce  </p>
+</blockquote>
+<p>1.并行数据处理框架<br>2.分而治之思想：将海量的数据划分为多块，每块数据进行单独处理，最终将结果进行合并。<br>3.map: map task<br>　　单独处理每一部分数据 各个Map Task是并行的，各跑各的，在不同的机器里面<br>4.reduce: reduce task<br>　　合并所有的Map Task 结果</p>
+<p><img src="/.com//mapreduce.png"></p>
+<p>总结：<br>HDFS: namenode&#x2F;datanode<br>YARN: resoureManager&#x2F;nodemanager<br>都属于Java进程，启动JVM进程，运行服务</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/07/jdkandmysql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sheerLi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/07/jdkandmysql/" itemprop="url">学习大数据的前期准备工作（三）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-07T19:27:57+08:00">
+                2019-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>本篇文章主要是讲 linux 命令下载并安装 jdk 和 mysql，为后面的大数据做准备</p>
+<h3 id="Linux-软件安装命令"><a href="#Linux-软件安装命令" class="headerlink" title="Linux 软件安装命令"></a>Linux 软件安装命令</h3><h4 id="rpm"><a href="#rpm" class="headerlink" title="rpm"></a>rpm</h4><blockquote>
+<p>安装 rpm 结尾的软件包<br>软件查询： rpm –qa: 列举所有当前安装rpm包<br>安装软件:  rpm – ivh XXX.rpm<br>问题： A &lt;-B &lt;-C  需要自己手动解决依赖<br>卸载： rpm -e  –nodeps  XXXXX</p>
+</blockquote>
+<h4 id="yum"><a href="#yum" class="headerlink" title="yum"></a>yum</h4><blockquote>
+<p>通过软件源进行安装,类似 软件软件 点击“安装”<br>查看所有yum支持的包:yum list<br>查看当前已经安装的包：yum list installed<br>卸载：yum remove XX<br>安装：yum install –y zip  </p>
+</blockquote>
+<h4 id="绿色版本"><a href="#绿色版本" class="headerlink" title="绿色版本"></a>绿色版本</h4><blockquote>
+<p>绝大部分都是解压直接能用</p>
+</blockquote>
+<h3 id="Linux-虚拟机安装-jdk-并-配置环境变量"><a href="#Linux-虚拟机安装-jdk-并-配置环境变量" class="headerlink" title="Linux 虚拟机安装 jdk 并 配置环境变量"></a>Linux 虚拟机安装 jdk 并 配置环境变量</h3><blockquote>
+<p><strong>步骤 1</strong><br>将 jdk 的包通过 远程控制工具 SearchSRC 上传到 Linux 虚拟机中</p>
+</blockquote>
+<p><img src="/.com//upload.png"></p>
+<blockquote>
+<p><strong>步骤 2</strong><br>使用 tar –zxvf jdk-8u91-linux-x64.tar.gz  -C  .&#x2F; 解压到当前文件夹</p>
+</blockquote>
+<p><img src="/.com//processing.png"></p>
+<blockquote>
+<p>查看 test 文件夹</p>
+</blockquote>
+<p><img src="/.com//jdkdeperate.png"></p>
+<blockquote>
+<p><strong>步骤 3</strong><br>sudo vi &#x2F;etc&#x2F;profile 配置环境变量</p>
+</blockquote>
+<p><img src="/.com//javaenvironment.png"></p>
+<blockquote>
+<p>保存退出后 source &#x2F;etc&#x2F;profile 使其生效</p>
+</blockquote>
+<p><img src="/.com//jdkcomple.png"></p>
+<h3 id="安装-mysql"><a href="#安装-mysql" class="headerlink" title="安装 mysql"></a>安装 mysql</h3><blockquote>
+<p><strong>步骤 1</strong><br>检查是否已经安装 mysql<br>命令: rpm -qa | grep mysql</p>
+</blockquote>
+<p><img src="/.com//checkmysql.png"></p>
+<blockquote>
+<p>卸载依赖<br>命令：sudo rpm -e  –nodeps mysql-libs-5.1.66-2.el6_3.x86_64</p>
+</blockquote>
+<p><img src="/.com//uninstallmysql.png"></p>
+<blockquote>
+<p>安装mysql<br>命令：sudo yum install -y mysql-server</p>
+</blockquote>
+<p><img src="/.com//installComple.png"></p>
+<blockquote>
+<p>启动 mysql 服务<br>命令: sudo service mysqld start</p>
+</blockquote>
+<p><img src="/.com//startmysql.png"></p>
+<blockquote>
+<p>修改 mysql 密码为 123456<br>命令：&#x2F;usr&#x2F;bin&#x2F;mysqladmin -u root password ‘123456’</p>
+</blockquote>
+<blockquote>
+<p>登录 mysql<br>命令：mysql -u root -p123456</p>
+</blockquote>
+<p><img src="/.com//loginmysql.png"></p>
+<blockquote>
+<p>展示数据库<br>命令：show databases</p>
+</blockquote>
+<p><img src="/.com//showdatabases.png"></p>
+<blockquote>
+<p>设置开机启动 </p>
+</blockquote>
+<p><img src="/.com//startkaiji.png"></p>
+<p>经过以上步骤，jdk 和 mysql 都安装完成!</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/06/LinuxCommand/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sheerLi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/06/LinuxCommand/" itemprop="url">学习大数据的前期准备工作（二）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-06T19:47:13+08:00">
+                2019-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Linux-常用命令"><a href="#Linux-常用命令" class="headerlink" title="Linux 常用命令"></a>Linux 常用命令</h2><blockquote>
+<p>命令通用格式 : <strong>命令 选项（参数） 操作的文件或者目录</strong></p>
+</blockquote>
+<h3 id="普通命令"><a href="#普通命令" class="headerlink" title="普通命令"></a>普通命令</h3><blockquote>
+<p><strong>ls</strong><br>格式：<strong>ls 目录</strong><br>参数: <strong>a</strong> : 列举包含隐藏文件<br>      <strong>l</strong> : 使用长格式查看  <strong>ls -l</strong> 等同于  <strong>ll</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>cd</strong><br>改变目录  </p>
+</blockquote>
+<blockquote>
+<p><strong>pwd</strong><br>打印当前所在目录  </p>
+</blockquote>
+<blockquote>
+<p><strong>clear</strong><br>清屏 等同于 <strong>ctrl</strong> + <strong>l</strong>  </p>
+</blockquote>
+<blockquote>
+<p><strong>history</strong><br>查看命令的历史记录  </p>
+</blockquote>
+<h3 id="文件操作命令"><a href="#文件操作命令" class="headerlink" title="文件操作命令"></a>文件操作命令</h3><h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><blockquote>
+<p>创建文件<br>touch a.txt</p>
+</blockquote>
+<p><img src="/.com//touch.png"></p>
+<blockquote>
+<p>创建一个空目录<br>mkdir dir1  </p>
+</blockquote>
+<p><img src="/.com//mkdir1.png"></p>
+<blockquote>
+<p>递归创建一个非空目录<br>mkdir -p dir2&#x2F;dir3 </p>
+</blockquote>
+<p><img src="/.com//mkdir2.png"></p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><blockquote>
+<p>删除文件<br>rm a.txt<br>-f 参数 命令是免确认</p>
+</blockquote>
+<p><img src="/.com//rm1.png"></p>
+<blockquote>
+<p>删除目录（只能删空目录）<br>rm -rf mkdir2</p>
+</blockquote>
+<p><img src="/.com//rm2.png">  </p>
+<h4 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h4><blockquote>
+<p>vi &#x2F; vim  </p>
+</blockquote>
+<h4 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h4><blockquote>
+<p>复制文件<br>cp a.txt dir1&#x2F;  </p>
+</blockquote>
+<p><img src="/.com//cp.png"></p>
+<blockquote>
+<p>复制目录<br>cp -r dir1 dir2&#x2F;</p>
+</blockquote>
+<p><img src="/.com//cp2.png"> </p>
+<h4 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h4><blockquote>
+<p>将 a.txt 文件移动到 dir2 目录<br>mv a.txt dir2</p>
+</blockquote>
+<p><img src="/.com//mv1.png"></p>
+<h4 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h4><blockquote>
+<p>more<br>分页查看 显示一屏数据，按“enter”往下翻页</p>
+</blockquote>
+<blockquote>
+<p>less<br>分页查看 显示一屏数据，按方向上下键翻页 按“q”退出预览</p>
+</blockquote>
+<blockquote>
+<p>head<br>查看文件头部内容，默认读取文件前10行<br>常用参数：**-n**: 查看行数</p>
+</blockquote>
+<blockquote>
+<p>tail<br>查看文件尾部内容，默认读取文件后10行<br>常用参数:<br>-n:查看行数<br>-F:动态查看，监听一个文件的变化</p>
+</blockquote>
+<h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><h4 id="管理员"><a href="#管理员" class="headerlink" title="管理员"></a>管理员</h4><blockquote>
+<p>用户 id 是 0</p>
+</blockquote>
+<h4 id="普通用户"><a href="#普通用户" class="headerlink" title="普通用户"></a>普通用户</h4><blockquote>
+<p>用户 id 从 500 开始,可以自己创建普通用户</p>
+</blockquote>
+<h4 id="用户信息文件"><a href="#用户信息文件" class="headerlink" title="用户信息文件"></a>用户信息文件</h4><blockquote>
+<p>more &#x2F;etc&#x2F;passwd</p>
+</blockquote>
+<p><img src="/.com//viewuser.png"></p>
+<blockquote>
+<p>标红意思<br>用户名:密码:uid:gid:所属组的名字:家目录:所用shell</p>
+</blockquote>
+<h4 id="用户组信息文件"><a href="#用户组信息文件" class="headerlink" title="用户组信息文件"></a>用户组信息文件</h4><blockquote>
+<p>more &#x2F;etc&#x2F;group</p>
+</blockquote>
+<h4 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h4><h5 id="切换到管理员"><a href="#切换到管理员" class="headerlink" title="切换到管理员"></a>切换到管理员</h5><blockquote>
+<p>su -</p>
+</blockquote>
+<h5 id="切换到普通用户"><a href="#切换到普通用户" class="headerlink" title="切换到普通用户"></a>切换到普通用户</h5><blockquote>
+<p>su -用户名</p>
+</blockquote>
+<h4 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h4><blockquote>
+<p>exit</p>
+</blockquote>
+<h4 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h4><blockquote>
+<p>格式：useradd username<br>例: useradd LW</p>
+</blockquote>
+<h4 id="查看用户"><a href="#查看用户" class="headerlink" title="查看用户"></a>查看用户</h4><blockquote>
+<p>格式：id username<br>例: id LW</p>
+</blockquote>
+<p><img src="/.com//viewuserinfo.png"></p>
+<h4 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h4><blockquote>
+<p>格式：passwd username<br>例: passwd LW</p>
+</blockquote>
+<h4 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h4><blockquote>
+<p>格式：userdel username<br>参数：-r  既删除用户又删除该用户的家<br>例: userdel LW</p>
+</blockquote>
+<h3 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h3><h4 id="用户分类"><a href="#用户分类" class="headerlink" title="用户分类"></a>用户分类</h4><blockquote>
+<p>所有者: <strong>u</strong><br>同组用户: <strong>g</strong><br>其他人: <strong>o</strong></p>
+</blockquote>
+<h4 id="权限分类"><a href="#权限分类" class="headerlink" title="权限分类"></a>权限分类</h4><blockquote>
+<p>读: <strong>r</strong><br>写: <strong>w</strong><br>执行: <strong>x</strong><br>没有权限: <strong>-</strong></p>
+</blockquote>
+<h4 id="文件权限详情"><a href="#文件权限详情" class="headerlink" title="文件权限详情"></a>文件权限详情</h4><p><img src="/.com//per.png"></p>
+<blockquote>
+<p>第一位：文件类型，<strong>d</strong>:目录，**-**：文件<br>剩下9位，3位一组<br>rwx：所有者拥有的 <strong>读</strong> <strong>写</strong> <strong>执行</strong> 权限<br>rwx：同组用户拥有的  <strong>读</strong> <strong>写</strong> <strong>执行</strong> 权限<br>r-x：其他人拥有的  <strong>读</strong> <strong>执行</strong> 权限<br>huadian huadian：所有者 所属组<br>4096：文件大小<br>Mar  6 09:14: 日期<br>b: 文件名</p>
+</blockquote>
+<h4 id="修改权限"><a href="#修改权限" class="headerlink" title="修改权限"></a>修改权限</h4><blockquote>
+<p>语法： Chmod  [添加或者删除权限]  文件或者目录  </p>
+</blockquote>
+<h5 id="通过字符修改"><a href="#通过字符修改" class="headerlink" title="通过字符修改"></a>通过字符修改</h5><blockquote>
+<p>给其他人添加 写的 权限</p>
+</blockquote>
+<p><img src="/.com//chmod1.png"></p>
+<blockquote>
+<p>给其他人删除 写的 权限</p>
+</blockquote>
+<p><img src="/.com//chmod2.png"></p>
+<blockquote>
+<p>给任何人都添加上 可执行 权限  </p>
+</blockquote>
+<p><img src="/.com//chmod3.png"></p>
+<blockquote>
+<p>给所属者和同组用户删除权限</p>
+</blockquote>
+<p><img src="/.com//chmod4.png"></p>
+<h5 id="通过数组修改"><a href="#通过数组修改" class="headerlink" title="通过数组修改"></a>通过数组修改</h5><blockquote>
+<p><strong>说明</strong><br>该位有权限用 1 表示,没有用 0 表示<br><strong>rwx</strong>  111  &#x3D;&gt; 7(十进制)<br><strong>r-x</strong>  101  &#x3D;&gt; 5(十进制)<br><strong>rw-</strong>  110  &#x3D;&gt; 6(十进制)</p>
+</blockquote>
+<blockquote>
+<p>例子：让 <strong>任何用户</strong> 拥有 <strong>全部权限</strong><br>例子：chmod 777 a.txt</p>
+</blockquote>
+<p><img src="/.com//chmod5.png"></p>
+<blockquote>
+<p>例子：让 <strong>任何用户</strong> 拥有 <strong>读写</strong> 没有 <strong>执行</strong> 的权限<br>例子：chmod 666 a.txt</p>
+</blockquote>
+<p><img src="/.com//chmod6.png"></p>
+<h4 id="修改文件-所有者-和-所属组"><a href="#修改文件-所有者-和-所属组" class="headerlink" title="修改文件 所有者 和 所属组"></a>修改文件 所有者 和 所属组</h4><blockquote>
+<p>语法格式：<strong>chown username:groupname 文件或者目录</strong><br>参数： -R 递归修改所有的文件<br>例：chown -R root:root b</p>
+</blockquote>
+<p><img src="/.com//chown.png"></p>
+<h3 id="常见符号"><a href="#常见符号" class="headerlink" title="常见符号"></a>常见符号</h3><h4 id><a href="#" class="headerlink" title="."></a>.</h4><blockquote>
+<p>表示当前目录</p>
+</blockquote>
+<h4 id="-1"><a href="#-1" class="headerlink" title="."></a>.</h4><blockquote>
+<p>表示上一级目录</p>
+</blockquote>
+<h4 id="-2"><a href="#-2" class="headerlink" title="~"></a>~</h4><blockquote>
+<p>用户的家目录<br>例如： cd ~</p>
+</blockquote>
+<p><img src="/.com//gohome.png"></p>
+<h4 id="-3"><a href="#-3" class="headerlink" title="|"></a>|</h4><blockquote>
+<p>表示管道符<br>例如：Ps –ef | grep java   过滤留下java的进程</p>
+</blockquote>
+<h4 id="gt"><a href="#gt" class="headerlink" title="&gt;"></a>&gt;</h4><blockquote>
+<p>覆盖重写某个文件</p>
+</blockquote>
+<h4 id="gt-gt"><a href="#gt-gt" class="headerlink" title="&gt;&gt;"></a>&gt;&gt;</h4><blockquote>
+<p>追加到某个文件</p>
+</blockquote>
+<p><img src="/.com//override.png"></p>
+<h3 id="文本编辑-vi-x2F-vim"><a href="#文本编辑-vi-x2F-vim" class="headerlink" title="文本编辑 vi &#x2F; vim"></a>文本编辑 vi &#x2F; vim</h3><h4 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h4><blockquote>
+<p>　vi 文件名<br> 如果编辑一个不存在的文件，默认会创建一个文件</p>
+</blockquote>
+<h4 id="种模式"><a href="#种模式" class="headerlink" title="种模式"></a>种模式</h4><h5 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h5><blockquote>
+<p>gg：跳转到第一行<br>G:跳转到最后一行<br>5gg:跳转到第5行<br>yy:复制当前行<br>p:在当前位置粘贴<br>dd:删除光标所在行<br>5dd:从当行开始，删除连续5行<br>99999999999999dd: 清除文档<br>u:撤销上一步<br>i:进入插入模式<br>o:在光标所在行 下一行 进入插入模式<br>O:在光标所在乎 前一行进入插入模式   </p>
+</blockquote>
+<h5 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h5><blockquote>
+<p>在命令模式下，输入“i”,进入插入模式</p>
+</blockquote>
+<h5 id="最后行模式"><a href="#最后行模式" class="headerlink" title="最后行模式"></a>最后行模式</h5><blockquote>
+<p>进入方式:<br>按下“ESC”进入命令模式<br>按下shift + : 进入最后行模式</p>
+</blockquote>
+<blockquote>
+<p>命令:<br>wq：保存退出<br>q: 不保存退出<br>!: 强制<br>q!: 强制退出<br>set nu(number): 显示行号<br>&#x2F;string 检索字符串  按“n”找下一个</p>
+</blockquote>
+<h3 id="常用工具命令"><a href="#常用工具命令" class="headerlink" title="常用工具命令"></a>常用工具命令</h3><h4 id="visudo-较重要"><a href="#visudo-较重要" class="headerlink" title="visudo (较重要)"></a>visudo (较重要)</h4><blockquote>
+<p>在企业中，通常不会使用root，为了安全，一般使用普通用户。<br>普通用户有时候，也需要操作一些管理员需要的权限</p>
+</blockquote>
+<blockquote>
+<p>例：让 huadian 用户拥有 root 所有权限   操作如下<br>切换到 root 用户<br>执行 visudo 命令<br>添加如下配置</p>
+</blockquote>
+<p><img src="/.com//visudo.png"></p>
+<blockquote>
+<p>普通用户如果使用额外赋予的权限<br>sudo 额外权限名</p>
+</blockquote>
+<p><img src="/.com//sudo.png"></p>
+<h4 id="man"><a href="#man" class="headerlink" title="man"></a>man</h4><blockquote>
+<p>帮助命令<br>例: man ls</p>
+</blockquote>
+<h4 id="wc"><a href="#wc" class="headerlink" title="wc"></a>wc</h4><blockquote>
+<p>文本统计工具<br>例： wc a.txt<br>结果：行 单词书 字符数 文件名</p>
+</blockquote>
+<p><img src="/.com//wc.png"></p>
+<h4 id="du"><a href="#du" class="headerlink" title="du"></a>du</h4><blockquote>
+<p>文件大小统计<br>du -a.txt&#x2F;</p>
+</blockquote>
+<p><img src="/.com//du.png"></p>
+<h3 id="系统管理命令"><a href="#系统管理命令" class="headerlink" title="系统管理命令"></a>系统管理命令</h3><h4 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h4><blockquote>
+<p>shutdown  -h now<br>halt<br>init 0</p>
+</blockquote>
+<h4 id="开机选项配置"><a href="#开机选项配置" class="headerlink" title="开机选项配置"></a>开机选项配置</h4><blockquote>
+<p>Vi &#x2F;etc&#x2F;inittab<br>id:3:initdefault:  启动linux，不启动图形化界面<br>init 5:恢复图形化界面</p>
+</blockquote>
+<p><img src="/.com//option.png"></p>
+<h4 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h4><blockquote>
+<p>init 6<br>reboot</p>
+</blockquote>
+<h3 id="服务管理命令"><a href="#服务管理命令" class="headerlink" title="服务管理命令"></a>服务管理命令</h3><blockquote>
+<p>语法： service s_name start|stop|status|restart|<br>查看防火墙: sudo service iptables status<br>查看网络：sudo service network status<br>Mysql数据：mysql&#x2F;mysqld(低版本)</p>
+</blockquote>
+<h3 id="chkconfig-查看或设置开机是否启动"><a href="#chkconfig-查看或设置开机是否启动" class="headerlink" title="chkconfig 查看或设置开机是否启动"></a>chkconfig 查看或设置开机是否启动</h3><blockquote>
+<p>查看开机是否启动<br>chkconfig iptables –list<br>结果：2~5都是on :开机启动</p>
+</blockquote>
+<p><img src="/.com//chkconfig.png"></p>
+<blockquote>
+<p>设置开机是否启动<br>chkconfig iptables off|on</p>
+</blockquote>
+<p><img src="/.com//chkconfig2.png"></p>
+<h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><h4 id="查看进程-ps"><a href="#查看进程-ps" class="headerlink" title="查看进程 ps"></a>查看进程 ps</h4><blockquote>
+<p>　ps –ef |grep java<br>含义：查看所有 java 进程</p>
+</blockquote>
+<h4 id="杀死进程-kill"><a href="#杀死进程-kill" class="headerlink" title="杀死进程 kill"></a>杀死进程 kill</h4><blockquote>
+<p>kill -9 进程id<br>含义：彻底杀死进程</p>
+</blockquote>
+<h3 id="Redhat的slinux安全机制"><a href="#Redhat的slinux安全机制" class="headerlink" title="Redhat的slinux安全机制"></a>Redhat的slinux安全机制</h3><blockquote>
+<p>vi &#x2F;etc&#x2F;selinux&#x2F;config<br>重启成效</p>
+</blockquote>
+<p><img src="/.com//redhatsecurity.png"></p>
+<h3 id="压缩管理"><a href="#压缩管理" class="headerlink" title="压缩管理"></a>压缩管理</h3><h4 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h4><h4 id="gzip"><a href="#gzip" class="headerlink" title="gzip"></a>gzip</h4><blockquote>
+<p>后缀: .gz<br>压缩: gzip file_path<br>解压: gunzip file.gz<br>特点: 压缩后源文件没有了,  不能对目录进行压缩</p>
+</blockquote>
+<h4 id="bzip2"><a href="#bzip2" class="headerlink" title="bzip2"></a>bzip2</h4><blockquote>
+<p>适合较大文件压缩<br>后缀.bz2<br>压缩：bzip2 file_path<br>解压：bunzip2 file.bz2<br>特点：压缩后源文件没有了,不能对目录进行压缩</p>
+</blockquote>
+<h4 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h4><p>打包命令，将多个文件或者目录打包成一个文件  </p>
+<blockquote>
+<p>格式：<br>打包：tar [选项参数]  file.tar  source<br>解包：tar  [选项参数]  file.tar –C  source<br>参数：<br>-C: 指定解压的目录<br>-x: 解压<br>-v: 是否显示进度<br>-z: 是否使用gzip压缩<br>-j: 是否使用bzip2压缩  </p>
+</blockquote>
+<blockquote>
+<p>应用（使用最频繁）：使用tar + gzip<br>压缩：tar –zcvf  jdk-8u91-linux-x64.tar.gz  source<br>解压：tar –zxvf jdk-8u91-linux-x64.tar.gz  -C  target  </p>
+</blockquote>
+<blockquote>
+<p>使用 tar + bzip2<br>压缩：tar –jcvf  jdk-8u91-linux-x64.tar.gz  source<br>解压：tar –jxvf jdk-8u91-linux-x64.tar.gz  -C  target</p>
+</blockquote>
+<p>以上差不多是 Linux 工作中常用到的命令。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/05/bigdata/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sheerLi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/05/bigdata/" itemprop="url">学习大数据的前期准备工作（一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-05T19:47:13+08:00">
+                2019-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Linux-基本环境配置"><a href="#Linux-基本环境配置" class="headerlink" title="Linux 基本环境配置"></a>Linux 基本环境配置</h2><blockquote>
+<p>以下修改操作需要在 root 管理员权限下<br>所以先通过 su - 命令切换到 root 环境下</p>
+</blockquote>
+<h3 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h3><blockquote>
+<p>执行下面命令修改主机名（临时）</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hostname bigdata01-huadian.com</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>修改主机名（永久）<br>1.执行下面命令进入相应文件<br>2.按下键盘的 “i” 键进入编辑模式</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysconfig/network</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>3.将 <strong>HOSTNAME</strong> 修改如下</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HOSTNAME=bigdata01-huadian.com</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>4.按下 <strong>esc</strong> 输入 <strong>:wq</strong> 保存并退出  </p>
+</blockquote>
+<h3 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h3><blockquote>
+<p>修改虚拟机<br>1.打开 <strong>VMware</strong> -&gt; 编辑 -&gt; 虚拟网络编辑器<br>2.将 VMware 当成一个路由器使用，设置路由器网段 <strong>192.168.59.0</strong></p>
+</blockquote>
+<p><img src="/.com//network.png"></p>
+<blockquote>
+<p>设置网络方式<br>1.打开 <strong>Linux</strong> 中 <strong>System</strong> -&gt; <strong>Preferences</strong> -&gt; <strong>Network Connections</strong><br>2.使用图形化界面操作将 ip 设置成 <strong>192.168.59.250</strong></p>
+</blockquote>
+<p><img src="/.com//network2.png">  </p>
+<h3 id="重启机器"><a href="#重启机器" class="headerlink" title="重启机器"></a>重启机器</h3><blockquote>
+<p>执行命令 reboot 命令<br>使用 <strong>ifconfig</strong> 查看</p>
+</blockquote>
+<p><img src="/.com//network3.png"></p>
+<h3 id="网络映射"><a href="#网络映射" class="headerlink" title="网络映射"></a>网络映射</h3><blockquote>
+<p>(在 <strong>Linux</strong> 上执行)<br>目的：让linux的IP和主机名称一一对应，后期可以通过主机名找到机器<br>执行命令 进入 <strong>hosts</strong> 文件</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>添加以下内容</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">192.168.59.250 bigdata01-huadian.com</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>终端中 <strong>ping bigdata01-huadian.com</strong><br>出现以下结果表示成功</p>
+</blockquote>
+<p><img src="/.com//network4.png"></p>
+<blockquote>
+<p>(在 <strong>windows</strong> 上执行)<br>目的：在 window 下也能够通过主机名访问 linux<br>修改文件：C:\Windows\System32\drivers\etc\hosts<br>新增如下内容:  </p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">192.168.59.250 bigdata01-huadian.com</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在 <strong>cmd</strong> 中 <strong>ping bigdata01-huadian.com</strong></p>
+</blockquote>
+<p><img src="/.com//network5.png"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
+  
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">sheerLi</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,37 +1,1009 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  
 
 
-{% block content %}
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="大数据,Linux," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Linux 常用命令 命令通用格式 : 命令 选项（参数） 操作的文件或者目录  普通命令 ls格式：ls 目录参数: a : 列举包含隐藏文件      l : 使用长格式查看  ls -l 等同于  ll   cd改变目录     pwd打印当前所在目录     clear清屏 等同于 ctrl + l     history查看命令的历史记录    文件操作命令创建 创建文件touch a.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习大数据的前期准备工作（二）">
+<meta property="og:url" content="http://yoursite.com/2019/03/06/LinuxCommand/index.html">
+<meta property="og:site_name" content="sheerLi">
+<meta property="og:description" content="Linux 常用命令 命令通用格式 : 命令 选项（参数） 操作的文件或者目录  普通命令 ls格式：ls 目录参数: a : 列举包含隐藏文件      l : 使用长格式查看  ls -l 等同于  ll   cd改变目录     pwd打印当前所在目录     clear清屏 等同于 ctrl + l     history查看命令的历史记录    文件操作命令创建 创建文件touch a.">
+<meta property="og:locale">
+<meta property="og:image" content="http://yoursite.com/.com//touch.png">
+<meta property="og:image" content="http://yoursite.com/.com//mkdir1.png">
+<meta property="og:image" content="http://yoursite.com/.com//mkdir2.png">
+<meta property="og:image" content="http://yoursite.com/.com//rm1.png">
+<meta property="og:image" content="http://yoursite.com/.com//rm2.png">
+<meta property="og:image" content="http://yoursite.com/.com//cp.png">
+<meta property="og:image" content="http://yoursite.com/.com//cp2.png">
+<meta property="og:image" content="http://yoursite.com/.com//mv1.png">
+<meta property="og:image" content="http://yoursite.com/.com//viewuser.png">
+<meta property="og:image" content="http://yoursite.com/.com//viewuserinfo.png">
+<meta property="og:image" content="http://yoursite.com/.com//per.png">
+<meta property="og:image" content="http://yoursite.com/.com//chmod1.png">
+<meta property="og:image" content="http://yoursite.com/.com//chmod2.png">
+<meta property="og:image" content="http://yoursite.com/.com//chmod3.png">
+<meta property="og:image" content="http://yoursite.com/.com//chmod4.png">
+<meta property="og:image" content="http://yoursite.com/.com//chmod5.png">
+<meta property="og:image" content="http://yoursite.com/.com//chmod6.png">
+<meta property="og:image" content="http://yoursite.com/.com//chown.png">
+<meta property="og:image" content="http://yoursite.com/.com//gohome.png">
+<meta property="og:image" content="http://yoursite.com/.com//override.png">
+<meta property="og:image" content="http://yoursite.com/.com//visudo.png">
+<meta property="og:image" content="http://yoursite.com/.com//sudo.png">
+<meta property="og:image" content="http://yoursite.com/.com//wc.png">
+<meta property="og:image" content="http://yoursite.com/.com//du.png">
+<meta property="og:image" content="http://yoursite.com/.com//option.png">
+<meta property="og:image" content="http://yoursite.com/.com//chkconfig.png">
+<meta property="og:image" content="http://yoursite.com/.com//chkconfig2.png">
+<meta property="og:image" content="http://yoursite.com/.com//redhatsecurity.png">
+<meta property="article:published_time" content="2019-03-06T11:47:13.000Z">
+<meta property="article:modified_time" content="2022-07-12T13:27:51.243Z">
+<meta property="article:author" content="sheerLi">
+<meta property="article:tag" content="大数据">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/.com//touch.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/06/LinuxCommand/"/>
+
+
+
+
+
+  <title>学习大数据的前期准备工作（二） | sheerLi</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">sheerLi</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">凛冬已至，冰冷刺骨</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/06/LinuxCommand/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sheerLi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">学习大数据的前期准备工作（二）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-06T19:47:13+08:00">
+                2019-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Linux-常用命令"><a href="#Linux-常用命令" class="headerlink" title="Linux 常用命令"></a>Linux 常用命令</h2><blockquote>
+<p>命令通用格式 : <strong>命令 选项（参数） 操作的文件或者目录</strong></p>
+</blockquote>
+<h3 id="普通命令"><a href="#普通命令" class="headerlink" title="普通命令"></a>普通命令</h3><blockquote>
+<p><strong>ls</strong><br>格式：<strong>ls 目录</strong><br>参数: <strong>a</strong> : 列举包含隐藏文件<br>      <strong>l</strong> : 使用长格式查看  <strong>ls -l</strong> 等同于  <strong>ll</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>cd</strong><br>改变目录  </p>
+</blockquote>
+<blockquote>
+<p><strong>pwd</strong><br>打印当前所在目录  </p>
+</blockquote>
+<blockquote>
+<p><strong>clear</strong><br>清屏 等同于 <strong>ctrl</strong> + <strong>l</strong>  </p>
+</blockquote>
+<blockquote>
+<p><strong>history</strong><br>查看命令的历史记录  </p>
+</blockquote>
+<h3 id="文件操作命令"><a href="#文件操作命令" class="headerlink" title="文件操作命令"></a>文件操作命令</h3><h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><blockquote>
+<p>创建文件<br>touch a.txt</p>
+</blockquote>
+<p><img src="/.com//touch.png"></p>
+<blockquote>
+<p>创建一个空目录<br>mkdir dir1  </p>
+</blockquote>
+<p><img src="/.com//mkdir1.png"></p>
+<blockquote>
+<p>递归创建一个非空目录<br>mkdir -p dir2&#x2F;dir3 </p>
+</blockquote>
+<p><img src="/.com//mkdir2.png"></p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><blockquote>
+<p>删除文件<br>rm a.txt<br>-f 参数 命令是免确认</p>
+</blockquote>
+<p><img src="/.com//rm1.png"></p>
+<blockquote>
+<p>删除目录（只能删空目录）<br>rm -rf mkdir2</p>
+</blockquote>
+<p><img src="/.com//rm2.png">  </p>
+<h4 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h4><blockquote>
+<p>vi &#x2F; vim  </p>
+</blockquote>
+<h4 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h4><blockquote>
+<p>复制文件<br>cp a.txt dir1&#x2F;  </p>
+</blockquote>
+<p><img src="/.com//cp.png"></p>
+<blockquote>
+<p>复制目录<br>cp -r dir1 dir2&#x2F;</p>
+</blockquote>
+<p><img src="/.com//cp2.png"> </p>
+<h4 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h4><blockquote>
+<p>将 a.txt 文件移动到 dir2 目录<br>mv a.txt dir2</p>
+</blockquote>
+<p><img src="/.com//mv1.png"></p>
+<h4 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h4><blockquote>
+<p>more<br>分页查看 显示一屏数据，按“enter”往下翻页</p>
+</blockquote>
+<blockquote>
+<p>less<br>分页查看 显示一屏数据，按方向上下键翻页 按“q”退出预览</p>
+</blockquote>
+<blockquote>
+<p>head<br>查看文件头部内容，默认读取文件前10行<br>常用参数：**-n**: 查看行数</p>
+</blockquote>
+<blockquote>
+<p>tail<br>查看文件尾部内容，默认读取文件后10行<br>常用参数:<br>-n:查看行数<br>-F:动态查看，监听一个文件的变化</p>
+</blockquote>
+<h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><h4 id="管理员"><a href="#管理员" class="headerlink" title="管理员"></a>管理员</h4><blockquote>
+<p>用户 id 是 0</p>
+</blockquote>
+<h4 id="普通用户"><a href="#普通用户" class="headerlink" title="普通用户"></a>普通用户</h4><blockquote>
+<p>用户 id 从 500 开始,可以自己创建普通用户</p>
+</blockquote>
+<h4 id="用户信息文件"><a href="#用户信息文件" class="headerlink" title="用户信息文件"></a>用户信息文件</h4><blockquote>
+<p>more &#x2F;etc&#x2F;passwd</p>
+</blockquote>
+<p><img src="/.com//viewuser.png"></p>
+<blockquote>
+<p>标红意思<br>用户名:密码:uid:gid:所属组的名字:家目录:所用shell</p>
+</blockquote>
+<h4 id="用户组信息文件"><a href="#用户组信息文件" class="headerlink" title="用户组信息文件"></a>用户组信息文件</h4><blockquote>
+<p>more &#x2F;etc&#x2F;group</p>
+</blockquote>
+<h4 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h4><h5 id="切换到管理员"><a href="#切换到管理员" class="headerlink" title="切换到管理员"></a>切换到管理员</h5><blockquote>
+<p>su -</p>
+</blockquote>
+<h5 id="切换到普通用户"><a href="#切换到普通用户" class="headerlink" title="切换到普通用户"></a>切换到普通用户</h5><blockquote>
+<p>su -用户名</p>
+</blockquote>
+<h4 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h4><blockquote>
+<p>exit</p>
+</blockquote>
+<h4 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h4><blockquote>
+<p>格式：useradd username<br>例: useradd LW</p>
+</blockquote>
+<h4 id="查看用户"><a href="#查看用户" class="headerlink" title="查看用户"></a>查看用户</h4><blockquote>
+<p>格式：id username<br>例: id LW</p>
+</blockquote>
+<p><img src="/.com//viewuserinfo.png"></p>
+<h4 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h4><blockquote>
+<p>格式：passwd username<br>例: passwd LW</p>
+</blockquote>
+<h4 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h4><blockquote>
+<p>格式：userdel username<br>参数：-r  既删除用户又删除该用户的家<br>例: userdel LW</p>
+</blockquote>
+<h3 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h3><h4 id="用户分类"><a href="#用户分类" class="headerlink" title="用户分类"></a>用户分类</h4><blockquote>
+<p>所有者: <strong>u</strong><br>同组用户: <strong>g</strong><br>其他人: <strong>o</strong></p>
+</blockquote>
+<h4 id="权限分类"><a href="#权限分类" class="headerlink" title="权限分类"></a>权限分类</h4><blockquote>
+<p>读: <strong>r</strong><br>写: <strong>w</strong><br>执行: <strong>x</strong><br>没有权限: <strong>-</strong></p>
+</blockquote>
+<h4 id="文件权限详情"><a href="#文件权限详情" class="headerlink" title="文件权限详情"></a>文件权限详情</h4><p><img src="/.com//per.png"></p>
+<blockquote>
+<p>第一位：文件类型，<strong>d</strong>:目录，**-**：文件<br>剩下9位，3位一组<br>rwx：所有者拥有的 <strong>读</strong> <strong>写</strong> <strong>执行</strong> 权限<br>rwx：同组用户拥有的  <strong>读</strong> <strong>写</strong> <strong>执行</strong> 权限<br>r-x：其他人拥有的  <strong>读</strong> <strong>执行</strong> 权限<br>huadian huadian：所有者 所属组<br>4096：文件大小<br>Mar  6 09:14: 日期<br>b: 文件名</p>
+</blockquote>
+<h4 id="修改权限"><a href="#修改权限" class="headerlink" title="修改权限"></a>修改权限</h4><blockquote>
+<p>语法： Chmod  [添加或者删除权限]  文件或者目录  </p>
+</blockquote>
+<h5 id="通过字符修改"><a href="#通过字符修改" class="headerlink" title="通过字符修改"></a>通过字符修改</h5><blockquote>
+<p>给其他人添加 写的 权限</p>
+</blockquote>
+<p><img src="/.com//chmod1.png"></p>
+<blockquote>
+<p>给其他人删除 写的 权限</p>
+</blockquote>
+<p><img src="/.com//chmod2.png"></p>
+<blockquote>
+<p>给任何人都添加上 可执行 权限  </p>
+</blockquote>
+<p><img src="/.com//chmod3.png"></p>
+<blockquote>
+<p>给所属者和同组用户删除权限</p>
+</blockquote>
+<p><img src="/.com//chmod4.png"></p>
+<h5 id="通过数组修改"><a href="#通过数组修改" class="headerlink" title="通过数组修改"></a>通过数组修改</h5><blockquote>
+<p><strong>说明</strong><br>该位有权限用 1 表示,没有用 0 表示<br><strong>rwx</strong>  111  &#x3D;&gt; 7(十进制)<br><strong>r-x</strong>  101  &#x3D;&gt; 5(十进制)<br><strong>rw-</strong>  110  &#x3D;&gt; 6(十进制)</p>
+</blockquote>
+<blockquote>
+<p>例子：让 <strong>任何用户</strong> 拥有 <strong>全部权限</strong><br>例子：chmod 777 a.txt</p>
+</blockquote>
+<p><img src="/.com//chmod5.png"></p>
+<blockquote>
+<p>例子：让 <strong>任何用户</strong> 拥有 <strong>读写</strong> 没有 <strong>执行</strong> 的权限<br>例子：chmod 666 a.txt</p>
+</blockquote>
+<p><img src="/.com//chmod6.png"></p>
+<h4 id="修改文件-所有者-和-所属组"><a href="#修改文件-所有者-和-所属组" class="headerlink" title="修改文件 所有者 和 所属组"></a>修改文件 所有者 和 所属组</h4><blockquote>
+<p>语法格式：<strong>chown username:groupname 文件或者目录</strong><br>参数： -R 递归修改所有的文件<br>例：chown -R root:root b</p>
+</blockquote>
+<p><img src="/.com//chown.png"></p>
+<h3 id="常见符号"><a href="#常见符号" class="headerlink" title="常见符号"></a>常见符号</h3><h4 id><a href="#" class="headerlink" title="."></a>.</h4><blockquote>
+<p>表示当前目录</p>
+</blockquote>
+<h4 id="-1"><a href="#-1" class="headerlink" title="."></a>.</h4><blockquote>
+<p>表示上一级目录</p>
+</blockquote>
+<h4 id="-2"><a href="#-2" class="headerlink" title="~"></a>~</h4><blockquote>
+<p>用户的家目录<br>例如： cd ~</p>
+</blockquote>
+<p><img src="/.com//gohome.png"></p>
+<h4 id="-3"><a href="#-3" class="headerlink" title="|"></a>|</h4><blockquote>
+<p>表示管道符<br>例如：Ps –ef | grep java   过滤留下java的进程</p>
+</blockquote>
+<h4 id="gt"><a href="#gt" class="headerlink" title="&gt;"></a>&gt;</h4><blockquote>
+<p>覆盖重写某个文件</p>
+</blockquote>
+<h4 id="gt-gt"><a href="#gt-gt" class="headerlink" title="&gt;&gt;"></a>&gt;&gt;</h4><blockquote>
+<p>追加到某个文件</p>
+</blockquote>
+<p><img src="/.com//override.png"></p>
+<h3 id="文本编辑-vi-x2F-vim"><a href="#文本编辑-vi-x2F-vim" class="headerlink" title="文本编辑 vi &#x2F; vim"></a>文本编辑 vi &#x2F; vim</h3><h4 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h4><blockquote>
+<p>　vi 文件名<br> 如果编辑一个不存在的文件，默认会创建一个文件</p>
+</blockquote>
+<h4 id="种模式"><a href="#种模式" class="headerlink" title="种模式"></a>种模式</h4><h5 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h5><blockquote>
+<p>gg：跳转到第一行<br>G:跳转到最后一行<br>5gg:跳转到第5行<br>yy:复制当前行<br>p:在当前位置粘贴<br>dd:删除光标所在行<br>5dd:从当行开始，删除连续5行<br>99999999999999dd: 清除文档<br>u:撤销上一步<br>i:进入插入模式<br>o:在光标所在行 下一行 进入插入模式<br>O:在光标所在乎 前一行进入插入模式   </p>
+</blockquote>
+<h5 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h5><blockquote>
+<p>在命令模式下，输入“i”,进入插入模式</p>
+</blockquote>
+<h5 id="最后行模式"><a href="#最后行模式" class="headerlink" title="最后行模式"></a>最后行模式</h5><blockquote>
+<p>进入方式:<br>按下“ESC”进入命令模式<br>按下shift + : 进入最后行模式</p>
+</blockquote>
+<blockquote>
+<p>命令:<br>wq：保存退出<br>q: 不保存退出<br>!: 强制<br>q!: 强制退出<br>set nu(number): 显示行号<br>&#x2F;string 检索字符串  按“n”找下一个</p>
+</blockquote>
+<h3 id="常用工具命令"><a href="#常用工具命令" class="headerlink" title="常用工具命令"></a>常用工具命令</h3><h4 id="visudo-较重要"><a href="#visudo-较重要" class="headerlink" title="visudo (较重要)"></a>visudo (较重要)</h4><blockquote>
+<p>在企业中，通常不会使用root，为了安全，一般使用普通用户。<br>普通用户有时候，也需要操作一些管理员需要的权限</p>
+</blockquote>
+<blockquote>
+<p>例：让 huadian 用户拥有 root 所有权限   操作如下<br>切换到 root 用户<br>执行 visudo 命令<br>添加如下配置</p>
+</blockquote>
+<p><img src="/.com//visudo.png"></p>
+<blockquote>
+<p>普通用户如果使用额外赋予的权限<br>sudo 额外权限名</p>
+</blockquote>
+<p><img src="/.com//sudo.png"></p>
+<h4 id="man"><a href="#man" class="headerlink" title="man"></a>man</h4><blockquote>
+<p>帮助命令<br>例: man ls</p>
+</blockquote>
+<h4 id="wc"><a href="#wc" class="headerlink" title="wc"></a>wc</h4><blockquote>
+<p>文本统计工具<br>例： wc a.txt<br>结果：行 单词书 字符数 文件名</p>
+</blockquote>
+<p><img src="/.com//wc.png"></p>
+<h4 id="du"><a href="#du" class="headerlink" title="du"></a>du</h4><blockquote>
+<p>文件大小统计<br>du -a.txt&#x2F;</p>
+</blockquote>
+<p><img src="/.com//du.png"></p>
+<h3 id="系统管理命令"><a href="#系统管理命令" class="headerlink" title="系统管理命令"></a>系统管理命令</h3><h4 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h4><blockquote>
+<p>shutdown  -h now<br>halt<br>init 0</p>
+</blockquote>
+<h4 id="开机选项配置"><a href="#开机选项配置" class="headerlink" title="开机选项配置"></a>开机选项配置</h4><blockquote>
+<p>Vi &#x2F;etc&#x2F;inittab<br>id:3:initdefault:  启动linux，不启动图形化界面<br>init 5:恢复图形化界面</p>
+</blockquote>
+<p><img src="/.com//option.png"></p>
+<h4 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h4><blockquote>
+<p>init 6<br>reboot</p>
+</blockquote>
+<h3 id="服务管理命令"><a href="#服务管理命令" class="headerlink" title="服务管理命令"></a>服务管理命令</h3><blockquote>
+<p>语法： service s_name start|stop|status|restart|<br>查看防火墙: sudo service iptables status<br>查看网络：sudo service network status<br>Mysql数据：mysql&#x2F;mysqld(低版本)</p>
+</blockquote>
+<h3 id="chkconfig-查看或设置开机是否启动"><a href="#chkconfig-查看或设置开机是否启动" class="headerlink" title="chkconfig 查看或设置开机是否启动"></a>chkconfig 查看或设置开机是否启动</h3><blockquote>
+<p>查看开机是否启动<br>chkconfig iptables –list<br>结果：2~5都是on :开机启动</p>
+</blockquote>
+<p><img src="/.com//chkconfig.png"></p>
+<blockquote>
+<p>设置开机是否启动<br>chkconfig iptables off|on</p>
+</blockquote>
+<p><img src="/.com//chkconfig2.png"></p>
+<h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><h4 id="查看进程-ps"><a href="#查看进程-ps" class="headerlink" title="查看进程 ps"></a>查看进程 ps</h4><blockquote>
+<p>　ps –ef |grep java<br>含义：查看所有 java 进程</p>
+</blockquote>
+<h4 id="杀死进程-kill"><a href="#杀死进程-kill" class="headerlink" title="杀死进程 kill"></a>杀死进程 kill</h4><blockquote>
+<p>kill -9 进程id<br>含义：彻底杀死进程</p>
+</blockquote>
+<h3 id="Redhat的slinux安全机制"><a href="#Redhat的slinux安全机制" class="headerlink" title="Redhat的slinux安全机制"></a>Redhat的slinux安全机制</h3><blockquote>
+<p>vi &#x2F;etc&#x2F;selinux&#x2F;config<br>重启成效</p>
+</blockquote>
+<p><img src="/.com//redhatsecurity.png"></p>
+<h3 id="压缩管理"><a href="#压缩管理" class="headerlink" title="压缩管理"></a>压缩管理</h3><h4 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h4><h4 id="gzip"><a href="#gzip" class="headerlink" title="gzip"></a>gzip</h4><blockquote>
+<p>后缀: .gz<br>压缩: gzip file_path<br>解压: gunzip file.gz<br>特点: 压缩后源文件没有了,  不能对目录进行压缩</p>
+</blockquote>
+<h4 id="bzip2"><a href="#bzip2" class="headerlink" title="bzip2"></a>bzip2</h4><blockquote>
+<p>适合较大文件压缩<br>后缀.bz2<br>压缩：bzip2 file_path<br>解压：bunzip2 file.bz2<br>特点：压缩后源文件没有了,不能对目录进行压缩</p>
+</blockquote>
+<h4 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h4><p>打包命令，将多个文件或者目录打包成一个文件  </p>
+<blockquote>
+<p>格式：<br>打包：tar [选项参数]  file.tar  source<br>解包：tar  [选项参数]  file.tar –C  source<br>参数：<br>-C: 指定解压的目录<br>-x: 解压<br>-v: 是否显示进度<br>-z: 是否使用gzip压缩<br>-j: 是否使用bzip2压缩  </p>
+</blockquote>
+<blockquote>
+<p>应用（使用最频繁）：使用tar + gzip<br>压缩：tar –zcvf  jdk-8u91-linux-x64.tar.gz  source<br>解压：tar –zxvf jdk-8u91-linux-x64.tar.gz  -C  target  </p>
+</blockquote>
+<blockquote>
+<p>使用 tar + bzip2<br>压缩：tar –jcvf  jdk-8u91-linux-x64.tar.gz  source<br>解压：tar –jxvf jdk-8u91-linux-x64.tar.gz  -C  target</p>
+</blockquote>
+<p>以上差不多是 Linux 工作中常用到的命令。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="tag"># 大数据</a>
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/05/bigdata/" rel="next" title="学习大数据的前期准备工作（一）">
+                <i class="fa fa-chevron-left"></i> 学习大数据的前期准备工作（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/07/jdkandmysql/" rel="prev" title="学习大数据的前期准备工作（三）">
+                学习大数据的前期准备工作（三） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
 
     <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+      
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+          </div>
+          
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">Linux 常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%AE%E9%80%9A%E5%91%BD%E4%BB%A4"><span class="nav-number">1.1.</span> <span class="nav-text">普通命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4"><span class="nav-number">1.2.</span> <span class="nav-text">文件操作命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4"><span class="nav-number">1.2.2.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E8%BE%91"><span class="nav-number">1.2.3.</span> <span class="nav-text">编辑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%8D%E5%88%B6"><span class="nav-number">1.2.4.</span> <span class="nav-text">复制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8"><span class="nav-number">1.2.5.</span> <span class="nav-text">移动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B"><span class="nav-number">1.2.6.</span> <span class="nav-text">查看</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="nav-number">1.3.</span> <span class="nav-text">用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%A1%E7%90%86%E5%91%98"><span class="nav-number">1.3.1.</span> <span class="nav-text">管理员</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7"><span class="nav-number">1.3.2.</span> <span class="nav-text">普通用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.3.</span> <span class="nav-text">用户信息文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E7%BB%84%E4%BF%A1%E6%81%AF%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.4.</span> <span class="nav-text">用户组信息文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E7%94%A8%E6%88%B7"><span class="nav-number">1.3.5.</span> <span class="nav-text">切换用户</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E5%88%B0%E7%AE%A1%E7%90%86%E5%91%98"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">切换到管理员</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E5%88%B0%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7"><span class="nav-number">1.3.5.2.</span> <span class="nav-text">切换到普通用户</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%80%E5%87%BA"><span class="nav-number">1.3.6.</span> <span class="nav-text">退出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7"><span class="nav-number">1.3.7.</span> <span class="nav-text">创建用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%94%A8%E6%88%B7"><span class="nav-number">1.3.8.</span> <span class="nav-text">查看用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81"><span class="nav-number">1.3.9.</span> <span class="nav-text">设置密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E7%94%A8%E6%88%B7"><span class="nav-number">1.3.10.</span> <span class="nav-text">删除用户</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="nav-number">1.4.</span> <span class="nav-text">权限管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E5%88%86%E7%B1%BB"><span class="nav-number">1.4.1.</span> <span class="nav-text">用户分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9D%83%E9%99%90%E5%88%86%E7%B1%BB"><span class="nav-number">1.4.2.</span> <span class="nav-text">权限分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E8%AF%A6%E6%83%85"><span class="nav-number">1.4.3.</span> <span class="nav-text">文件权限详情</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%9D%83%E9%99%90"><span class="nav-number">1.4.4.</span> <span class="nav-text">修改权限</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E5%AD%97%E7%AC%A6%E4%BF%AE%E6%94%B9"><span class="nav-number">1.4.4.1.</span> <span class="nav-text">通过字符修改</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E6%95%B0%E7%BB%84%E4%BF%AE%E6%94%B9"><span class="nav-number">1.4.4.2.</span> <span class="nav-text">通过数组修改</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6-%E6%89%80%E6%9C%89%E8%80%85-%E5%92%8C-%E6%89%80%E5%B1%9E%E7%BB%84"><span class="nav-number">1.4.5.</span> <span class="nav-text">修改文件 所有者 和 所属组</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%AC%A6%E5%8F%B7"><span class="nav-number">1.5.</span> <span class="nav-text">常见符号</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.5.1.</span> <span class="nav-text">.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-1"><span class="nav-number">1.5.2.</span> <span class="nav-text">.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-2"><span class="nav-number">1.5.3.</span> <span class="nav-text">~</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-3"><span class="nav-number">1.5.4.</span> <span class="nav-text">|</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gt"><span class="nav-number">1.5.5.</span> <span class="nav-text">&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gt-gt"><span class="nav-number">1.5.6.</span> <span class="nav-text">&gt;&gt;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91-vi-x2F-vim"><span class="nav-number">1.6.</span> <span class="nav-text">文本编辑 vi &#x2F; vim</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.6.1.</span> <span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A7%8D%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.6.2.</span> <span class="nav-text">种模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.6.2.1.</span> <span class="nav-text">命令行模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.6.2.2.</span> <span class="nav-text">插入模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9C%80%E5%90%8E%E8%A1%8C%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.6.2.3.</span> <span class="nav-text">最后行模式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E5%91%BD%E4%BB%A4"><span class="nav-number">1.7.</span> <span class="nav-text">常用工具命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#visudo-%E8%BE%83%E9%87%8D%E8%A6%81"><span class="nav-number">1.7.1.</span> <span class="nav-text">visudo (较重要)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#man"><span class="nav-number">1.7.2.</span> <span class="nav-text">man</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wc"><span class="nav-number">1.7.3.</span> <span class="nav-text">wc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#du"><span class="nav-number">1.7.4.</span> <span class="nav-text">du</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4"><span class="nav-number">1.8.</span> <span class="nav-text">系统管理命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E6%9C%BA"><span class="nav-number">1.8.1.</span> <span class="nav-text">关机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%80%E6%9C%BA%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE"><span class="nav-number">1.8.2.</span> <span class="nav-text">开机选项配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E5%90%AF"><span class="nav-number">1.8.3.</span> <span class="nav-text">重启</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4"><span class="nav-number">1.9.</span> <span class="nav-text">服务管理命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chkconfig-%E6%9F%A5%E7%9C%8B%E6%88%96%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E6%98%AF%E5%90%A6%E5%90%AF%E5%8A%A8"><span class="nav-number">1.10.</span> <span class="nav-text">chkconfig 查看或设置开机是否启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-number">1.11.</span> <span class="nav-text">进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B-ps"><span class="nav-number">1.11.1.</span> <span class="nav-text">查看进程 ps</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9D%80%E6%AD%BB%E8%BF%9B%E7%A8%8B-kill"><span class="nav-number">1.11.2.</span> <span class="nav-text">杀死进程 kill</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redhat%E7%9A%84slinux%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="nav-number">1.12.</span> <span class="nav-text">Redhat的slinux安全机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E7%AE%A1%E7%90%86"><span class="nav-number">1.13.</span> <span class="nav-text">压缩管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#zip"><span class="nav-number">1.13.1.</span> <span class="nav-text">zip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gzip"><span class="nav-number">1.13.2.</span> <span class="nav-text">gzip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bzip2"><span class="nav-number">1.13.3.</span> <span class="nav-text">bzip2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tar"><span class="nav-number">1.13.4.</span> <span class="nav-text">tar</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">sheerLi</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

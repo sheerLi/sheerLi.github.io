@@ -1,37 +1,765 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  
 
 
-{% block content %}
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="说明最近在项目中遇到 请求后台接口时的身份验证 问题，需要使用 cookie 存储用户登录信息，便于每次在请求后台接口时，带上 cookie 达到身份的校验。借此机会，恶补了一下 cookie 方面的知识 cookie 的工作方式cookie 是浏览器提供的功能，它其实是存储在浏览器中的纯文本，浏览器的安装目录下会专门有一个 cookie 文件夹来存放各个域下的设置的 cookie 每当发送请求时">
+<meta property="og:type" content="article">
+<meta property="og:title" content="聊一聊 cookie">
+<meta property="og:url" content="http://yoursite.com/2019/04/05/cookie/index.html">
+<meta property="og:site_name" content="sheerLi">
+<meta property="og:description" content="说明最近在项目中遇到 请求后台接口时的身份验证 问题，需要使用 cookie 存储用户登录信息，便于每次在请求后台接口时，带上 cookie 达到身份的校验。借此机会，恶补了一下 cookie 方面的知识 cookie 的工作方式cookie 是浏览器提供的功能，它其实是存储在浏览器中的纯文本，浏览器的安装目录下会专门有一个 cookie 文件夹来存放各个域下的设置的 cookie 每当发送请求时">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-04-05T09:42:04.000Z">
+<meta property="article:modified_time" content="2022-07-12T13:27:51.253Z">
+<meta property="article:author" content="sheerLi">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/05/cookie/"/>
+
+
+
+
+
+  <title>聊一聊 cookie | sheerLi</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">sheerLi</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">凛冬已至，冰冷刺骨</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/05/cookie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sheerLi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">聊一聊 cookie</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-05T17:42:04+08:00">
+                2019-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>最近在项目中遇到 <strong>请求后台接口时的身份验证</strong> 问题，需要使用 cookie 存储用户登录信息，便于每次在请求后台接口时，带上 cookie 达到身份的校验。借此机会，恶补了一下 cookie 方面的知识</p>
+<h3 id="cookie-的工作方式"><a href="#cookie-的工作方式" class="headerlink" title="cookie 的工作方式"></a>cookie 的工作方式</h3><p><strong>cookie</strong> 是浏览器提供的功能，它其实是存储在浏览器中的纯文本，浏览器的安装目录下会专门有一个 cookie 文件夹来存放各个域下的设置的 <strong>cookie</strong></p>
+<p>每当发送请求时，浏览器会自动检查是否有相应的 <strong>cookie</strong>, 有则添加到 <strong>request header</strong> 中的 cookie 字段中。</p>
+<p>由于 <strong>cookie</strong> 存放的数据每次都会放到 http 请求头中，如果其中的数据没有必要发送给服务器，无疑增加了网络开销；但是这些数据每个请求到需要发送给服务器，那么免去了重复添加请求参数的操作。所以每个请求都需要携带的数据特别适合存放在 <strong>cookie</strong> 中（例如身份认证）</p>
+<h3 id="cookie-的格式"><a href="#cookie-的格式" class="headerlink" title="cookie 的格式"></a>cookie 的格式</h3><p>JS 原生的方法 <strong>document.cookie</strong> 能够获取到 <strong>cookie</strong> 。获取到的是一个字符串，这个字符串是有格式的, 由键值对 <strong>key&#x3D;value</strong> 构成, 键值对之间有一个 <strong>分号</strong> 和一个 <strong>空格</strong> 隔开</p>
+<h3 id="cookie-的属性"><a href="#cookie-的属性" class="headerlink" title="cookie 的属性"></a>cookie 的属性</h3><h4 id="expires"><a href="#expires" class="headerlink" title="expires"></a>expires</h4><blockquote>
+<p>expires: 用来设置 <strong>cookie什么时间内有效</strong>。<strong>expires</strong> 是 <strong>cookie</strong> 的失效时间, 格式必须是 <strong>GMT</strong> 格式的时间(可以通过 <strong>new Date().toGMTString()</strong> 或者 <strong>new Date().toUTCString()</strong> 来获得)<br>如 <strong>expires&#x3D;Thu, 25 Feb 2016 04:18:00 GMT</strong> 表示 <strong>cookie</strong> 将 在2016年2月25日4:<strong>18分之后失效，对于失效的cookie</strong> 浏览器会清空。如果没有设置该选项，则默认有效期为<strong>session</strong>，即会话 cookie。这种<strong>cookie</strong>在浏览器关闭后就没有了。</p>
+</blockquote>
+<h4 id="domain-和-path"><a href="#domain-和-path" class="headerlink" title="domain 和 path"></a>domain 和 path</h4><blockquote>
+<p>domain: 是域名  若未设置，默认为 设置该cookie的网页所在的域名<br>path: 是路径 若未设置，默认为 设置该cookie的网页所在的目录<br>两者加起来限制 cookie 能够被哪些URL访问</p>
+</blockquote>
+<h4 id="secure"><a href="#secure" class="headerlink" title="secure"></a>secure</h4><blockquote>
+<p>用来设置<strong>cookie</strong>只在确保安全的请求中才会发送。当请求是HTTPS或者其他安全协议时，包含 <strong>secure</strong> 选项的 <strong>cookie</strong> 才能被发送至服务器。<br>默认 secure 为空，所以默认按情况下，不管是 https 还是 http 请求, cookie 都能被发送到服务端<br>注：在http协议的网页中是无法设置secure类型cookie的。</p>
+</blockquote>
+<h4 id="httpOnly"><a href="#httpOnly" class="headerlink" title="httpOnly"></a>httpOnly</h4><blockquote>
+<p>这个选项用来设置cookie是否能通过 js 去访问<br>默认 httpOnly 为空,所以默认情况下 js 可以访问（读取、修改、删除）这个cookie 的<br>这种类型的 cookie 只能通过 服务端来设置<br>这个选项是 限制客户端去访问cookie 保障安全</p>
+</blockquote>
+<h3 id="如何设置-cookie"><a href="#如何设置-cookie" class="headerlink" title="如何设置 cookie"></a>如何设置 cookie</h3><h4 id="服务端设置-cookie"><a href="#服务端设置-cookie" class="headerlink" title="服务端设置 cookie"></a>服务端设置 cookie</h4><p>  无论是请求资源文件还是发送一个 ajax 请求，服务端都会返回response。而response-header中有一个叫做 set-cookie，是服务端专门用来设置 cookie 的。</p>
+<p>  注意：</p>
+<blockquote>
+<p>一个set-Cookie字段只能设置一个cookie，当你要想设置多个 cookie，需要添加同样多的set-Cookie字段<br>服务端可以设置cookie 的所有选项：expires、domain、path、secure、HttpOnly</p>
+</blockquote>
+<h4 id="客户端设置-cookie"><a href="#客户端设置-cookie" class="headerlink" title="客户端设置 cookie"></a>客户端设置 cookie</h4><p>  通过 js 来设置 cookie</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="property">cookie</span> = <span class="string">&quot;name=jack; &quot;</span>;</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">cookie</span> = <span class="string">&quot;age=12; expires=Thu, 26 Feb 2116 11:50:25 GMT; domain=baidu.com; path=/&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>  下面的写法 无法创建多个 cookie ，只是添加了 “name&#x3D;jack”，若是想添加多个 cookie 那么需要重复执行document.cookie &#x3D; “key&#x3D;name”。如上面所示</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="property">cookie</span> = <span class="string">&quot;name=jack; age=12; &quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何修改、删除"><a href="#如何修改、删除" class="headerlink" title="如何修改、删除"></a>如何修改、删除</h3><h4 id="修改-cookie"><a href="#修改-cookie" class="headerlink" title="修改 cookie"></a>修改 cookie</h4><p>  要想修改一个<strong>cookie</strong>，只需要重新赋值就行，旧的值会被新的值覆盖。但要注意一点，在设置新<strong>cookie</strong>时，<strong>path&#x2F;domain</strong>这几个选项一定要旧<strong>cookie</strong> 保持一样。否则不会修改旧值，而是添加了一个新的 <strong>cookie</strong>。</p>
+<h4 id="删除-cookie"><a href="#删除-cookie" class="headerlink" title="删除 cookie"></a>删除 cookie</h4><p>  删除一个cookie 也挺简单，也是重新赋值，只要将这个新cookie的expires 选项设置为一个过去的时间点就行了。但同样要注意，path&#x2F;domain&#x2F;这几个选项一定要旧 cookie 保持一样。</p>
+<h3 id="跨域请求中的-cookie"><a href="#跨域请求中的-cookie" class="headerlink" title="跨域请求中的 cookie"></a>跨域请求中的 cookie</h3><blockquote>
+<p>在发同域请求时，浏览器会将cookie自动加在request header中。但大家是否遇到过这样的场景：在发送跨域请求时，cookie并没有自动加在request header中。</p>
+</blockquote>
+<p>解决办法：</p>
+<blockquote>
+<p>在跨域请求中，client端必须手动设置xhr.withCredentials&#x3D;true，且server端也必须允许request能携带认证信息（即response header中包含Access-Control-Allow-Credentials:true），这样浏览器才会自动将cookie加在request header中。  </p>
+</blockquote>
+<blockquote>
+<p>注意： 一旦跨域request能够携带认证信息，server端一定不能将Access-Control-Allow-Origin设置为*，而必须设置为请求页面的域名。</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/05/webStorageApi/" rel="next" title="cookie、sessionStorage、localStorage的区别">
+                <i class="fa fa-chevron-left"></i> cookie、sessionStorage、localStorage的区别
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/06/fileDownloadAndUpload/" rel="prev" title="前端实现文件的下载和上传">
+                前端实现文件的下载和上传 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
 
     <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+      
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+          </div>
+          
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E"><span class="nav-number">1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie-%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">cookie 的工作方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie-%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">cookie 的格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie-%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="nav-number">4.</span> <span class="nav-text">cookie 的属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#expires"><span class="nav-number">4.1.</span> <span class="nav-text">expires</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#domain-%E5%92%8C-path"><span class="nav-number">4.2.</span> <span class="nav-text">domain 和 path</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#secure"><span class="nav-number">4.3.</span> <span class="nav-text">secure</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#httpOnly"><span class="nav-number">4.4.</span> <span class="nav-text">httpOnly</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE-cookie"><span class="nav-number">5.</span> <span class="nav-text">如何设置 cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E8%AE%BE%E7%BD%AE-cookie"><span class="nav-number">5.1.</span> <span class="nav-text">服务端设置 cookie</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AE%BE%E7%BD%AE-cookie"><span class="nav-number">5.2.</span> <span class="nav-text">客户端设置 cookie</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E3%80%81%E5%88%A0%E9%99%A4"><span class="nav-number">6.</span> <span class="nav-text">如何修改、删除</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-cookie"><span class="nav-number">6.1.</span> <span class="nav-text">修改 cookie</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4-cookie"><span class="nav-number">6.2.</span> <span class="nav-text">删除 cookie</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82%E4%B8%AD%E7%9A%84-cookie"><span class="nav-number">7.</span> <span class="nav-text">跨域请求中的 cookie</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">sheerLi</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
