@@ -86,25 +86,25 @@
 <meta property="og:site_name" content="sheerLi">
 <meta property="og:description" content="本篇文章主要是讲 linux 命令下载并安装 jdk 和 mysql，为后面的大数据做准备 Linux 软件安装命令rpm 安装 rpm 结尾的软件包软件查询： rpm –qa: 列举所有当前安装rpm包安装软件:  rpm – ivh XXX.rpm问题： A &lt;-B &lt;-C  需要自己手动解决依赖卸载： rpm -e  –nodeps  XXXXX  yum 通过软件源进行安装,类">
 <meta property="og:locale">
-<meta property="og:image" content="http://yoursite.com/.com//upload.png">
-<meta property="og:image" content="http://yoursite.com/.com//processing.png">
-<meta property="og:image" content="http://yoursite.com/.com//jdkdeperate.png">
-<meta property="og:image" content="http://yoursite.com/.com//javaenvironment.png">
-<meta property="og:image" content="http://yoursite.com/.com//jdkcomple.png">
-<meta property="og:image" content="http://yoursite.com/.com//checkmysql.png">
-<meta property="og:image" content="http://yoursite.com/.com//uninstallmysql.png">
-<meta property="og:image" content="http://yoursite.com/.com//installComple.png">
-<meta property="og:image" content="http://yoursite.com/.com//startmysql.png">
-<meta property="og:image" content="http://yoursite.com/.com//loginmysql.png">
-<meta property="og:image" content="http://yoursite.com/.com//showdatabases.png">
-<meta property="og:image" content="http://yoursite.com/.com//startkaiji.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/upload.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/processing.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/jdkdeperate.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/javaenvironment.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/jdkcomple.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/checkmysql.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/uninstallmysql.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/installComple.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/startmysql.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/loginmysql.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/showdatabases.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/07/jdkandmysql/startkaiji.png">
 <meta property="article:published_time" content="2019-03-07T11:27:57.000Z">
-<meta property="article:modified_time" content="2022-07-12T13:27:51.255Z">
+<meta property="article:modified_time" content="2022-07-14T03:27:20.685Z">
 <meta property="article:author" content="sheerLi">
 <meta property="article:tag" content="大数据">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/.com//upload.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/07/jdkandmysql/upload.png">
 
 
 
@@ -369,54 +369,54 @@
 <h3 id="Linux-虚拟机安装-jdk-并-配置环境变量"><a href="#Linux-虚拟机安装-jdk-并-配置环境变量" class="headerlink" title="Linux 虚拟机安装 jdk 并 配置环境变量"></a>Linux 虚拟机安装 jdk 并 配置环境变量</h3><blockquote>
 <p><strong>步骤 1</strong><br>将 jdk 的包通过 远程控制工具 SearchSRC 上传到 Linux 虚拟机中</p>
 </blockquote>
-<p><img src="/.com//upload.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/upload.png"></p>
 <blockquote>
 <p><strong>步骤 2</strong><br>使用 tar –zxvf jdk-8u91-linux-x64.tar.gz  -C  .&#x2F; 解压到当前文件夹</p>
 </blockquote>
-<p><img src="/.com//processing.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/processing.png"></p>
 <blockquote>
 <p>查看 test 文件夹</p>
 </blockquote>
-<p><img src="/.com//jdkdeperate.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/jdkdeperate.png"></p>
 <blockquote>
 <p><strong>步骤 3</strong><br>sudo vi &#x2F;etc&#x2F;profile 配置环境变量</p>
 </blockquote>
-<p><img src="/.com//javaenvironment.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/javaenvironment.png"></p>
 <blockquote>
 <p>保存退出后 source &#x2F;etc&#x2F;profile 使其生效</p>
 </blockquote>
-<p><img src="/.com//jdkcomple.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/jdkcomple.png"></p>
 <h3 id="安装-mysql"><a href="#安装-mysql" class="headerlink" title="安装 mysql"></a>安装 mysql</h3><blockquote>
 <p><strong>步骤 1</strong><br>检查是否已经安装 mysql<br>命令: rpm -qa | grep mysql</p>
 </blockquote>
-<p><img src="/.com//checkmysql.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/checkmysql.png"></p>
 <blockquote>
 <p>卸载依赖<br>命令：sudo rpm -e  –nodeps mysql-libs-5.1.66-2.el6_3.x86_64</p>
 </blockquote>
-<p><img src="/.com//uninstallmysql.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/uninstallmysql.png"></p>
 <blockquote>
 <p>安装mysql<br>命令：sudo yum install -y mysql-server</p>
 </blockquote>
-<p><img src="/.com//installComple.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/installComple.png"></p>
 <blockquote>
 <p>启动 mysql 服务<br>命令: sudo service mysqld start</p>
 </blockquote>
-<p><img src="/.com//startmysql.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/startmysql.png"></p>
 <blockquote>
 <p>修改 mysql 密码为 123456<br>命令：&#x2F;usr&#x2F;bin&#x2F;mysqladmin -u root password ‘123456’</p>
 </blockquote>
 <blockquote>
 <p>登录 mysql<br>命令：mysql -u root -p123456</p>
 </blockquote>
-<p><img src="/.com//loginmysql.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/loginmysql.png"></p>
 <blockquote>
 <p>展示数据库<br>命令：show databases</p>
 </blockquote>
-<p><img src="/.com//showdatabases.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/showdatabases.png"></p>
 <blockquote>
 <p>设置开机启动 </p>
 </blockquote>
-<p><img src="/.com//startkaiji.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/startkaiji.png"></p>
 <p>经过以上步骤，jdk 和 mysql 都安装完成!</p>
 
       

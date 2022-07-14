@@ -1270,7 +1270,7 @@
 <p>相对于集中式<br>集中式：一台机器，将所有的东西（软件）放在一台机器上（安装）<br>分布式：多台机器，将东西进行划分，每台机器存储一部分  </p>
 <p>主从架构：<br>主节点：只有一个（管理者，调度）<br>从节点：多个（被管理者，干活的）</p>
 <h3 id="hadoop-模块"><a href="#hadoop-模块" class="headerlink" title="hadoop 模块"></a>hadoop 模块</h3><p>附上一张官网 hadoop 模块图  </p>
-<p><img src="/.com//modules.png"></p>
+<p><img src="/2019/03/10/hadoopIntro/modules.png"></p>
 <blockquote>
 <p>common  </p>
 </blockquote>
@@ -1279,7 +1279,7 @@
 <p>HDFS (Hadoop Distributed File System)</p>
 </blockquote>
 <p>功能： 存储数据<br>主节点： <strong>namenode</strong> 决定数据存储到哪个 <strong>datanode</strong><br>从节点： datanode 真正存储数据的  </p>
-<p><img src="/.com//hdfs.png"></p>
+<p><img src="/2019/03/10/hadoopIntro/hdfs.png"></p>
 <blockquote>
 <p>YARN  </p>
 </blockquote>
@@ -1288,7 +1288,7 @@
 <p>MapReduce  </p>
 </blockquote>
 <p>1.并行数据处理框架<br>2.分而治之思想：将海量的数据划分为多块，每块数据进行单独处理，最终将结果进行合并。<br>3.map: map task<br>　　单独处理每一部分数据 各个Map Task是并行的，各跑各的，在不同的机器里面<br>4.reduce: reduce task<br>　　合并所有的Map Task 结果</p>
-<p><img src="/.com//mapreduce.png"></p>
+<p><img src="/2019/03/10/hadoopIntro/mapreduce.png"></p>
 <p>总结：<br>HDFS: namenode&#x2F;datanode<br>YARN: resoureManager&#x2F;nodemanager<br>都属于Java进程，启动JVM进程，运行服务</p>
 
           
@@ -1444,54 +1444,54 @@
 <h3 id="Linux-虚拟机安装-jdk-并-配置环境变量"><a href="#Linux-虚拟机安装-jdk-并-配置环境变量" class="headerlink" title="Linux 虚拟机安装 jdk 并 配置环境变量"></a>Linux 虚拟机安装 jdk 并 配置环境变量</h3><blockquote>
 <p><strong>步骤 1</strong><br>将 jdk 的包通过 远程控制工具 SearchSRC 上传到 Linux 虚拟机中</p>
 </blockquote>
-<p><img src="/.com//upload.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/upload.png"></p>
 <blockquote>
 <p><strong>步骤 2</strong><br>使用 tar –zxvf jdk-8u91-linux-x64.tar.gz  -C  .&#x2F; 解压到当前文件夹</p>
 </blockquote>
-<p><img src="/.com//processing.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/processing.png"></p>
 <blockquote>
 <p>查看 test 文件夹</p>
 </blockquote>
-<p><img src="/.com//jdkdeperate.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/jdkdeperate.png"></p>
 <blockquote>
 <p><strong>步骤 3</strong><br>sudo vi &#x2F;etc&#x2F;profile 配置环境变量</p>
 </blockquote>
-<p><img src="/.com//javaenvironment.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/javaenvironment.png"></p>
 <blockquote>
 <p>保存退出后 source &#x2F;etc&#x2F;profile 使其生效</p>
 </blockquote>
-<p><img src="/.com//jdkcomple.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/jdkcomple.png"></p>
 <h3 id="安装-mysql"><a href="#安装-mysql" class="headerlink" title="安装 mysql"></a>安装 mysql</h3><blockquote>
 <p><strong>步骤 1</strong><br>检查是否已经安装 mysql<br>命令: rpm -qa | grep mysql</p>
 </blockquote>
-<p><img src="/.com//checkmysql.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/checkmysql.png"></p>
 <blockquote>
 <p>卸载依赖<br>命令：sudo rpm -e  –nodeps mysql-libs-5.1.66-2.el6_3.x86_64</p>
 </blockquote>
-<p><img src="/.com//uninstallmysql.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/uninstallmysql.png"></p>
 <blockquote>
 <p>安装mysql<br>命令：sudo yum install -y mysql-server</p>
 </blockquote>
-<p><img src="/.com//installComple.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/installComple.png"></p>
 <blockquote>
 <p>启动 mysql 服务<br>命令: sudo service mysqld start</p>
 </blockquote>
-<p><img src="/.com//startmysql.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/startmysql.png"></p>
 <blockquote>
 <p>修改 mysql 密码为 123456<br>命令：&#x2F;usr&#x2F;bin&#x2F;mysqladmin -u root password ‘123456’</p>
 </blockquote>
 <blockquote>
 <p>登录 mysql<br>命令：mysql -u root -p123456</p>
 </blockquote>
-<p><img src="/.com//loginmysql.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/loginmysql.png"></p>
 <blockquote>
 <p>展示数据库<br>命令：show databases</p>
 </blockquote>
-<p><img src="/.com//showdatabases.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/showdatabases.png"></p>
 <blockquote>
 <p>设置开机启动 </p>
 </blockquote>
-<p><img src="/.com//startkaiji.png"></p>
+<p><img src="/2019/03/07/jdkandmysql/startkaiji.png"></p>
 <p>经过以上步骤，jdk 和 mysql 都安装完成!</p>
 
           
@@ -1655,38 +1655,38 @@
 <h3 id="文件操作命令"><a href="#文件操作命令" class="headerlink" title="文件操作命令"></a>文件操作命令</h3><h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><blockquote>
 <p>创建文件<br>touch a.txt</p>
 </blockquote>
-<p><img src="/.com//touch.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/touch.png"></p>
 <blockquote>
 <p>创建一个空目录<br>mkdir dir1  </p>
 </blockquote>
-<p><img src="/.com//mkdir1.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/mkdir1.png"></p>
 <blockquote>
 <p>递归创建一个非空目录<br>mkdir -p dir2&#x2F;dir3 </p>
 </blockquote>
-<p><img src="/.com//mkdir2.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/mkdir2.png"></p>
 <h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><blockquote>
 <p>删除文件<br>rm a.txt<br>-f 参数 命令是免确认</p>
 </blockquote>
-<p><img src="/.com//rm1.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/rm1.png"></p>
 <blockquote>
 <p>删除目录（只能删空目录）<br>rm -rf mkdir2</p>
 </blockquote>
-<p><img src="/.com//rm2.png">  </p>
+<p><img src="/2019/03/06/LinuxCommand/rm2.png">  </p>
 <h4 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h4><blockquote>
 <p>vi &#x2F; vim  </p>
 </blockquote>
 <h4 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h4><blockquote>
 <p>复制文件<br>cp a.txt dir1&#x2F;  </p>
 </blockquote>
-<p><img src="/.com//cp.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/cp.png"></p>
 <blockquote>
 <p>复制目录<br>cp -r dir1 dir2&#x2F;</p>
 </blockquote>
-<p><img src="/.com//cp2.png"> </p>
+<p><img src="/2019/03/06/LinuxCommand/cp2.png"> </p>
 <h4 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h4><blockquote>
 <p>将 a.txt 文件移动到 dir2 目录<br>mv a.txt dir2</p>
 </blockquote>
-<p><img src="/.com//mv1.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/mv1.png"></p>
 <h4 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h4><blockquote>
 <p>more<br>分页查看 显示一屏数据，按“enter”往下翻页</p>
 </blockquote>
@@ -1708,7 +1708,7 @@
 <h4 id="用户信息文件"><a href="#用户信息文件" class="headerlink" title="用户信息文件"></a>用户信息文件</h4><blockquote>
 <p>more &#x2F;etc&#x2F;passwd</p>
 </blockquote>
-<p><img src="/.com//viewuser.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/viewuser.png"></p>
 <blockquote>
 <p>标红意思<br>用户名:密码:uid:gid:所属组的名字:家目录:所用shell</p>
 </blockquote>
@@ -1730,7 +1730,7 @@
 <h4 id="查看用户"><a href="#查看用户" class="headerlink" title="查看用户"></a>查看用户</h4><blockquote>
 <p>格式：id username<br>例: id LW</p>
 </blockquote>
-<p><img src="/.com//viewuserinfo.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/viewuserinfo.png"></p>
 <h4 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h4><blockquote>
 <p>格式：passwd username<br>例: passwd LW</p>
 </blockquote>
@@ -1743,7 +1743,7 @@
 <h4 id="权限分类"><a href="#权限分类" class="headerlink" title="权限分类"></a>权限分类</h4><blockquote>
 <p>读: <strong>r</strong><br>写: <strong>w</strong><br>执行: <strong>x</strong><br>没有权限: <strong>-</strong></p>
 </blockquote>
-<h4 id="文件权限详情"><a href="#文件权限详情" class="headerlink" title="文件权限详情"></a>文件权限详情</h4><p><img src="/.com//per.png"></p>
+<h4 id="文件权限详情"><a href="#文件权限详情" class="headerlink" title="文件权限详情"></a>文件权限详情</h4><p><img src="/2019/03/06/LinuxCommand/per.png"></p>
 <blockquote>
 <p>第一位：文件类型，<strong>d</strong>:目录，**-**：文件<br>剩下9位，3位一组<br>rwx：所有者拥有的 <strong>读</strong> <strong>写</strong> <strong>执行</strong> 权限<br>rwx：同组用户拥有的  <strong>读</strong> <strong>写</strong> <strong>执行</strong> 权限<br>r-x：其他人拥有的  <strong>读</strong> <strong>执行</strong> 权限<br>huadian huadian：所有者 所属组<br>4096：文件大小<br>Mar  6 09:14: 日期<br>b: 文件名</p>
 </blockquote>
@@ -1753,35 +1753,35 @@
 <h5 id="通过字符修改"><a href="#通过字符修改" class="headerlink" title="通过字符修改"></a>通过字符修改</h5><blockquote>
 <p>给其他人添加 写的 权限</p>
 </blockquote>
-<p><img src="/.com//chmod1.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/chmod1.png"></p>
 <blockquote>
 <p>给其他人删除 写的 权限</p>
 </blockquote>
-<p><img src="/.com//chmod2.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/chmod2.png"></p>
 <blockquote>
 <p>给任何人都添加上 可执行 权限  </p>
 </blockquote>
-<p><img src="/.com//chmod3.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/chmod3.png"></p>
 <blockquote>
 <p>给所属者和同组用户删除权限</p>
 </blockquote>
-<p><img src="/.com//chmod4.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/chmod4.png"></p>
 <h5 id="通过数组修改"><a href="#通过数组修改" class="headerlink" title="通过数组修改"></a>通过数组修改</h5><blockquote>
 <p><strong>说明</strong><br>该位有权限用 1 表示,没有用 0 表示<br><strong>rwx</strong>  111  &#x3D;&gt; 7(十进制)<br><strong>r-x</strong>  101  &#x3D;&gt; 5(十进制)<br><strong>rw-</strong>  110  &#x3D;&gt; 6(十进制)</p>
 </blockquote>
 <blockquote>
 <p>例子：让 <strong>任何用户</strong> 拥有 <strong>全部权限</strong><br>例子：chmod 777 a.txt</p>
 </blockquote>
-<p><img src="/.com//chmod5.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/chmod5.png"></p>
 <blockquote>
 <p>例子：让 <strong>任何用户</strong> 拥有 <strong>读写</strong> 没有 <strong>执行</strong> 的权限<br>例子：chmod 666 a.txt</p>
 </blockquote>
-<p><img src="/.com//chmod6.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/chmod6.png"></p>
 <h4 id="修改文件-所有者-和-所属组"><a href="#修改文件-所有者-和-所属组" class="headerlink" title="修改文件 所有者 和 所属组"></a>修改文件 所有者 和 所属组</h4><blockquote>
 <p>语法格式：<strong>chown username:groupname 文件或者目录</strong><br>参数： -R 递归修改所有的文件<br>例：chown -R root:root b</p>
 </blockquote>
-<p><img src="/.com//chown.png"></p>
-<h3 id="常见符号"><a href="#常见符号" class="headerlink" title="常见符号"></a>常见符号</h3><h4 id><a href="#" class="headerlink" title="."></a>.</h4><blockquote>
+<p><img src="/2019/03/06/LinuxCommand/chown.png"></p>
+<h3 id="常见符号"><a href="#常见符号" class="headerlink" title="常见符号"></a>常见符号</h3><h4 id=""><a href="#" class="headerlink" title="."></a>.</h4><blockquote>
 <p>表示当前目录</p>
 </blockquote>
 <h4 id="-1"><a href="#-1" class="headerlink" title="."></a>.</h4><blockquote>
@@ -1790,7 +1790,7 @@
 <h4 id="-2"><a href="#-2" class="headerlink" title="~"></a>~</h4><blockquote>
 <p>用户的家目录<br>例如： cd ~</p>
 </blockquote>
-<p><img src="/.com//gohome.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/gohome.png"></p>
 <h4 id="-3"><a href="#-3" class="headerlink" title="|"></a>|</h4><blockquote>
 <p>表示管道符<br>例如：Ps –ef | grep java   过滤留下java的进程</p>
 </blockquote>
@@ -1800,7 +1800,7 @@
 <h4 id="gt-gt"><a href="#gt-gt" class="headerlink" title="&gt;&gt;"></a>&gt;&gt;</h4><blockquote>
 <p>追加到某个文件</p>
 </blockquote>
-<p><img src="/.com//override.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/override.png"></p>
 <h3 id="文本编辑-vi-x2F-vim"><a href="#文本编辑-vi-x2F-vim" class="headerlink" title="文本编辑 vi &#x2F; vim"></a>文本编辑 vi &#x2F; vim</h3><h4 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h4><blockquote>
 <p>　vi 文件名<br> 如果编辑一个不存在的文件，默认会创建一个文件</p>
 </blockquote>
@@ -1822,29 +1822,29 @@
 <blockquote>
 <p>例：让 huadian 用户拥有 root 所有权限   操作如下<br>切换到 root 用户<br>执行 visudo 命令<br>添加如下配置</p>
 </blockquote>
-<p><img src="/.com//visudo.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/visudo.png"></p>
 <blockquote>
 <p>普通用户如果使用额外赋予的权限<br>sudo 额外权限名</p>
 </blockquote>
-<p><img src="/.com//sudo.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/sudo.png"></p>
 <h4 id="man"><a href="#man" class="headerlink" title="man"></a>man</h4><blockquote>
 <p>帮助命令<br>例: man ls</p>
 </blockquote>
 <h4 id="wc"><a href="#wc" class="headerlink" title="wc"></a>wc</h4><blockquote>
 <p>文本统计工具<br>例： wc a.txt<br>结果：行 单词书 字符数 文件名</p>
 </blockquote>
-<p><img src="/.com//wc.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/wc.png"></p>
 <h4 id="du"><a href="#du" class="headerlink" title="du"></a>du</h4><blockquote>
 <p>文件大小统计<br>du -a.txt&#x2F;</p>
 </blockquote>
-<p><img src="/.com//du.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/du.png"></p>
 <h3 id="系统管理命令"><a href="#系统管理命令" class="headerlink" title="系统管理命令"></a>系统管理命令</h3><h4 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h4><blockquote>
 <p>shutdown  -h now<br>halt<br>init 0</p>
 </blockquote>
 <h4 id="开机选项配置"><a href="#开机选项配置" class="headerlink" title="开机选项配置"></a>开机选项配置</h4><blockquote>
 <p>Vi &#x2F;etc&#x2F;inittab<br>id:3:initdefault:  启动linux，不启动图形化界面<br>init 5:恢复图形化界面</p>
 </blockquote>
-<p><img src="/.com//option.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/option.png"></p>
 <h4 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h4><blockquote>
 <p>init 6<br>reboot</p>
 </blockquote>
@@ -1854,11 +1854,11 @@
 <h3 id="chkconfig-查看或设置开机是否启动"><a href="#chkconfig-查看或设置开机是否启动" class="headerlink" title="chkconfig 查看或设置开机是否启动"></a>chkconfig 查看或设置开机是否启动</h3><blockquote>
 <p>查看开机是否启动<br>chkconfig iptables –list<br>结果：2~5都是on :开机启动</p>
 </blockquote>
-<p><img src="/.com//chkconfig.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/chkconfig.png"></p>
 <blockquote>
 <p>设置开机是否启动<br>chkconfig iptables off|on</p>
 </blockquote>
-<p><img src="/.com//chkconfig2.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/chkconfig2.png"></p>
 <h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><h4 id="查看进程-ps"><a href="#查看进程-ps" class="headerlink" title="查看进程 ps"></a>查看进程 ps</h4><blockquote>
 <p>　ps –ef |grep java<br>含义：查看所有 java 进程</p>
 </blockquote>
@@ -1868,7 +1868,7 @@
 <h3 id="Redhat的slinux安全机制"><a href="#Redhat的slinux安全机制" class="headerlink" title="Redhat的slinux安全机制"></a>Redhat的slinux安全机制</h3><blockquote>
 <p>vi &#x2F;etc&#x2F;selinux&#x2F;config<br>重启成效</p>
 </blockquote>
-<p><img src="/.com//redhatsecurity.png"></p>
+<p><img src="/2019/03/06/LinuxCommand/redhatsecurity.png"></p>
 <h3 id="压缩管理"><a href="#压缩管理" class="headerlink" title="压缩管理"></a>压缩管理</h3><h4 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h4><h4 id="gzip"><a href="#gzip" class="headerlink" title="gzip"></a>gzip</h4><blockquote>
 <p>后缀: .gz<br>压缩: gzip file_path<br>解压: gunzip file.gz<br>特点: 压缩后源文件没有了,  不能对目录进行压缩</p>
 </blockquote>
@@ -2049,15 +2049,15 @@
 <h3 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h3><blockquote>
 <p>修改虚拟机<br>1.打开 <strong>VMware</strong> -&gt; 编辑 -&gt; 虚拟网络编辑器<br>2.将 VMware 当成一个路由器使用，设置路由器网段 <strong>192.168.59.0</strong></p>
 </blockquote>
-<p><img src="/.com//network.png"></p>
+<p><img src="/2019/03/05/bigdata/network.png"></p>
 <blockquote>
 <p>设置网络方式<br>1.打开 <strong>Linux</strong> 中 <strong>System</strong> -&gt; <strong>Preferences</strong> -&gt; <strong>Network Connections</strong><br>2.使用图形化界面操作将 ip 设置成 <strong>192.168.59.250</strong></p>
 </blockquote>
-<p><img src="/.com//network2.png">  </p>
+<p><img src="/2019/03/05/bigdata/network2.png">  </p>
 <h3 id="重启机器"><a href="#重启机器" class="headerlink" title="重启机器"></a>重启机器</h3><blockquote>
 <p>执行命令 reboot 命令<br>使用 <strong>ifconfig</strong> 查看</p>
 </blockquote>
-<p><img src="/.com//network3.png"></p>
+<p><img src="/2019/03/05/bigdata/network3.png"></p>
 <h3 id="网络映射"><a href="#网络映射" class="headerlink" title="网络映射"></a>网络映射</h3><blockquote>
 <p>(在 <strong>Linux</strong> 上执行)<br>目的：让linux的IP和主机名称一一对应，后期可以通过主机名找到机器<br>执行命令 进入 <strong>hosts</strong> 文件</p>
 </blockquote>
@@ -2070,7 +2070,7 @@
 <blockquote>
 <p>终端中 <strong>ping bigdata01-huadian.com</strong><br>出现以下结果表示成功</p>
 </blockquote>
-<p><img src="/.com//network4.png"></p>
+<p><img src="/2019/03/05/bigdata/network4.png"></p>
 <blockquote>
 <p>(在 <strong>windows</strong> 上执行)<br>目的：在 window 下也能够通过主机名访问 linux<br>修改文件：C:\Windows\System32\drivers\etc\hosts<br>新增如下内容:  </p>
 </blockquote>
@@ -2079,7 +2079,7 @@
 <blockquote>
 <p>在 <strong>cmd</strong> 中 <strong>ping bigdata01-huadian.com</strong></p>
 </blockquote>
-<p><img src="/.com//network5.png"></p>
+<p><img src="/2019/03/05/bigdata/network5.png"></p>
 
           
         
